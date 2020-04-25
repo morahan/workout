@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
 import { Text, View, TextInput, ScrollView, Picker, Slider, Switch, TouchableOpacity, Button, Image, SafeAreaView } from 'react-native';
 import styles from './styles/styles.js';
-import Welcome from './components/welcome.js'
+import Welcome from './components/welcome.js';
+import Workout from './components/workout.js';
+import SetWorkout from './components/setWorkout.js';
 
 function App(){
 
@@ -9,18 +11,8 @@ function App(){
     <SafeAreaView style={styles.Screen}>
 
       <Welcome></Welcome>
-      {/* <View style={styles.Welcome}>
-        <Image source={require('./assets/fl-icon.png')} style={{height: 117, width: 117, alignSelf: "center"}}/>
-        <Text style={styles.Welcome}>Welcome</Text>
-      </View>
-
-      <View>
-        <Text style={styles.cta}>Get started</Text>
-      </View>
-
-      <View>
-        <Text style={styles.foot}>© Freio Labs, All Rights Reserved</Text>
-      </View> */}
+      {/* <SetWorkout></SetWorkout> */}
+      {/* <WorkOut></WorkOut> */}
 
     
     </SafeAreaView>
