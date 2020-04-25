@@ -4,18 +4,28 @@ import styles from './styles/styles.js';
 import Welcome from './components/welcome.js';
 import Workout from './components/workout.js';
 import SetWorkout from './components/setWorkout.js';
+import { NavigationContainer } from '@react-navigation/native';
+import { createStackNavigator } from '@react-navigation/stack';
+
+
+import 'react-native-gesture-handler';
 
 function App(){
 
   return (
-    <SafeAreaView style={styles.Screen}>
+    <NavigationContainer>
+      <SafeAreaView style={styles.Screen}>
+        {/* <Stack.Navigator>
+          <Stack.Screen name="Home" component={Welcome}/>
+          <Stack.Screen name="Setup" component={SetWorkout} />
+          <Stack.Screen name="Workout" component={Workout} />
+        </Stack.Navigator> */}
+        {/* <Welcome></Welcome> */}
+        <SetWorkout></SetWorkout>
+        {/* <WorkOut></WorkOut> */}
 
-      <Welcome></Welcome>
-      {/* <SetWorkout></SetWorkout> */}
-      {/* <WorkOut></WorkOut> */}
-
-    
-    </SafeAreaView>
+      </SafeAreaView>
+    </NavigationContainer>
   );
 }
 
