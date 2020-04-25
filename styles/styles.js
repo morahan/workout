@@ -20,6 +20,11 @@ const styles = StyleSheet.create({
     fontSize: 37,
     justifyContent: 'space-between'
   },
+  cta2: {
+    color: "#ffff",
+    fontSize: 31,
+    justifyContent: 'space-between'
+  },
 
   foot: {
     // flex: 3,
@@ -49,23 +54,53 @@ const styles = StyleSheet.create({
     width: "75%",
   },
 
+  Box: {
+    margin: "5%",
+    backgroundColor: 'whitesmoke',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    padding: "23%",
+    borderRadius: 17,
+    height: '50%',
+    width: "75%",
+  },
+
+  BtnBox: {
+    backgroundColor: 'whitesmoke',
+    borderRadius: 17,
+    height: '15%',
+    width: "75%",
+    paddingLeft: "5%",
+    paddingRight: "5%",
+    paddingBottom: "5%",
+  },
+
   Btn: {
    justifyContent: "center",
    borderRadius: 17,
   },
 
-  // Text: {
-  //   color: "#000",
-  //   fontSize: 17,
-  //   textAlign: 'center',
-  //   paddingTop: "15%",
-  // },
+  BtnHz: {
+   flexDirection: "row",
+   justifyContent: "space-between",
+   margin: "5%",
+   borderRadius: 17,
+  },
 
-  // Text2: {
-  //   color: "#000",
-  //   fontSize: 17,
-  //   textAlign: 'center',
-  // },
+  Text: {
+    color: "#000",
+    fontSize: 23,
+    textAlign: 'center',
+    paddingTop: "5%",
+    paddingBottom: "5%",
+  
+  },
+
+  Text2: {
+    color: "#fff",
+    fontSize: 17,
+    textAlign: 'center',
+  },
 
   Input: {
     alignItems: 'center',
