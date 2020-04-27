@@ -20,7 +20,6 @@ function Welcome() {
             </View>
 
             <View style={styles.LogIn}>
-                {/* <TextInput style={styles.Input}placeholder="enter your name"> </TextInput> */}
                 <Button style={styles.Btn} title='Sign In' onPress={clickHandler} />
             </View>
 

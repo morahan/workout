@@ -1,9 +1,12 @@
 import React, { useState } from 'react';
 import { Text, View, TextInput, ScrollView, Picker, Slider, Switch, TouchableOpacity, Button, Image, SafeAreaView } from 'react-native';
 import styles from '../styles/styles.js';
+import { NavigationContainer } from '@react-navigation/native';
+import { createStackNavigator } from '@react-navigation/stack';
+
+// const Stack = createStackNavigator();
 
 let clickNumber = 0;
-
 function trackClicks() {
     if (clickNumber === 0) {
         return <Welcome></Welcome>
@@ -12,12 +15,11 @@ function trackClicks() {
     } else if (clickNumber === 3) {
         return <Workout></Workout>
     }
-
 }
 
 
 
-function Welcome() {
+function Welcome( { navigation }) {
     const [welcome, setWelcome] = useState('Welcome');
     const [name, setName] = useState('Get Started')
     const clickHandler = () => {
@@ -38,9 +40,13 @@ function Welcome() {
             </View>
 
             <View style={styles.LogIn}>
-                {/* <TextInput style={styles.Input}placeholder="enter your name"> </TextInput> */}
                 <Button style={styles.Btn} title='Sign In' onPress={clickHandler} />
             </View>
+
+            <Button 
+                title="Set Workout"
+                onPress={() => navigation.push('SetWorkout')}
+            />
 
             <View>
                 <Text style={styles.foot}>© Freio Labs, All Rights Reserved</Text>
