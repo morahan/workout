@@ -22,7 +22,7 @@ function App(){
         <Welcome></Welcome>
         {/* <SetWorkout></SetWorkout> */}
         {/* <Workout></Workout> */}
-      </SafeAreaView> */}
+      {/* </SafeAreaView> */}
 
     // </NavigationContainer>
   );
