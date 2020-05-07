@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Text, View, Linking } from 'react-native';
+import { Text, View, Linking, TouchableOpacity } from 'react-native';
 import styles from '../styles/styles.js';
 
 function Footer() {
