@@ -1,6 +1,8 @@
 import { createStackNavigator } from 'react-navigation-stack';
 import { createAppContainer } from 'react-navigation';
-import Welcome from '../pages/Welcome.js';
+
+// ==== Pages ====
+import Welcome from '../pages/welcome.js';
 import GetStarted from '../pages/getStarted.js';
 import SetWorkout from '../pages/setWorkout.js';
 import SignIn from '../pages/signIn.js';
@@ -15,22 +17,21 @@ const screens = {
     GetStarted: {
         screen: GetStarted
     },
-    CustomizeWorkout: {
-        screen: SetWorkout
-    },
     SignIn: {
         screen: SignIn
     },
     SignUp: {
         screen: SignUp
     },
+    CustomizeWorkout: {
+        screen: SetWorkout
+    },
     Workout: {
         screen: Workout
     }
-
-
 }
 
+const HomeStack = createStackNavigator(screens);
 
-const HomeStack = createStackNavigator(screens)
+export default createAppContainer(HomeStack);
 
