@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Text, View, TouchableOpacity, Button, Image } from 'react-native';
 import styles from '../styles/styles.js';
 
-function Welcome({ navigation }) {
+function GetStarted({ navigation }) {
 
     return (
         <View style={styles.Screen}>
@@ -19,7 +19,7 @@ function Welcome({ navigation }) {
             </View>
            
             <View style={styles.LogIn}>
-                <Button style={styles.Btn} title='Sign In' onPress={clickHandler} />
+                <Button style={styles.Btn} title='Sign Un' onPress={clickHandler} />
             </View>
 
             
@@ -31,4 +31,4 @@ function Welcome({ navigation }) {
     );
 }
 
-export default Welcome;
+export default GetStarted;

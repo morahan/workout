@@ -8,7 +8,7 @@ export default function Welcome({ props }) {
     const clickHandler = () => {
         setWelcome('  Loading...');
         console.log("props ==== ", props)
-        // navigation.navigate('GetStarted');
+        navigation.navigate('GetStarted');
     }
 
     return (
@@ -18,7 +18,7 @@ export default function Welcome({ props }) {
                 <Text style={styles.Welcome}>{welcome}</Text>
             </View>
             <View style={styles.LogIn}>
-                <Button style={styles.Btn} title='Sign In' onPress={clickHandler} />
+                <Button style={styles.Btn} title='Get Started' onPress={clickHandler} />
             </View>
         </View>
     );

@@ -77,6 +77,7 @@ const styles = StyleSheet.create({
 
   Btn: {
    justifyContent: "center",
+   padding: "10%",
    borderRadius: 17,
   },
 

@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Text, View, TextInput, ScrollView, Picker, Slider, Switch, Button, Image, SafeAreaView } from 'react-native';
 import styles from './styles/styles.js';
+import { AppLoading } from 'expo';
 
 // import { NavigationContainer } from '@react-navigation/native';
 // import { createStackNavigator } from '@react-navigation/stack';
@@ -25,15 +26,15 @@ function App(){
     //       <Stack.Screen name="Workout" component={Workout} />
     //     </Stack.Navigator>
     // </NavigationContainer>
-
-      <SafeAreaView style={styles.Screen}>
-        <Navigator />
-        {/* <Welcome></Welcome> */}
-        {/* <GetStarted></GetStarted> */}
-        {/* <SetWorkout></SetWorkout> */}
-        {/* <Workout></Workout> */}
-        <Footer></Footer>
-      </SafeAreaView>
+      
+      <Navigator />
+      // <SafeAreaView style={styles.Screen}>
+      // </SafeAreaView>
+        //  <Welcome></Welcome> 
+        //  <GetStarted></GetStarted> 
+        //  <SetWorkout></SetWorkout> 
+        //  <Workout></Workout> 
+      // <Footer></Footer>
 
   );
 }
