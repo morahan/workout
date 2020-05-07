@@ -1,8 +1,6 @@
 import React, { useState } from 'react';
 import { Text, View, TextInput, ScrollView, Picker, Slider, Switch, TouchableOpacity, Button, Image, SafeAreaView } from 'react-native';
 import styles from '../styles/styles.js';
-import { NavigationContainer } from '@react-navigation/native';
-import { createStackNavigator } from '@react-navigation/stack';
 
 // const Stack = createStackNavigator();
 
