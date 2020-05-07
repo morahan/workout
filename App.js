@@ -10,6 +10,7 @@ import styles from './styles/styles.js';
 import Welcome from './pages/welcome.js';
 import Workout from './pages/workout.js';
 // import SetWorkout from './pages/setWorkout.js';
+import GetStarted from './pages/getStarted.js';
 
 // ==== components =====
 import Footer from './components/footer.js';
@@ -26,8 +27,9 @@ function App(){
     // </NavigationContainer>
 
       <SafeAreaView style={styles.Screen}>
-        <Navigator></Navigator>
-        <Welcome></Welcome>
+        <Navigator />
+        {/* <Welcome></Welcome> */}
+        {/* <GetStarted></GetStarted> */}
         {/* <SetWorkout></SetWorkout> */}
         {/* <Workout></Workout> */}
         <Footer></Footer>
