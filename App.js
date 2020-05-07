@@ -13,8 +13,8 @@ import Workout from './pages/workout.js';
 
 // ==== components =====
 import Footer from './components/footer.js';
+import Navigator from './routes/homeStack.js';
 
-const Stack = createStackNavigator();
 function App(){
   return (
     // <NavigationContainer>
@@ -26,6 +26,7 @@ function App(){
     // </NavigationContainer>
 
       <SafeAreaView style={styles.Screen}>
+        <Navigator></Navigator>
         <Welcome></Welcome>
         {/* <SetWorkout></SetWorkout> */}
         {/* <Workout></Workout> */}
