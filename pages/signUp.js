@@ -2,8 +2,8 @@ import React, { useState } from 'react';
 import { Text, View, TextInput, ScrollView, Picker, Slider, Switch, TouchableOpacity, Button, Image, SafeAreaView } from 'react-native';
 import styles from '../styles/styles.js';
 
-
-function Welcome() {
+// Edit code below! Copied from Welcome 
+function SignUp() {
     const [welcome, setWelcome] = useState('Welcome');
     const [name, setName] = useState('Get Started')
     const clickHandler = () => {
@@ -32,7 +32,7 @@ function Welcome() {
     );
 }
 
-export default Welcome;
+export default SignUp;
 
 
 
