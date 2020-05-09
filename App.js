@@ -16,6 +16,7 @@ import GetStarted from './pages/getStarted.js';
 // ==== components =====
 import Footer from './components/footer.js';
 import Navigator from './routes/homeStack.js';
+import Timer2 from './pages/timer2.js'
 
 function App(){
   return (
@@ -27,13 +28,14 @@ function App(){
     //     </Stack.Navigator>
     // </NavigationContainer>
       
-      <Navigator />
+      // <Navigator />
       // <SafeAreaView style={styles.Screen}>
       // </SafeAreaView>
         //  <Welcome></Welcome> 
         //  <GetStarted></GetStarted> 
         //  <SetWorkout></SetWorkout> 
         //  <Workout></Workout> 
+        <Timer2></Timer2>
       // <Footer></Footer>
 
   );
