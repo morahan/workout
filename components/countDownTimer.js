@@ -134,7 +134,7 @@ export default class Timer extends Component {
     render() {
         console.log(this.state.totalDuration);
         return (
-            <View style={{ flex: 1, justifyContent: 'center' }}>
+            <View style={{ flex: 1, justifyContent: 'center', backgroundColor: '#000' }}>
                 <CountDown
                     until={this.state.totalDuration}
                     //duration of countdown in seconds

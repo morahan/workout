@@ -25,7 +25,11 @@ function Workout() {
                     <Text style={styles.Text2}>20 Reps</Text>
                 </View>
             </View>
-            <Timer></Timer>
+            <TouchableOpacity style={styles.beginButton}>
+                <Text style={styles.colorWhite}>Begin Session</Text>
+            </TouchableOpacity>
+
+            {/* <Timer></Timer> */}
         </View>
     );
 }
