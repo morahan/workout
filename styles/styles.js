@@ -118,6 +118,7 @@ const styles = StyleSheet.create({
     color: "#000",
     fontSize: 17,
     textAlign: 'center',
+    marginTop: '25%'
   },
 
   EBox: {
