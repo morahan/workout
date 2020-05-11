@@ -104,7 +104,7 @@ const styles = StyleSheet.create({
         flex: 1,
         justifyContent: 'center',
         alignItems: 'center',
-        backgroundColor: '#F5FCFF',
+        backgroundColor: 'whitesmoke',
     },
     timer: {
         fontSize: 80,
@@ -119,7 +119,7 @@ const styles = StyleSheet.create({
     beginButton: {
         margin: 40,
         padding: 40,
-        backgroundColor: '#4CAF50',
+        backgroundColor: '#44ace8',
         width: '80%',
     },
     stopButton: {
@@ -138,7 +138,7 @@ const styles = StyleSheet.create({
         top: 0,
         height: 60,
         width: '100%',
-        backgroundColor: '#4CAF50'
+        backgroundColor: '#44ace8'
     },
     headerText: {
         fontSize: 24,
