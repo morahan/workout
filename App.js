@@ -16,7 +16,7 @@ import GetStarted from './pages/getStarted.js';
 // ==== components =====
 import Footer from './components/footer.js';
 import Navigator from './routes/homeStack.js';
-import Timer2 from './pages/timer2.js'
+import Timer3 from './components/timer3.js'
 
 function App(){
   return (
@@ -35,7 +35,7 @@ function App(){
         //  <GetStarted></GetStarted> 
         //  <SetWorkout></SetWorkout> 
         //  <Workout></Workout> 
-        <Timer2></Timer2>
+        <Timer3></Timer3>
       // <Footer></Footer>
 
   );
