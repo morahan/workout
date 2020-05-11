@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { Text, View, TextInput, ScrollView, Picker, Slider, Switch, TouchableOpacity, Button, Image, SafeAreaView } from 'react-native';
 import styles from '../styles/styles.js';
-import Timer from '../components/countDownTimer.js';
-
+import Timer3 from '../components/timer3.js';
+import Exercise from '../components/exercise.js'
 
 function Workout() {
     return (
@@ -12,24 +12,9 @@ function Workout() {
                     Super Set #1 
                 </Text>
                 <Text> </Text>
-                <View style={styles.EBox}>
-                    <Text style={styles.Text2}>Squats</Text>
-                    <Text style={styles.Text2}>25 Reps</Text>
-                </View>
-                <View style={styles.EBox}>
-                    <Text style={styles.Text2}>Leg Extensions</Text>
-                    <Text style={styles.Text2}>15 Reps</Text>
-                </View>
-                <View style={styles.EBox}>
-                    <Text style={styles.Text2}>Lunges</Text>
-                    <Text style={styles.Text2}>20 Reps</Text>
-                </View>
+                <Exercise></Exercise>
             </View>
-            <TouchableOpacity style={styles.beginButton}>
-                <Text style={styles.colorWhite}>Begin Session</Text>
-            </TouchableOpacity>
-
-            {/* <Timer></Timer> */}
+            <Timer3></Timer3>
         </View>
     );
 }
