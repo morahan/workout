@@ -7,21 +7,10 @@ import Exercise from '../components/exercise.js'
 function Workout() {
     return (
         <View style={styles.Screen}>
-            <View style={styles.Box}> 
-                <Text style={ styles.HeaderText }> 
-                    Super Set #1 
-                </Text>
-                <Text> </Text>
-                <Exercise></Exercise>
-            </View>
+            <Exercise></Exercise>
             <Timer3></Timer3>
         </View>
     );
 }
 
 export default Workout;
-
-
-
-
-
