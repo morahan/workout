@@ -3,36 +3,58 @@ import { Text, View, TextInput, ScrollView, Picker, Slider, Switch, TouchableOpa
 import styles from '../styles/styles.js';
 // import { Component } from 'react';
 
-
-
-let count = 0;
+let exercise = 0;
 let exerciseList = [["Squats", 25], ["Leg Extensions", 15], ["Lunges", 20]];
+let round = 1;
+let superSet = 1;
+
 class Exercise extends Component {
     constructor(props){
         super(props);
         this.state = {
-            // setNum: 1,
-            exercise: exerciseList[count][0],
-            reps: exerciseList[count][1]
+            round: round,
+            exercise: exerciseList[exercise][0],
+            reps: exerciseList[exercise][1],
+            superSet: superSet,
         }
     }
     
     nextExerciseEventHandler = () => {
-        count++;
+        if (exercise === exerciseList.length - 1) {
+            exercise = 0;
+            round++
+        } else {
+            exercise++;
+        }
+
         this.setState({
-            exercise: exerciseList[count][0],
-            reps: exerciseList[count][1]
+            exercise: exerciseList[exercise][0],
+            reps: exerciseList[exercise][1],
+            round: round,
         });
-        console.log(count)
+
+        if (round === 4) {
+            superSet++;
+            round = 1;
+            this.setState({
+                superSet: superSet,
+                round: round,
+            })
+        }
+        console.log("ex: ", exercise, "ss: ", superSet, "round ", round)
     }
 
-    render(){
+    render() {
         return (
             <View style={styles.Screen}>
+                <Text style={styles.HeaderText}>
+                    {"Super Set #" + this.state.superSet}
+                </Text>
                 <View style={styles.Box}>
+                    <Text>{"Round " + this.state.round} </Text>
                     <View style={styles.EBox}>
                         <Text style={styles.Text2}>{this.state.exercise}</Text>
-                        <Text style={styles.Text2}>{this.state.reps}</Text>
+                        <Text style={styles.Text2}>{this.state.reps + " Reps"}</Text>
                     </View>
                     <View styles={styles.Btn}>
                         <TouchableOpacity>
@@ -46,8 +68,3 @@ class Exercise extends Component {
 }
 
 export default Exercise;
-
-
-
-
-
