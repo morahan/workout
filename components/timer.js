@@ -4,6 +4,7 @@ import CountDown from 'react-native-countdown-component';
 import moment from 'moment';
 import { TouchableOpacity } from 'react-native-gesture-handler';
 
+
 export default class App extends Component {
     constructor(props) {
         super(props);
@@ -30,7 +31,7 @@ export default class App extends Component {
         console.log(this.state.totalDuration);
         return (
             <View>
-                <View style={{ flex: 1, justifyContent: 'center' }}>
+                <View>
                     <CountDown
                         // background of timer
                         digitStyle={{backgroundColor: '#44ace8'}}
@@ -49,13 +50,13 @@ export default class App extends Component {
                     />
                 </View>
                 {!this.state.sessionInProgress &&
-                    <TouchableOpacity style={styles.startButton} onPress={this.startSession}>
-                        <Text style={styles.colorWhite}>Continue Session</Text>
+                    <TouchableOpacity style={timerStyles.startButton} onPress={this.startSession}>
+                        <Text style={timerStyles.colorWhite}>Continue Session</Text>
                     </TouchableOpacity>
                 }
                 {this.state.sessionInProgress &&
-                    <TouchableOpacity style={styles.stopButton} onPress={this.stopSession}>
-                        <Text style={styles.colorWhite}>Stop Session</Text>
+                    <TouchableOpacity style={timerStyles.stopButton} onPress={this.stopSession}>
+                        <Text style={timerStyles.colorWhite}>Stop Session</Text>
                     </TouchableOpacity>
                 }
             </View>
@@ -64,7 +65,7 @@ export default class App extends Component {
 }
 
 
-const styles = StyleSheet.create({
+const timerStyles = StyleSheet.create({
     container: {
         flex: 1,
         justifyContent: 'center',
@@ -75,6 +76,8 @@ const styles = StyleSheet.create({
         fontSize: 80,
         textAlign: 'center',
         margin: 10,
+        height: "10vh",
+        backgroundColor: "green",
     },
     instructions: {
         textAlign: 'center',
