@@ -18,7 +18,7 @@ import Footer from './components/footer.js';
 import Navigator from './routes/homeStack.js';
 
 // components to Test
-import Timer3 from './components/timer3.js'
+import Timer from './components/timer.js'
 
 function App(){
   return (
@@ -31,13 +31,13 @@ function App(){
     // </NavigationContainer>
       
       // <Navigator />
-      // <SafeAreaView style={styles.Screen}>
-      // </SafeAreaView>
+      <SafeAreaView style={styles.Screen}>
+        <Workout></Workout> 
+      </SafeAreaView>
         //  <Welcome></Welcome> 
         //  <GetStarted></GetStarted> 
         //  <SetWorkout></SetWorkout> 
-         <Workout></Workout> 
-        // <Timer3></Timer3>
+        // <Timer></Timer>
       // <Footer></Footer>
 
   );
