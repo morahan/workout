@@ -8,7 +8,7 @@ function Workout() {
     return (
         <View style={styles.Screen}>
             <Exercise></Exercise>
-            <Timer></Timer>
+            {/* <Timer></Timer> */}
         </View>
     );
 }
