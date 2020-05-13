@@ -46,23 +46,26 @@ class Exercise extends Component {
 
     render() {
         return (
-            <View style={styles.Screen}>
-                <Text style={styles.HeaderText}>
-                    {"Super Set #" + this.state.superSet}
-                </Text>
-                <View style={styles.Box}>
-                    <Text>{"Round " + this.state.round} </Text>
-                    <View style={styles.EBox}>
-                        <Text style={styles.Text2}>{this.state.exercise}</Text>
-                        <Text style={styles.Text2}>{this.state.reps + " Reps"}</Text>
-                    </View>
-                    <View styles={styles.Btn}>
-                        <TouchableOpacity>
-                            <Text style={styles.Text2} onPress={this.nextExerciseEventHandler}>Next Set</Text>
-                        </TouchableOpacity>
+            // <View style={styles.Screen}>
+                <View style={styles.WorkoutScreen}>
+                    <Text style={styles.HeaderText}>
+                        {"Super Set #" + this.state.superSet}
+                    </Text>
+                    <Text style={styles.HeaderText2}>{"Round " + this.state.round} </Text>
+                    <View style={styles.Box}>
+                        <View style={styles.EBox}>
+                            <Text style={styles.Text2}>{this.state.exercise}</Text>
+                            <Text style={styles.Text2}>{this.state.reps + " Reps"}</Text>
+                        </View>
+                        <View style={styles.Btn}>
+                            <TouchableOpacity>
+                                <Text style={styles.Text2} onPress={this.nextExerciseEventHandler}>Next Set</Text>
+                            </TouchableOpacity>
+                        </View>
                     </View>
                 </View>
-            </View>
+
+            // </View>
         );
     }
 }
