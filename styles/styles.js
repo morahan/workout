@@ -8,7 +8,7 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     backgroundColor: '#44ace8',
     alignItems: 'center',
-    paddingTop: "3vh",
+    padding: "3vh",
     justifyContent: 'center',
     height: "100vh",
   },
@@ -19,6 +19,8 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     height: "50vh",
     width: "75vw",
+    paddingBottom: "5vh",
+    // marginBottom:"5vh",
     // justifyContent: 'space-between',
     borderRadius: "37px"
   },
@@ -70,7 +72,7 @@ const styles = StyleSheet.create({
     backgroundColor: 'whitesmoke',
     alignItems: 'center',
     borderRadius: "17px",
-    padding: "2vh",
+    // padding: "2vh",
     margin: "3vh",
     height: '25vh',
     width: "50vw",
@@ -89,9 +91,14 @@ const styles = StyleSheet.create({
   Btn: {
    justifyContent: "center",
    width: "35vw",
+   height: "7vh",
+  //  padding: "1vh",
+  //  margin: "5vh",
   //  padding: "15%",
   //  margin: "10%",
-   backgroundColor: "#44ace8",
+   justifyContent: "center",
+   alignSelf: "center",
+   backgroundColor: "black",
    borderRadius: 17,
   },
 
@@ -111,7 +118,7 @@ const styles = StyleSheet.create({
   },
 
   WText: {
-    color: "#000",
+    color: "white",
     fontSize: 23,
     textAlign: 'center',
     paddingTop: "5%",
@@ -153,7 +160,7 @@ const styles = StyleSheet.create({
     margin: "1vh",
     justifyContent: "center",
     alignItems: "center",
-    backgroundColor: "lightgrey",
+    // backgroundColor: "lightgrey",
     borderRadius: "17px",
   },
 
