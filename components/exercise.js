@@ -1,7 +1,7 @@
 import React, { Component, useState } from 'react';
 import { Text, View, TextInput, ScrollView, Picker, Slider, Switch, TouchableOpacity, Button, Image, SafeAreaView } from 'react-native';
 import styles from '../styles/styles.js';
-// import { Component } from 'react';
+import Timer from './timer.js';
 
 let exercise = 0;
 let exerciseList = [["Squats", 25], ["Leg Extensions", 15], ["Lunges", 20]];
@@ -59,10 +59,11 @@ class Exercise extends Component {
                         </View>
                         <View style={styles.Btn}>
                             <TouchableOpacity>
-                                <Text style={styles.Text2} onPress={this.nextExerciseEventHandler}>Next Set</Text>
+                                <Text style={styles.WText} onPress={this.nextExerciseEventHandler}>Next Set</Text>
                             </TouchableOpacity>
                         </View>
                     </View>
+                    <Timer></Timer>
                 </View>
 
             // </View>
