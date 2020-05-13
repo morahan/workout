@@ -2,17 +2,29 @@ import { StyleSheet } from 'react-native';
 
 const styles = StyleSheet.create({
   Screen: {
-    flex: 1,
+    display: "flex",
+    flexDirection: "column",
+    alignItems: "center",
+    justifyContent: "center",
     backgroundColor: '#44ace8',
     alignItems: 'center',
-    paddingTop: "10%",
-    justifyContent: 'space-between'
+    paddingTop: "3vh",
+    justifyContent: 'center',
+    height: "100vh",
+  },
+  
+  WorkoutScreen: {
+    flex: 1,
+    backgroundColor: '#ffff',
+    alignItems: 'center',
+    height: "50vh",
+    width: "75vw",
+    // justifyContent: 'space-between',
+    borderRadius: "37px"
   },
   
   Head: {
     justifyContent: 'space-between'
-    // flex: 5,
-    // justifyContent: 'space-between',
   },
   
   cta: {
@@ -27,15 +39,13 @@ const styles = StyleSheet.create({
   },
 
   foot: {
-    // flex: 3,
     color: "#fff",
     paddingBottom: "5%"
-    // justifyContent: 'space-between',
   },
 
-  // Logo: {
-  //   height: 117, width: 117, alignSelf: "center", paddingTop: 100
-  // },
+  Logo: {
+    height: 117, width: 117, alignSelf: "center", paddingTop: 100
+  },
 
   Welcome: {
     color: "#ffff",
@@ -55,14 +65,15 @@ const styles = StyleSheet.create({
   },
 
   Box: {
-    margin: "5%",
+    // display: "flex",
+    // flexDirection: "column",
     backgroundColor: 'whitesmoke',
     alignItems: 'center',
-    // justifyContent: 'space-between',
-    // padding: "23%",
-    borderRadius: 17,
-    height: '50%',
-    width: "175%",
+    borderRadius: "17px",
+    padding: "2vh",
+    margin: "3vh",
+    height: '25vh',
+    width: "50vw",
   },
 
   BtnBox: {
@@ -70,21 +81,24 @@ const styles = StyleSheet.create({
     borderRadius: 17,
     height: '15%',
     width: "75%",
-    paddingLeft: "5%",
-    paddingRight: "5%",
-    paddingBottom: "5%",
+    paddingLeft: "3vw",
+    paddingRight: "3vw",
+    paddingBottom: "5vh",
   },
 
   Btn: {
    justifyContent: "center",
-   padding: "10%",
+   width: "35vw",
+  //  padding: "15%",
+  //  margin: "10%",
+   backgroundColor: "#44ace8",
    borderRadius: 17,
   },
 
   BtnHz: {
    flexDirection: "row",
    justifyContent: "space-between",
-   margin: "5%",
+   margin: "5vw",
    borderRadius: 17,
   },
 
@@ -106,25 +120,41 @@ const styles = StyleSheet.create({
 
   HeaderText: {
     color: "#000",
-    fontSize: 23,
+    fontSize: 47,
     textAlign: 'center',
-    paddingTop: "5%",
-    paddingBottom: "3%",
+    paddingTop: "2vh",
+    paddingBottom: "2vh",
+    borderBottomColor: 'black',
+    borderBottomWidth: 1,
+  },
+
+  HeaderText2: {
+    color: "#000",
+    fontSize: 37,
+    textAlign: 'center',
+    paddingTop: "2vh",
+    paddingBottom: "2vh",
     borderBottomColor: 'black',
     borderBottomWidth: 1,
   },
 
   Text2: {
     color: "#000",
-    fontSize: 17,
+    fontSize: 23,
     textAlign: 'center',
-    marginTop: '25%'
+    // alignItems: "space-between",
+    justifyContent: "spaceBetween",
+    margin: '1vh'
   },
 
   EBox: {
-    borderBottomColor: 'grey',
-    borderBottomWidth: 1,
-    paddingTop: "10%",
+    width: "100%",
+    padding: "1vh",
+    margin: "1vh",
+    justifyContent: "center",
+    alignItems: "center",
+    backgroundColor: "lightgrey",
+    borderRadius: "17px",
   },
 
   WText2: {
@@ -135,12 +165,12 @@ const styles = StyleSheet.create({
 
   Input: {
     alignItems: 'center',
-    width: "80%",
+    width: "80vw",
     fontSize: 23,
     borderRadius: 10,
     borderColor: 'black',
     borderWidth: 2,
-    height: "25%",
+    height: "15vh",
     // padding: 10,
     // padding: '10%',
     alignSelf: 'center',
