@@ -33,12 +33,12 @@ function App(){
       // <Navigator />
       <SafeAreaView style={styles.Screen}>
         <Workout></Workout> 
+        {/* <Footer></Footer> */}
       </SafeAreaView>
         //  <Welcome></Welcome> 
         //  <GetStarted></GetStarted> 
         //  <SetWorkout></SetWorkout> 
         // <Timer></Timer>
-      // <Footer></Footer>
 
   );
 }
