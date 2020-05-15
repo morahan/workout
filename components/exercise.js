@@ -1,5 +1,5 @@
 import React, { Component, useState } from 'react';
-import { Text, View, TextInput, ScrollView, Picker, Slider, Switch, TouchableOpacity, Button, Image, SafeAreaView } from 'react-native';
+import { Text, View, TextInput, StyleSheet, TouchableOpacity } from 'react-native';
 import styles from '../styles/styles.js';
 import Timer from './timer.js';
 
@@ -63,6 +63,15 @@ class Exercise extends Component {
                             </TouchableOpacity>
                         </View>
                     </View>
+                {/* <TextInput
+                    placeholder="Enter Duration"
+                    underlineColorAndroid='transparent'
+                    style={timerStyles.TextInputStyle}
+                    keyboardType='numeric'
+                    maxLength={10} 
+                    onChangeText={(time) => this.enterDurationEventHandler(time)}
+                />   */}
+
                     <Timer></Timer>
                 </View>
 
@@ -71,4 +80,16 @@ class Exercise extends Component {
     }
 }
 
+
 export default Exercise;
+
+// const timerStyles = StyleSheet.create({
+//     TextInputStyle: {
+//         textAlign: 'center',
+//         height: 40,
+//         borderRadius: 17,
+//         borderWidth: 2,
+//         borderColor: '#009688',
+//         marginBottom: 10
+//     },
+// });
