@@ -124,6 +124,13 @@ const styles = StyleSheet.create({
     paddingTop: "5%",
     paddingBottom: "5%",
   },
+  WText2: {
+    color: "white",
+    fontSize: 17,
+    textAlign: 'center',
+    paddingTop: "5%",
+    paddingBottom: "5%",
+  },
 
   HeaderText: {
     color: "#000",
