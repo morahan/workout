@@ -57,10 +57,6 @@ export default class App extends Component {
     }
 
     timerFinishEventHandler(){
-        console.log(this.state)
-        // let finish = this.state.finishCount;
-        // console.log("insideTimerFinish => ", finish, this.state.restCount)
-        // console.log("insideTimerFinish => ", this.state.finishCount, this.state.restCount)
         if (this.state.finishCount === this.state.restCount){
             this.setState({ finishCount: this.state.finishCount++, totalDuration: 15}, () => console.log("finishCount === ", this.state.finishCount, "restCount === ", this.state.restCount))
         } else {
