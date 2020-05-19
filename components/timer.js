@@ -2,6 +2,9 @@ import React, { Component } from 'react';
 import { Text, TextInput, View, StyleSheet, Button } from 'react-native';
 import CountDown from 'react-native-countdown-component';
 import { TouchableOpacity } from 'react-native-gesture-handler';
+import { greaterThan } from 'react-native-reanimated';
+import styles from '../styles/styles.js';
+
 // import styles from '../styles/styles.js';
 
 const defaultDuration = '120';
@@ -12,7 +15,7 @@ export default class App extends Component {
         //initialize the counter duration
         this.state = {
             tempTime: '',
-            totalDuration: "60",
+            totalDuration: "120",
             sessionInProgress: true,
         };
     }
@@ -40,25 +43,15 @@ export default class App extends Component {
                 alert("please enter numbers only");
             }
         }
-        this.setState({ tempTime: newDuration*60 });
-        console.log("temp time == ", this.state.tempTime)
+        this.setState({ tempTime: newDuration*60 }, () => {
+            console.log("temp time === ", this.state.tempTime)
+        });
     }
 
-    enterDurationEventHandler(time){
-        // let newDuration = '';
-        // let numbers = '0123456789';
-        // for (var i = 0; i < time.length; i++) {
-        //     if (numbers.indexOf(time[i]) > -1) {
-        //         // newDuration = newDuration + time[i];
-        //         newDuration = time[i] * 60;
-        //     }
-        //     else {
-        //         alert("please enter numbers only");
-        //     }
-        // }
-        
-        this.setState({ totalDuration: this.state.tempTime });
-        console.log("Total Duration === ", this.state.totalDuration)
+    enterDurationEventHandler(time){        
+        this.setState({ totalDuration: this.state.tempTime }, () => {
+            console.log("Total Duration === ", this.state.totalDuration)
+        });
     }
 
     render() {
@@ -71,9 +64,9 @@ export default class App extends Component {
                         //duration of countdown in seconds
                         until={this.state.totalDuration}
                         //formate digits to show
-                        timetoShow={['M', 'S']}
+                        timeToShow={['M', 'S']}
                         // format lables for digits
-                        timeLables={{m: 'Minutes', s: 'Seeeeconds'}}
+                        timeLabels={{m: 'Min', s: 'Sec'}}
                         
                         style={timerStyles.timer}
                         //on Finish call
@@ -89,10 +82,6 @@ export default class App extends Component {
                     />
                 </View>
                 <View>
-                    <Button
-                        onPress={(time) => this.enterDurationEventHandler(time)}
-                        title="Customize Timer"
-                    />
                     <TextInput
                         placeholder="Enter Number of Minutes"
                         underlineColorAndroid='transparent'
@@ -102,6 +91,12 @@ export default class App extends Component {
                         onChangeText={(time) => this.typeDurationEventHandler(time)}
                         // onSubmitEditing = {(time) => this.enterDurationEventHandler(time)}
                     /> 
+                    <TouchableOpacity 
+                        style={timerStyles.customizeBtn}
+                        onPress={(time) => this.enterDurationEventHandler(time)}>
+                        <Text style={styles.WText2}>Customize Timer</Text>
+                    </TouchableOpacity>
+                       
                 </View>
 
                 {!this.state.sessionInProgress &&
@@ -165,6 +160,18 @@ const timerStyles = StyleSheet.create({
         backgroundColor: "green"
     },
 
+    customizeBtn: {
+        // color: "white",
+        justifyContent: "center",
+        width: "35vw",
+        height: "7vh",
+        justifyContent: "center",
+        alignSelf: "center",
+        backgroundColor: "green",
+        borderRadius: 17,
+        margin: "3%",
+    },
+
     stopButton: {
         justifyContent: "center",
         width: "35vw",
@@ -190,6 +197,6 @@ const timerStyles = StyleSheet.create({
         borderRadius: 10,
         borderWidth: 2,
         borderColor: '#009688',
-        marginBottom: 10
+        marginBottom: 0,
     } ,
 });
