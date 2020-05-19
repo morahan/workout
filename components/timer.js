@@ -5,10 +5,6 @@ import { TouchableOpacity } from 'react-native-gesture-handler';
 import { greaterThan } from 'react-native-reanimated';
 import styles from '../styles/styles.js';
 
-// import styles from '../styles/styles.js';
-
-const defaultDuration = '120';
-const newDuration = "";
 export default class App extends Component {
     constructor(props) {
         super(props);
@@ -17,13 +13,18 @@ export default class App extends Component {
             tempTime: '',
             totalDuration: "120",
             sessionInProgress: true,
+            finishCount: 0,
+            restCount: 0,
         };
     }
 
     stopSession = () => {
+        alert("You completed "+ this.state.finishCount + " sets! ")
         this.setState({
             sessionInProgress: false,
-        })
+            finishCount: 0,
+            restCount: 0,
+        }, () => console.log("finishCount === ", this.state.finishCount, "restCount === ", this.state.restCount))
     }
   
     startSession = () => {
@@ -43,7 +44,7 @@ export default class App extends Component {
                 alert("please enter numbers only");
             }
         }
-        this.setState({ tempTime: newDuration*60 }, () => {
+        this.setState({ tempTime: newDuration*3 }, () => {
             console.log("temp time === ", this.state.tempTime)
         });
     }
@@ -52,6 +53,17 @@ export default class App extends Component {
         this.setState({ totalDuration: this.state.tempTime }, () => {
             console.log("Total Duration === ", this.state.totalDuration)
         });
+    }
+
+    timerFinishEventHandler(){
+        console.log("insideTimerFinish => ", this.state.finishCount, this.state.restCount)
+        if (this.state.finishCount === this.state.restCount){
+            this.setState({ finishCount: this.state.finishCount++, totalDuration: 15}, () => console.log("finishCount === ", this.state.finishCount, "restCount === ", this.state.restCount))
+        } else {
+            this.setState({ restCount: this.state.restCount++, totalDuration: 30, }, () => console.log("finishCount === ", this.state.finishCount, "restCount === ", this.state.restCount))
+        }
+
+         
     }
 
     render() {
@@ -70,7 +82,8 @@ export default class App extends Component {
                         
                         style={timerStyles.timer}
                         //on Finish call
-                        onFinish={() => alert('Nice Work! Time for next Set')}
+                        onFinish={this.timerFinishEventHandler}
+                        // onFinish={() => alert('Nice Work! Time for next Set')}
                         //on Press call
                         onPress={() => alert('Pump It!')}
                         // size of duration Text
