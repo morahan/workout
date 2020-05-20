@@ -58,12 +58,10 @@ export default class App extends Component {
 
     timerFinishEventHandler(){
         if (this.state.finishCount === this.state.restCount){
-            this.setState({ finishCount: this.state.finishCount++, totalDuration: 15}, () => console.log("finishCount === ", this.state.finishCount, "restCount === ", this.state.restCount))
+            this.setState({ finishCount: this.state.finishCount += 1, totalDuration: 15}, () => console.log("finishCount === ", this.state.finishCount, "restCount === ", this.state.restCount))
         } else {
-            this.setState({ restCount: this.state.restCount++, totalDuration: 30, }, () => console.log("finishCount === ", this.state.finishCount, "restCount === ", this.state.restCount))
+            this.setState({ restCount: this.state.restCount += 1, totalDuration: 30}, () => console.log("finishCount === ", this.state.finishCount, "restCount === ", this.state.restCount))
         }
-
-         
     }
 
     render() {
@@ -131,7 +129,7 @@ export default class App extends Component {
 const timerStyles = StyleSheet.create({
     container: {
         width: "50vw",
-        paddingTop: "5vh",
+        paddingTop: "2vh",
         // paddingBottom: "5vh",
     },
 
@@ -146,10 +144,12 @@ const timerStyles = StyleSheet.create({
     digitBox: {
         backgroundColor: 'black',
         marginTop: '3vh',
-        marginTop: '3vh',
+        marginLeft: '3vw',
+        marginRight: '3vw',
         borderRadius: "100%",
-        width: "10vw",
-        height: "10vw",
+        width: "7vh",
+        height: "7vh",
+
     },
 
     digitText: {
@@ -174,7 +174,6 @@ const timerStyles = StyleSheet.create({
     },
 
     customizeBtn: {
-        // color: "white",
         justifyContent: "center",
         width: "35vw",
         height: "7vh",
@@ -204,9 +203,10 @@ const timerStyles = StyleSheet.create({
         color: '#fff',
         fontSize: 26
     },
+
     TextInputStyle: {
         textAlign: 'center',
-        height: 40,
+        height: "5vh",
         borderRadius: 10,
         borderWidth: 2,
         borderColor: '#009688',
