@@ -12,6 +12,7 @@ let round = 1;
 let superSet = 1;
 let superSetTargetNum = 3
 let exercisesInSuperSet = 3;
+let defaultNextBtnText = "Next Exercise";
 
 class Exercise extends Component {
     constructor(props){
@@ -26,6 +27,7 @@ class Exercise extends Component {
     }
     
     nextExerciseEventHandler = () => {
+        // track progress of workout
         if (exercise === exerciseList.length -1) {
             exercise = 0;
             round++;
@@ -35,43 +37,43 @@ class Exercise extends Component {
             completedExercises++;
         }
 
+        // Setting Exercise and Reps and Round
         this.setState({
             exercise: exerciseList[exercise][0],
             reps: exerciseList[exercise][1],
             round: round,
         });
 
+        // When finished with round change button text to "Next Round"
         if (exercise % (exercisesInSuperSet-1) === 0){
             this.setState({ 
                 buttonText: "Next Round!"
             })
         }
-        if (this.state.superSet === superSetTargetNum){
+        // Reset button to Default "Next Exercise"
+        if (exercise % (exercisesInSuperSet) === 0){
             this.setState({ 
-                buttonText: "Next SuperSet!"
+                buttonText: defaultNextBtnText
             })
         }
-
+        // Finish Superset
         if (round === 4) {
             superSet++;
             round = 1;
             this.setState({
                 superSet: superSet,
                 round: round,
+                buttonText: "Next Superset!"
+            })
+        }
+        // Completed final superset
+        if (this.state.superSet === superSetTargetNum+1){
+            this.setState({ 
                 buttonText: "Done!"
             })
         }
         console.log("ex: ", exercise, "ss: ", superSet, "round ", round, "completed Exercises: ", completedExercises)
     }
-
-    // nextBtnHandler = () => {
-        
-    //     if (round === 4) {
-    //         this.setState({
-    //             buttonText:
-    //         })
-    //     }
-    // }
 
     render() {
         return (
