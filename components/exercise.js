@@ -4,9 +4,14 @@ import styles from '../styles/styles.js';
 import Timer from './timer.js';
 
 let exercise = 0;
+let completedExercises = 0;
 let exerciseList = [["Squats", 25], ["Leg Extensions", 15], ["Lunges", 20]];
+let round1 = [["Pushups", 25], ["Bench Press", 15], ["Chest Fly", 20]];
+let round2 = [["Situps", 25], ["Plank", 15], ["Bridge", 20]];
 let round = 1;
 let superSet = 1;
+let superSetTargetNum = 3
+let exercisesInSuperSet = 3;
 
 class Exercise extends Component {
     constructor(props){
@@ -16,15 +21,18 @@ class Exercise extends Component {
             exercise: exerciseList[exercise][0],
             reps: exerciseList[exercise][1],
             superSet: superSet,
+            buttonText: "Next Exercise",
         }
     }
     
     nextExerciseEventHandler = () => {
-        if (exercise === exerciseList.length - 1) {
+        if (exercise === exerciseList.length -1) {
             exercise = 0;
-            round++
+            round++;
+            completedExercises++;
         } else {
             exercise++;
+            completedExercises++;
         }
 
         this.setState({
@@ -33,16 +41,37 @@ class Exercise extends Component {
             round: round,
         });
 
+        if (exercise % (exercisesInSuperSet-1) === 0){
+            this.setState({ 
+                buttonText: "Next Round!"
+            })
+        }
+        if (this.state.superSet === superSetTargetNum){
+            this.setState({ 
+                buttonText: "Next SuperSet!"
+            })
+        }
+
         if (round === 4) {
             superSet++;
             round = 1;
             this.setState({
                 superSet: superSet,
                 round: round,
+                buttonText: "Done!"
             })
         }
-        console.log("ex: ", exercise, "ss: ", superSet, "round ", round)
+        console.log("ex: ", exercise, "ss: ", superSet, "round ", round, "completed Exercises: ", completedExercises)
     }
+
+    // nextBtnHandler = () => {
+        
+    //     if (round === 4) {
+    //         this.setState({
+    //             buttonText:
+    //         })
+    //     }
+    // }
 
     render() {
         return (
@@ -59,7 +88,7 @@ class Exercise extends Component {
                         </View>
                         <View style={styles.Btn}>
                             <TouchableOpacity>
-                                <Text style={styles.WText} onPress={this.nextExerciseEventHandler}>Next Set</Text>
+                                <Text style={styles.WText} onPress={this.nextExerciseEventHandler}>{this.state.buttonText}</Text>
                             </TouchableOpacity>
                         </View>
                     </View>
