@@ -8,8 +8,8 @@ let user = {
   favoriteWorkOut: "upperBody"
 };
 
-let workOut = {
-  upperbody: {
+let workout = {
+  upperBody: {
     days: ["Monday", "Wednesday", "Friday"],
     exercises: [
       { id: 1,
@@ -79,3 +79,5 @@ let workOut = {
     ]
   }
 };
+
+export default workout;
