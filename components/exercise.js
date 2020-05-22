@@ -2,12 +2,10 @@ import React, { Component, useState } from 'react';
 import { Text, View, TextInput, StyleSheet, TouchableOpacity } from 'react-native';
 import styles from '../styles/styles.js';
 import Timer from './timer.js';
+import workout from './workoutList.js';
 
-let exercise = 0;
+let exerciseNum = 0;
 let completedExercises = 0;
-let exerciseList = [["Squats", 25], ["Leg Extensions", 15], ["Lunges", 20]];
-let round1 = [["Pushups", 25], ["Bench Press", 15], ["Chest Fly", 20]];
-let round2 = [["Situps", 25], ["Plank", 15], ["Bridge", 20]];
 let round = 1;
 let superSet = 1;
 let superSetTargetNum = 3
@@ -19,8 +17,8 @@ class Exercise extends Component {
         super(props);
         this.state = {
             round: round,
-            exercise: exerciseList[exercise][0],
-            reps: exerciseList[exercise][1],
+            exercise: workout.upperBody.exercises[exerciseNum].name,
+            reps: workout.upperBody.exercises[exerciseNum].reps,
             superSet: superSet,
             buttonText: "Next Exercise",
         }
@@ -28,30 +26,30 @@ class Exercise extends Component {
     
     nextExerciseEventHandler = () => {
         // track progress of workout
-        if (exercise === exerciseList.length -1) {
-            exercise = 0;
+        if (exerciseNum === exercisesInSuperSet -1) {
+            exerciseNum = 0;
             round++;
             completedExercises++;
         } else {
-            exercise++;
+            exerciseNum++;
             completedExercises++;
         }
 
         // Setting Exercise and Reps and Round
         this.setState({
-            exercise: exerciseList[exercise][0],
-            reps: exerciseList[exercise][1],
+            exercise: workout.upperBody.exercises[exerciseNum].name,
+            reps: workout.upperBody.exercises[exerciseNum].reps,
             round: round,
         });
 
         // When finished with round change button text to "Next Round"
-        if (exercise % (exercisesInSuperSet-1) === 0){
+        if (exerciseNum % (exercisesInSuperSet-1) === 0){
             this.setState({ 
                 buttonText: "Next Round!"
             })
         }
         // Reset button to Default "Next Exercise"
-        if (exercise % (exercisesInSuperSet) === 0){
+        if (exerciseNum % (exercisesInSuperSet) === 0){
             this.setState({ 
                 buttonText: defaultNextBtnText
             })
@@ -72,7 +70,7 @@ class Exercise extends Component {
                 buttonText: "Done!"
             })
         }
-        console.log("ex: ", exercise, "ss: ", superSet, "round ", round, "completed Exercises: ", completedExercises)
+        console.log("ex: ", exerciseNum, "ss: ", superSet, "round ", round, "completed Exercises: ", completedExercises)
     }
 
     render() {
