@@ -92,7 +92,8 @@ export default class App extends Component {
                         digitTxtStyle={timerStyles.digitText}
                     />
                 </View>
-                <View>
+                {/* === Customize timer */}
+                {/* <View>
                     <TextInput
                         placeholder="Enter Number of Minutes"
                         underlineColorAndroid='transparent'
@@ -108,7 +109,7 @@ export default class App extends Component {
                         <Text style={styles.WText2}>Customize Timer</Text>
                     </TouchableOpacity>
                        
-                </View>
+                </View> */}
 
                 {!this.state.sessionInProgress &&
                     <TouchableOpacity style={timerStyles.startButton} onPress={this.startSession}>
@@ -128,9 +129,9 @@ export default class App extends Component {
 
 const timerStyles = StyleSheet.create({
     container: {
+        marginTop: "3vh",
         width: "50vw",
         paddingTop: "2vh",
-        // paddingBottom: "5vh",
     },
 
     timer: {
@@ -142,6 +143,7 @@ const timerStyles = StyleSheet.create({
     },
 
     digitBox: {
+        // marginTop: "3vh",
         backgroundColor: 'black',
         marginTop: '3vh',
         marginLeft: '3vw',
@@ -149,28 +151,34 @@ const timerStyles = StyleSheet.create({
         borderRadius: "100%",
         width: "7vh",
         height: "7vh",
-
     },
 
     digitText: {
+        // marginTop: "3vh",
         backgroundColor: 'black',
         color: "white",
         fontSize: 15,
     },
 
     startButton: {
+        marginTop: "3vh",
         justifyContent: "center",
         width: "35vw",
         height: "7vh",
-        //  padding: "1vh",
-        //  margin: "5vh",
-        //  padding: "15%",
-        //  margin: "10%",
-        justifyContent: "center",
         alignSelf: "center",
         backgroundColor: "black",
         borderRadius: 17,
         backgroundColor: "green"
+    },
+
+    stopButton: {
+        marginTop: "3vh",
+        justifyContent: "center",
+        width: "35vw",
+        height: "7vh",
+        alignSelf: "center",
+        backgroundColor: "black",
+        borderRadius: 17,
     },
 
     customizeBtn: {
@@ -184,19 +192,6 @@ const timerStyles = StyleSheet.create({
         margin: "3%",
     },
 
-    stopButton: {
-        justifyContent: "center",
-        width: "35vw",
-        height: "7vh",
-        //  padding: "1vh",
-        //  margin: "5vh",
-        //  padding: "15%",
-        //  margin: "10%",
-        justifyContent: "center",
-        alignSelf: "center",
-        backgroundColor: "black",
-        borderRadius: 17,
-    },
 
     colorWhite: {
         textAlign: 'center',
