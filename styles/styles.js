@@ -86,6 +86,22 @@ const styles = StyleSheet.create({
     paddingLeft: "3vw",
     paddingRight: "3vw",
     paddingBottom: "5vh",
+    // paddingTop: "5vh",
+    marginBottom: "3vh"
+  },
+
+  BtnBoxLG: {
+    display: "flex",
+    justifyContent: "space-between",
+    backgroundColor: 'whitesmoke',
+    borderRadius: 17,
+    height: '15vh',
+    width: "75vw",
+    paddingLeft: "3vw",
+    paddingRight: "3vw",
+    paddingBottom: "5vh",
+    // paddingTop: "5vh",
+    marginBottom: "3vh"
   },
 
   Btn: {
@@ -96,16 +112,32 @@ const styles = StyleSheet.create({
   //  margin: "5vh",
   //  padding: "15%",
   //  margin: "10%",
-   justifyContent: "center",
    alignSelf: "center",
    backgroundColor: "black",
    borderRadius: 17,
   },
 
+  BtnSM: {
+   justifyContent: "center",
+   width: "25vw",
+   height: "5vh",
+  //  padding: "1vh",
+  //  margin: "5vh",
+  //  padding: "15%",
+  //  margin: "10%",
+  //  alignSelf: "center",
+   textAlign: "center",
+   backgroundColor: "green",
+   borderRadius: 7,
+  },
+
   BtnHz: {
    flexDirection: "row",
-   justifyContent: "space-between",
-   margin: "5vw",
+   justifyContent: "center",
+   padding: "3vh",
+   paddingRight: "3vw",
+   paddingLeft: "3vw",
+  //  margin: "0",
    borderRadius: 17,
   },
 
