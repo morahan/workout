@@ -130,7 +130,7 @@ const styles = StyleSheet.create({
   //  margin: "10%",
   //  alignSelf: "center",
    textAlign: "center",
-   backgroundColor: "green",
+   backgroundColor: "black",
    borderRadius: 7,
   },
 
