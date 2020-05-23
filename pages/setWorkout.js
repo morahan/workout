@@ -18,37 +18,53 @@ function SetWorkout() {
                 <Text style={styles.cta2}>Choose Your Workout</Text>
             </View>
 
-            <View style={styles.BtnBox}>
+            <View style={styles.BtnBoxLG}>
                 <View>
                     <Text style={styles.Text}>
                         Legs
                     </Text>
                 </View>
                 <View style={styles.BtnHz}>
+                    <TouchableOpacity style={styles.BtnSM} >
+                        <Text>Customize</Text>
+                    </TouchableOpacity>
+                    <TouchableOpacity tyle={styles.BtnSM}>
+                        <Text>Start</Text>
+                    </TouchableOpacity>
+                </View>
+                {/* <View style={styles.BtnHz}>
                     <Button title="Customize" style={{backgroundColor: "green"}}></Button>
                     <Button title="Start" style={{backgroundColor: "green"}}></Button>
-                </View>
+                </View> */}
             </View>
-            <View style={styles.BtnBox}>
+            <View style={styles.BtnBoxLG}>
                 <View>
                     <Text style={styles.Text}>
                         Core
                     </Text>
                 </View>
                 <View style={styles.BtnHz}>
-                    <Button title="Customize" style={{ backgroundColor: "green" }}></Button>
-                    <Button title="Start" style={{ backgroundColor: "green" }}></Button>
+                    <TouchableOpacity style={styles.BtnSM} >
+                        <Text>Customize</Text>
+                    </TouchableOpacity>
+                    <TouchableOpacity tyle={styles.BtnSM}>
+                        <Text>Start</Text>
+                    </TouchableOpacity>
                 </View>
             </View>
-            <View style={styles.BtnBox}>
+            <View style={styles.BtnBoxLG}>
                 <View>
                     <Text style={styles.Text}>
                         Upper Body
                     </Text>
                 </View>
                 <View style={styles.BtnHz}>
-                    <Button title="Customize" style={{ backgroundColor: "green" }}></Button>
-                    <Button title="Start" style={{ backgroundColor: "green" }}></Button>
+                    <TouchableOpacity style={styles.BtnSM} >
+                        <Text>Customize</Text>
+                    </TouchableOpacity>
+                    <TouchableOpacity tyle={styles.BtnSM}>
+                        <Text>Start</Text>
+                    </TouchableOpacity>
                 </View>
             </View>
            
