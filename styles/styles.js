@@ -7,7 +7,6 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "center",
     backgroundColor: '#44ace8',
-    alignItems: 'center',
     padding: "3vh",
     justifyContent: 'center',
     height: "100vh",
@@ -26,7 +25,10 @@ const styles = StyleSheet.create({
   },
   
   Head: {
-    justifyContent: 'space-between'
+    justifyContent: 'space-between',
+    color: "#ffff",
+    fontSize: 31,
+    paddingBottom: "3vh",
   },
   
   cta: {
@@ -92,10 +94,11 @@ const styles = StyleSheet.create({
 
   BtnBoxLG: {
     display: "flex",
-    justifyContent: "space-between",
+    // alignContent: "space-between",
+    // justifyContent: "space-around",
     backgroundColor: 'whitesmoke',
     borderRadius: 17,
-    height: '15vh',
+    height: '25vh',
     width: "75vw",
     paddingLeft: "3vw",
     paddingRight: "3vw",
@@ -133,7 +136,7 @@ const styles = StyleSheet.create({
 
   BtnHz: {
    flexDirection: "row",
-   justifyContent: "center",
+   justifyContent: "space-around",
    padding: "3vh",
    paddingRight: "3vw",
    paddingLeft: "3vw",
@@ -145,23 +148,23 @@ const styles = StyleSheet.create({
     color: "#000",
     fontSize: 23,
     textAlign: 'center',
-    paddingTop: "5%",
-    paddingBottom: "5%",
+    paddingTop: "5vh",
+    paddingBottom: "5vh",
   },
 
   WText: {
     color: "white",
     fontSize: 23,
     textAlign: 'center',
-    paddingTop: "5%",
-    paddingBottom: "5%",
+    paddingTop: "5vh",
+    paddingBottom: "5vh",
   },
   WText2: {
     color: "white",
     fontSize: 17,
     textAlign: 'center',
-    paddingTop: "5%",
-    paddingBottom: "5%",
+    paddingTop: "5vh",
+    paddingBottom: "5vh",
   },
 
   HeaderText: {
