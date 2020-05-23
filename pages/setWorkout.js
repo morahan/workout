@@ -26,10 +26,10 @@ function SetWorkout() {
                 </View>
                 <View style={styles.BtnHz}>
                     <TouchableOpacity style={styles.BtnSM} >
-                        <Text>Customize</Text>
+                        <Text style={styles.WText2}>Customize</Text>
                     </TouchableOpacity>
-                    <TouchableOpacity tyle={styles.BtnSM}>
-                        <Text>Start</Text>
+                    <TouchableOpacity style={styles.BtnSM}>
+                        <Text style={styles.WText2}>Start</Text>
                     </TouchableOpacity>
                 </View>
                 {/* <View style={styles.BtnHz}>
@@ -45,10 +45,10 @@ function SetWorkout() {
                 </View>
                 <View style={styles.BtnHz}>
                     <TouchableOpacity style={styles.BtnSM} >
-                        <Text>Customize</Text>
+                        <Text style={styles.WText2}>Customize</Text>
                     </TouchableOpacity>
-                    <TouchableOpacity tyle={styles.BtnSM}>
-                        <Text>Start</Text>
+                    <TouchableOpacity style={styles.BtnSM}>
+                        <Text style={styles.WText2}>Start</Text>
                     </TouchableOpacity>
                 </View>
             </View>
@@ -60,10 +60,10 @@ function SetWorkout() {
                 </View>
                 <View style={styles.BtnHz}>
                     <TouchableOpacity style={styles.BtnSM} >
-                        <Text>Customize</Text>
+                        <Text style={styles.WText2}>Customize</Text>
                     </TouchableOpacity>
-                    <TouchableOpacity tyle={styles.BtnSM}>
-                        <Text>Start</Text>
+                    <TouchableOpacity style={styles.BtnSM}>
+                        <Text style={styles.WText2}>Start</Text>
                     </TouchableOpacity>
                 </View>
             </View>
