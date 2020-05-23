@@ -10,7 +10,7 @@ import { AppLoading } from 'expo';
 // ==== pages ====
 import Welcome from './pages/welcome.js';
 import Workout from './pages/workout.js';
-// import SetWorkout from './pages/setWorkout.js';
+import SetWorkout from './pages/setWorkout.js';
 import GetStarted from './pages/getStarted.js';
 
 // ==== components =====
@@ -32,12 +32,12 @@ function App(){
       
       // <Navigator />
       <SafeAreaView style={styles.Screen}>
-        <Workout></Workout> 
+        {/* <Workout></Workout>  */}
         {/* <Footer></Footer> */}
+         <SetWorkout></SetWorkout> 
       </SafeAreaView>
         //  <Welcome></Welcome> 
         //  <GetStarted></GetStarted> 
-        //  <SetWorkout></SetWorkout> 
         // <Timer></Timer>
 
   );
