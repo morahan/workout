@@ -15,7 +15,7 @@ function SetWorkout() {
     return (
         <View style={styles.Screen}>
             <View>
-                <Text style={styles.cta2}>Choose Your Workout</Text>
+                <Text style={styles.Head}>Choose Your Workout</Text>
             </View>
 
             <View style={styles.BtnBoxLG}>
