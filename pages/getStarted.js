@@ -6,20 +6,20 @@ import styles from '../styles/styles.js';
 export default class GetStarted extends Component {
     constructor(props) {
         super(props);
-        //initialize the counter duration
         this.state = {
             name: 'Your Name',
         };
     }
 
-    signInHandler = ({ navigation }) => {
+    signInHandler = (props) => {
         this.setState({ name: "Lola Sign In"}),
-        navigation.navigate('SignIn')
+        this.props.navigation.navigate('SignIn')
         console.log("Sign In Handler")
     }
 
     signUpHandler = () => {
         this.setState({ name: "Lola Sign Up"})
+        this.props.navigation.navigate('SignUp')
         console.log("Sign Up Handlers")
     }
 
@@ -43,8 +43,6 @@ export default class GetStarted extends Component {
                         <Text style={styles.WText}>Sign Up</Text>
                     </TouchableOpacity>
                 </View>
-
-                
 
                 <View>
                     <Text style={styles.foot}>© Freio Labs, All Rights Reserved</Text>
