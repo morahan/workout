@@ -5,11 +5,15 @@ const styles = StyleSheet.create({
     display: "flex",
     flexDirection: "column",
     alignItems: "center",
-    justifyContent: "center",
     backgroundColor: '#44ace8',
     padding: "3vh",
-    justifyContent: 'center',
+    justifyContent: 'space-around',
     height: "100vh",
+  },
+
+  TopLogoAndHeading: {
+    justifyContent: "center",
+    marginBottom: '-15vh',
   },
   
   WorkoutScreen: {
@@ -36,6 +40,7 @@ const styles = StyleSheet.create({
     fontSize: 37,
     justifyContent: 'space-between'
   },
+
   cta2: {
     color: "#ffff",
     fontSize: 31,
@@ -44,7 +49,7 @@ const styles = StyleSheet.create({
 
   foot: {
     color: "#fff",
-    paddingBottom: "5%"
+    paddingBottom: "5vh"
   },
 
   Logo: {
@@ -54,18 +59,20 @@ const styles = StyleSheet.create({
   Welcome: {
     color: "#ffff",
     fontSize: 23,
-    paddingTop: "5%",
+    paddingTop: "2vh",
+    // paddingBottom: "5vh",
     alignSelf: "center",
+
   },
 
   LogIn: {
     margin: "5%",
     backgroundColor: 'whitesmoke',
     alignItems: 'center',
-    justifyContent: 'center',
+    justifyContent: 'space-around',
     borderRadius: 17,
-    height: '10%',
-    width: "75%",
+    height: '25vh',
+    width: "55vw",
   },
 
   Box: {
