@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Text, View, TextInput, ScrollView, Picker, Slider, Switch, TouchableOpacity, Button, Image, SafeAreaView } from 'react-native';
+import { Text, View, TextInput, ScrollView, Picker, Slider, Switch, TouchableOpacity, Image } from 'react-native';
 import styles from '../styles/styles.js';
 
 export default function Welcome({ navigation }) {
