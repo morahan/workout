@@ -235,7 +235,7 @@ const styles = StyleSheet.create({
   Input2: {
     width: "35vw",
     textAlign: "center",
-    fontSize: 23,
+    fontSize: 17,
     borderRadius: 13,
     borderColor: 'black',
     borderWidth: 2,
