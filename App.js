@@ -12,6 +12,8 @@ import Welcome from './pages/welcome.js';
 import Workout from './pages/workout.js';
 import SetWorkout from './pages/setWorkout.js';
 import GetStarted from './pages/getStarted.js';
+import SignUp from './pages/signUp.js';
+import SignIn from './pages/signIn.js';
 
 // ==== components =====
 import Footer from './components/footer.js';
@@ -32,6 +34,8 @@ function App(){
       
     // <SafeAreaView style={styles.Screen}></SafeAreaView>
         <Navigator />
+        // <SignUp></SignUp>
+        // <SignIn></SignIn>
         // <Workout></Workout> 
         // <Footer></Footer>
         // <SetWorkout></SetWorkout> 
