@@ -1,31 +1,27 @@
 import React, { Component } from 'react';
-import { Text, View, TextInput, ScrollView, Picker, Slider, Switch, TouchableOpacity, Button, Image, SafeAreaView } from 'react-native';
+import { Text, View, TextInput, TouchableOpacity, Image } from 'react-native';
 import styles from '../styles/styles.js';
 
-
 export default class SignUp extends Component {
-
     constructor(props){
         super(props);
         this.state = {
             message: "Sign Up Below",
             name: '',
-            nextStep: false,
+            step: 0,
         };
     }
 
-    // const [welcome, setWelcome] = useState('Sign Up');
-    // const [name, setName] = useState('Enter your name below')
     pressSignUpHandler = () => {
-        this.setState({ message: 'Welcome!', name: this.state.tempName, nextStep: true});
+        this.setState({ message: 'Welcome!', name: this.state.tempName, step: 1});
     }
 
-    pressNextStepHandler = () => {
-        this.props.navigation.navigate('Workout')
+    pressNextStepHandler = (props) => {
+       this.props.navigation.navigate('Workout')
     }
 
     render () {
-        if (this.state.nextStep === false ){
+        if (this.state.step === 0 ){
             return (
                 <View style={styles.Screen}>
                     <View>
@@ -49,7 +45,7 @@ export default class SignUp extends Component {
                 </View>
             );
         } 
-        if (this.state.nextStep === true) {
+        if (this.state.step === 1) {
             return (
                 <View style={styles.Screen}>
                     <View>
