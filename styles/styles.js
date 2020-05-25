@@ -44,7 +44,9 @@ const styles = StyleSheet.create({
   cta2: {
     color: "#ffff",
     fontSize: 31,
-    justifyContent: 'space-between'
+    justifyContent: 'space-between',
+    textAlign: "center",
+    margin: "2vh",
   },
 
   foot: {
@@ -227,9 +229,18 @@ const styles = StyleSheet.create({
     borderColor: 'black',
     borderWidth: 2,
     height: "15vh",
-    // padding: 10,
-    // padding: '10%',
     alignSelf: 'center',
+  },
+
+  Input2: {
+    width: "35vw",
+    textAlign: "center",
+    fontSize: 23,
+    borderRadius: 13,
+    borderColor: 'black',
+    borderWidth: 2,
+    height: "5vh",
+    marginBottom: "-5vh"
   },
 });
 
