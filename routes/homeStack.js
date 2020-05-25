@@ -9,7 +9,6 @@ import SignIn from '../pages/signIn.js';
 import SignUp from '../pages/signUp.js';
 import Workout from '../pages/workout.js';
 
-
 const screens = {
     Welcome: {
         screen: Welcome
