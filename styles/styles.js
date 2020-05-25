@@ -99,7 +99,7 @@ const styles = StyleSheet.create({
     backgroundColor: 'whitesmoke',
     borderRadius: 17,
     height: '25vh',
-    width: "75vw",
+    width: "50vw",
     paddingLeft: "3vw",
     paddingRight: "3vw",
     paddingBottom: "5vh",
@@ -122,7 +122,7 @@ const styles = StyleSheet.create({
 
   BtnSM: {
    justifyContent: "center",
-   width: "25vw",
+   width: "17vw",
    height: "5vh",
   //  padding: "1vh",
   //  margin: "5vh",
