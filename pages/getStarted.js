@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { Text, View, TouchableOpacity, Image } from 'react-native';
 import styles from '../styles/styles.js';
 
-
 export default class GetStarted extends Component {
     constructor(props) {
         super(props);
