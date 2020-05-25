@@ -23,7 +23,11 @@ class Exercise extends Component {
             buttonText: "Next Exercise",
         }
     }
-    
+
+    // enterDurationEventHandler = (time) => {
+
+    // }
+
     nextExerciseEventHandler = () => {
         // track progress of workout
         if (exerciseNum === exercisesInSuperSet -1) {
