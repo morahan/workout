@@ -148,7 +148,7 @@ const timerStyles = StyleSheet.create({
         marginTop: '3vh',
         marginLeft: '3vw',
         marginRight: '3vw',
-        borderRadius: "100%",
+        borderRadius: 100,
         width: "7vh",
         height: "7vh",
     },
