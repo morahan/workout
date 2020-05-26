@@ -32,15 +32,18 @@ function App(){
     //     </Stack.Navigator>
     // </NavigationContainer>
       
-    // <SafeAreaView style={styles.Screen}></SafeAreaView>
-        <Navigator />
+    // <SafeAreaView style={styles.Screen}>
+    
+    // </SafeAreaView>
+    
+        // <Welcome></Welcome> 
+        // <Navigator/>
         // <SignUp></SignUp>
         // <SignIn></SignIn>
         // <Workout></Workout> 
         // <Footer></Footer>
         // <SetWorkout></SetWorkout> 
-        //  <Welcome></Welcome> 
-        //  <GetStarted></GetStarted> 
+         <GetStarted></GetStarted> 
         // <Timer></Timer>
 
   );
