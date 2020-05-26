@@ -6,9 +6,9 @@ const styles = StyleSheet.create({
     flexDirection: "column",
     alignItems: "center",
     backgroundColor: '#44ace8',
-    padding: "3vh",
+    // padding: "3vh",
     justifyContent: 'space-around',
-    height: "100vh",
+    height: "100%",
   },
 
   TopLogoAndHeading: {
@@ -25,7 +25,7 @@ const styles = StyleSheet.create({
     paddingBottom: "5vh",
     // marginBottom:"5vh",
     // justifyContent: 'space-between',
-    borderRadius: "37px"
+    borderRadius: 37,
   },
   
   Head: {
@@ -68,13 +68,13 @@ const styles = StyleSheet.create({
   },
 
   LogIn: {
-    margin: "5%",
+    // margin: "5%",
     backgroundColor: 'whitesmoke',
     alignItems: 'center',
     justifyContent: 'space-around',
     borderRadius: 17,
-    height: '25vh',
-    width: "55vw",
+    height: '25%',
+    width: "50%",
   },
 
   Box: {
@@ -82,7 +82,7 @@ const styles = StyleSheet.create({
     // flexDirection: "column",
     backgroundColor: 'whitesmoke',
     alignItems: 'center',
-    borderRadius: "17px",
+    borderRadius: 17,
     // padding: "2vh",
     margin: "3vh",
     height: '25vh',
@@ -117,10 +117,10 @@ const styles = StyleSheet.create({
   },
 
   Btn: {
-   justifyContent: "center",
-   width: "35vw",
-   height: "7vh",
-  //  padding: "1vh",
+  //  alignContent: "space-between",
+   width: "75%",
+  //  height: "13%",
+  //  padding: "7vh",
   //  margin: "5vh",
   //  padding: "15%",
   //  margin: "10%",
@@ -164,6 +164,7 @@ const styles = StyleSheet.create({
   WText: {
     color: "white",
     fontSize: 23,
+    alignContent: "center",
     textAlign: 'center',
     paddingTop: "5vh",
     paddingBottom: "5vh",
@@ -201,18 +202,18 @@ const styles = StyleSheet.create({
     fontSize: 23,
     textAlign: 'center',
     // alignItems: "space-between",
-    justifyContent: "spaceBetween",
+    // justifyContent: "space-between",
     margin: '1vh'
   },
 
   EBox: {
-    width: "100%",
+    width: "35vw",
     padding: "1vh",
     margin: "1vh",
     justifyContent: "center",
     alignItems: "center",
     // backgroundColor: "lightgrey",
-    borderRadius: "17px",
+    borderRadius: 17,
   },
 
   WText2: {
