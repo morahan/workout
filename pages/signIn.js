@@ -32,7 +32,7 @@ export default class SignIn extends Component {
                         <Text style={styles.Welcome}>{this.state.message}</Text>
                     </View>
                     <View>
-                        <Text style={styles.cta}>{name}</Text>
+                        <Text style={styles.cta}>{this.state.name}</Text>
                     </View>
     
                     <View style={styles.LogIn}>
