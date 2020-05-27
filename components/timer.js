@@ -112,13 +112,13 @@ export default class App extends Component {
                 </View> */}
 
                 {!this.state.sessionInProgress &&
-                    <TouchableOpacity style={timerStyles.startButton} onPress={this.startSession}>
-                        <Text style={timerStyles.colorWhite}>Continue Session</Text>
+                    <TouchableOpacity style={styles.BtnStop} onPress={this.startSession}>
+                        <Text style={timerStyles.textBlack}>Continue Session</Text>
                     </TouchableOpacity>
                 }
                 {this.state.sessionInProgress &&
-                    <TouchableOpacity style={timerStyles.stopButton} onPress={this.stopSession}>
-                        <Text style={timerStyles.colorWhite}>Stop Session</Text>
+                    <TouchableOpacity style={styles.BtnStart} onPress={this.stopSession}>
+                        <Text style={timerStyles.textBlack}>Stop Session</Text>
                     </TouchableOpacity>
                 }
             </View>
@@ -129,82 +129,87 @@ export default class App extends Component {
 
 const timerStyles = StyleSheet.create({
     container: {
-        marginTop: "3vh",
-        width: "50vw",
-        paddingTop: "2vh",
+        marginBottom: "10%",
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "space-around",
+        width: "50%",
+        height: "25%",
+        backgroundColor: "whitesmoke",
+        borderRadius: 17,
     },
 
     timer: {
         width: "100%",
-        backgroundColor: "whitesmoke",
+        // backgroundColor: "blue",
         borderRadius: 17,
-        paddingBottom: "3vh",
-        marginBottom: "3vh",
     },
 
     digitBox: {
-        // marginTop: "3vh",
         backgroundColor: 'black',
-        marginTop: '3vh',
-        marginLeft: '3vw',
-        marginRight: '3vw',
+        marginTop: '25%',
+        marginLeft: '3%',
+        marginRight: '3%',
+        width: 50,
+        height: 50,
         borderRadius: 100,
-        width: "7vh",
-        height: "7vh",
     },
 
     digitText: {
-        // marginTop: "3vh",
         backgroundColor: 'black',
         color: "white",
-        fontSize: 15,
+        fontSize: 17,
     },
 
-    startButton: {
-        marginTop: "3vh",
-        justifyContent: "center",
-        width: "35vw",
-        height: "7vh",
-        alignSelf: "center",
-        backgroundColor: "black",
-        borderRadius: 17,
-        backgroundColor: "green"
-    },
+    // startButton: {
+    //     // marginTop: "3%",
+    //     justifyContent: "center",
+    //     width: "75%",
+    //     height: "50%",
+    //     alignSelf: "center",
+    //     backgroundColor: "black",
+    //     borderRadius: 13,
+    //     backgroundColor: "green"
+    // },
 
-    stopButton: {
-        marginTop: "3vh",
-        justifyContent: "center",
-        width: "35vw",
-        height: "7vh",
-        alignSelf: "center",
-        backgroundColor: "black",
-        borderRadius: 17,
-    },
+    // stopButton: {
+    //     justifyContent: "center",
+    //     width: "75%",
+    //     height: "10%",
+    //     alignSelf: "center",
+    //     backgroundColor: "black",
+    //     borderRadius: 13,
+    // },
 
-    customizeBtn: {
-        justifyContent: "center",
-        width: "35vw",
-        height: "7vh",
-        justifyContent: "center",
-        alignSelf: "center",
-        backgroundColor: "green",
-        borderRadius: 17,
-        margin: "3%",
-    },
+    // customizeBtn: {
+    //     justifyContent: "center",
+    //     width: "35%",
+    //     height: "7%",
+    //     justifyContent: "center",
+    //     alignSelf: "center",
+    //     backgroundColor: "green",
+    //     borderRadius: 17,
+    //     margin: "3%",
+    // },
 
-
-    colorWhite: {
+    textWhite: {
         textAlign: 'center',
         color: '#fff',
-        fontSize: 26
+        fontSize: 17
     },
 
-    TextInputStyle: {
+    textBlack: {
         textAlign: 'center',
-        height: "5vh",
-        borderRadius: 10,
-        borderWidth: 2,
-        borderColor: '#009688',
-        marginBottom: 0,
-    } ,
+        color: '#000',
+        fontSize: 17
+    },
+
+    // TextInputStyle: {
+    //     textAlign: 'center',
+    //     height: "5%",
+    //     borderRadius: 10,
+    //     borderWidth: 2,
+    //     borderColor: '#009688',
+    //     marginBottom: 0,
+    // },
 });
