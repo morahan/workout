@@ -8,7 +8,7 @@ let exerciseNum = 0;
 let completedExercises = 0;
 let round = 1;
 let superSet = 1;
-let superSetTargetNum = 3
+let superSetTargetNum = 3;
 let exercisesInSuperSet = 3;
 let defaultNextBtnText = "Next Exercise";
 
