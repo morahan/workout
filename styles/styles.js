@@ -127,11 +127,12 @@ const styles = StyleSheet.create({
   },
 
   BtnStop: {
-    width: "75%",
-    height: "25%",
+    width: "100%",
+    // height: "25%",
     alignItems: "center",
+    alignSelf: "center",
     justifyContent: "center",
-    backgroundColor: "black",
+    // backgroundColor: "black",
     borderRadius: 17,
   },
 
@@ -140,7 +141,7 @@ const styles = StyleSheet.create({
     height: "50%",
     // alignItems: "center",
     justifyContent: "center",
-    backgroundColor: "black",
+    // backgroundColor: "black",
     borderRadius: 17,
   },
 

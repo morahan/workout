@@ -113,12 +113,12 @@ export default class App extends Component {
 
                 {!this.state.sessionInProgress &&
                     <TouchableOpacity style={styles.BtnStop} onPress={this.startSession}>
-                        <Text style={timerStyles.textBlack}>Continue Session</Text>
+                        <Text style={timerStyles.textWhite}>Continue Session</Text>
                     </TouchableOpacity>
                 }
                 {this.state.sessionInProgress &&
                     <TouchableOpacity style={styles.BtnStart} onPress={this.stopSession}>
-                        <Text style={timerStyles.textBlack}>Stop Session</Text>
+                        <Text style={timerStyles.textWhite}>Stop Session</Text>
                     </TouchableOpacity>
                 }
             </View>
@@ -129,25 +129,24 @@ export default class App extends Component {
 
 const timerStyles = StyleSheet.create({
     container: {
-        marginBottom: "10%",
-        display: "flex",
         alignItems: "center",
         justifyContent: "space-around",
-        width: "50%",
-        height: "25%",
-        backgroundColor: "whitesmoke",
+        width: "100%",
+        height: "35%",
+        // backgroundColor: "blue",
         borderRadius: 17,
     },
 
     timer: {
         width: "100%",
-        // backgroundColor: "blue",
+        // paddingTop: "3%",
+        // backgroundColor: "whitesmoke",
         borderRadius: 17,
     },
 
     digitBox: {
         backgroundColor: 'black',
-        marginTop: '25%',
+        marginTop: '15%',
         marginLeft: '3%',
         marginRight: '3%',
         width: 50,
