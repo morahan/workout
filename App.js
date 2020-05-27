@@ -37,13 +37,13 @@ function App(){
     // </SafeAreaView>
     
         // <Welcome></Welcome> 
-        // <Navigator/>
+        <Navigator/>
         // <SignUp></SignUp>
         // <SignIn></SignIn>
         // <Workout></Workout> 
         // <Footer></Footer>
         // <SetWorkout></SetWorkout> 
-         <GetStarted></GetStarted> 
+        //  <GetStarted></GetStarted> 
         // <Timer></Timer>
 
   );
