@@ -6,25 +6,25 @@ const styles = StyleSheet.create({
     flexDirection: "column",
     alignItems: "center",
     backgroundColor: '#44ace8',
-    // padding: "3vh",
+    // padding: "3%",
     justifyContent: 'space-around',
     height: "100%",
   },
 
   TopLogoAndHeading: {
     justifyContent: "center",
-    marginBottom: '-15vh',
+    marginBottom: '-15%',
   },
   
   WorkoutScreen: {
-    flex: 1,
-    backgroundColor: '#ffff',
+    display: "flex",
+    backgroundColor: '#44ace8',
     alignItems: 'center',
-    height: "50vh",
-    width: "75vw",
-    paddingBottom: "5vh",
-    // marginBottom:"5vh",
-    // justifyContent: 'space-between',
+    height: "100%",
+    width: "100%",
+    // paddingBottom: "5%",
+    // marginBottom:"5%",
+    justifyContent: 'space-between',
     borderRadius: 37,
   },
   
@@ -32,7 +32,7 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
     color: "#ffff",
     fontSize: 31,
-    paddingBottom: "3vh",
+    // paddingBottom: "3",
   },
   
   cta: {
@@ -46,29 +46,32 @@ const styles = StyleSheet.create({
     fontSize: 31,
     justifyContent: 'space-between',
     textAlign: "center",
-    margin: "2vh",
+    // margin: "2%",
   },
 
   foot: {
     color: "#fff",
-    paddingBottom: "5vh"
+    paddingBottom: "5%"
   },
 
   Logo: {
-    height: 117, width: 117, alignSelf: "center", paddingTop: 100
+    height: "15%", 
+    width: "15%", 
+    alignSelf: "center", 
+    paddingTop: "5%",
   },
 
   Welcome: {
     color: "#ffff",
     fontSize: 23,
-    paddingTop: "2vh",
-    // paddingBottom: "5vh",
+    paddingTop: "2%",
+    // paddingBottom: "5%",
     alignSelf: "center",
-
   },
 
   LogIn: {
     // margin: "5%",
+    display: "flex",
     backgroundColor: 'whitesmoke',
     alignItems: 'center',
     justifyContent: 'space-around',
@@ -78,15 +81,13 @@ const styles = StyleSheet.create({
   },
 
   Box: {
-    // display: "flex",
-    // flexDirection: "column",
+    display: "flex",
     backgroundColor: 'whitesmoke',
     alignItems: 'center',
+    justifyContent: "space-around",
     borderRadius: 17,
-    // padding: "2vh",
-    margin: "3vh",
-    height: '25vh',
-    width: "50vw",
+    height: '35%',
+    width: "50%",
   },
 
   BtnBox: {
@@ -94,11 +95,11 @@ const styles = StyleSheet.create({
     borderRadius: 17,
     height: '15%',
     width: "75%",
-    paddingLeft: "3vw",
-    paddingRight: "3vw",
-    paddingBottom: "5vh",
-    // paddingTop: "5vh",
-    marginBottom: "3vh"
+    paddingLeft: "3%",
+    paddingRight: "3%",
+    paddingBottom: "5%",
+    // paddingTop: "5%",
+    marginBottom: "3%"
   },
 
   BtnBoxLG: {
@@ -107,37 +108,46 @@ const styles = StyleSheet.create({
     // justifyContent: "space-around",
     backgroundColor: 'whitesmoke',
     borderRadius: 17,
-    height: '25vh',
-    width: "50vw",
-    paddingLeft: "3vw",
-    paddingRight: "3vw",
-    paddingBottom: "5vh",
-    // paddingTop: "5vh",
-    marginBottom: "3vh"
+    height: '25%',
+    width: "50%",
+    paddingLeft: "3%",
+    paddingRight: "3%",
+    paddingBottom: "5%",
+    // paddingTop: "5%",
+    marginBottom: "3%"
   },
 
   Btn: {
-  //  alignContent: "space-between",
-   width: "75%",
-  //  height: "13%",
-  //  padding: "7vh",
-  //  margin: "5vh",
-  //  padding: "15%",
-  //  margin: "10%",
-   alignSelf: "center",
-   backgroundColor: "black",
-   borderRadius: 17,
+    width: "75%",
+    height: "25%",
+    alignItems: "center",
+    justifyContent: "center",
+    backgroundColor: "black",
+    borderRadius: 17,
+  },
+
+  BtnStop: {
+    width: "75%",
+    height: "25%",
+    alignItems: "center",
+    justifyContent: "center",
+    backgroundColor: "black",
+    borderRadius: 17,
+  },
+
+  BtnStart: {
+    width: "75%",
+    height: "50%",
+    // alignItems: "center",
+    justifyContent: "center",
+    backgroundColor: "black",
+    borderRadius: 17,
   },
 
   BtnSM: {
    justifyContent: "center",
-   width: "17vw",
-   height: "5vh",
-  //  padding: "1vh",
-  //  margin: "5vh",
-  //  padding: "15%",
-  //  margin: "10%",
-  //  alignSelf: "center",
+   width: "17%",
+   height: "5%",
    textAlign: "center",
    backgroundColor: "black",
    borderRadius: 7,
@@ -146,10 +156,9 @@ const styles = StyleSheet.create({
   BtnHz: {
    flexDirection: "row",
    justifyContent: "space-around",
-   padding: "3vh",
-   paddingRight: "3vw",
-   paddingLeft: "3vw",
-  //  margin: "0",
+   padding: "3%",
+   paddingRight: "3%",
+   paddingLeft: "3%",
    borderRadius: 17,
   },
 
@@ -157,42 +166,39 @@ const styles = StyleSheet.create({
     color: "#000",
     fontSize: 23,
     textAlign: 'center',
-    paddingTop: "5vh",
-    paddingBottom: "5vh",
+    paddingTop: "5%",
+    paddingBottom: "5%",
   },
 
   WText: {
     color: "white",
     fontSize: 23,
-    alignContent: "center",
-    textAlign: 'center',
-    paddingTop: "5vh",
-    paddingBottom: "5vh",
+    paddingTop: "5%",
+    paddingBottom: "5%",
   },
+
   WText2: {
     color: "white",
     fontSize: 17,
     textAlign: 'center',
-    paddingTop: "5vh",
-    paddingBottom: "5vh",
+    paddingTop: "5%",
+    paddingBottom: "5%",
   },
 
   HeaderText: {
     color: "#000",
     fontSize: 47,
     textAlign: 'center',
-    paddingTop: "2vh",
-    paddingBottom: "2vh",
+    paddingTop: "5%",
     borderBottomColor: 'black',
-    borderBottomWidth: 1,
   },
 
   HeaderText2: {
     color: "#000",
     fontSize: 37,
     textAlign: 'center',
-    paddingTop: "2vh",
-    paddingBottom: "2vh",
+    marginTop: "-15%",
+    // paddingBottom: "2%",
     borderBottomColor: 'black',
     borderBottomWidth: 1,
   },
@@ -201,17 +207,14 @@ const styles = StyleSheet.create({
     color: "#000",
     fontSize: 23,
     textAlign: 'center',
-    // alignItems: "space-between",
-    // justifyContent: "space-between",
-    margin: '1vh'
+    margin: '1%'
   },
 
   EBox: {
-    width: "35vw",
-    padding: "1vh",
-    margin: "1vh",
-    justifyContent: "center",
-    alignItems: "center",
+    display: "flex",
+    width: "100%",
+    height: "45%",
+    justifyContent: "space-around",
     // backgroundColor: "lightgrey",
     borderRadius: 17,
   },
@@ -224,24 +227,24 @@ const styles = StyleSheet.create({
 
   Input: {
     alignItems: 'center',
-    width: "80vw",
+    width: "80%",
+    height: "15%",
     fontSize: 23,
     borderRadius: 10,
     borderColor: 'black',
     borderWidth: 2,
-    height: "15vh",
     alignSelf: 'center',
   },
 
   Input2: {
-    width: "35vw",
+    width: "75%",
+    height: "25%",
     textAlign: "center",
     fontSize: 17,
-    borderRadius: 13,
+    borderRadius: 17,
     borderColor: 'black',
     borderWidth: 2,
-    height: "5vh",
-    marginBottom: "-5vh"
+    marginBottom: "-5%"
   },
 });
 
