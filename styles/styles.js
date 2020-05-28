@@ -87,7 +87,9 @@ const styles = StyleSheet.create({
     justifyContent: "space-around",
     borderRadius: 17,
     height: '35%',
-    width: "50%",
+    width: "75%",
+    paddingBottom: "2%",
+    paddingTop: "2%",
   },
 
   BtnBox: {
@@ -198,7 +200,7 @@ const styles = StyleSheet.create({
     color: "#000",
     fontSize: 37,
     textAlign: 'center',
-    marginTop: "-15%",
+    marginTop: "-5%",
     // paddingBottom: "2%",
     borderBottomColor: 'black',
     borderBottomWidth: 1,
@@ -208,14 +210,16 @@ const styles = StyleSheet.create({
     color: "#000",
     fontSize: 23,
     textAlign: 'center',
-    margin: '1%'
+    paddingBottom: '4%'
   },
 
   EBox: {
     display: "flex",
     width: "100%",
     height: "45%",
-    justifyContent: "space-around",
+    // marginTop: "5%",
+    // marginBottom: "-15%",
+    // justifyContent: "space-around",
     // backgroundColor: "lightgrey",
     borderRadius: 17,
   },
