@@ -25,7 +25,6 @@ class Exercise extends Component {
     }
 
     // enterDurationEventHandler = (time) => {
-
     // }
 
     nextExerciseEventHandler = () => {
@@ -93,6 +92,7 @@ class Exercise extends Component {
                         <View style={styles.Btn}>
                             <TouchableOpacity>
                                 <Text style={styles.WText} onPress={this.nextExerciseEventHandler}>{this.state.buttonText}</Text>
+                                {/* <Text style={styles.WText} onPress={() => this.props.nextExerciseEventHandler(23)}>{this.state.buttonText}</Text> */}
                             </TouchableOpacity>
                         </View>
                     </View>
