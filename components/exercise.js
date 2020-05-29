@@ -3,14 +3,19 @@ import { Text, View, TextInput, StyleSheet, TouchableOpacity } from 'react-nativ
 import styles from '../styles/styles.js';
 import Timer from './timer.js';
 import workout from './workoutList.js';
+const moment = require('moment');
 
-let exerciseNum = 0;
+let exerciseNum = 1;
 let completedExercises = 0;
+let completedRounds = 0;
+let completedSuperSets = 0;
 let round = 1;
 let superSet = 1;
 let superSetTargetNum = 3;
 let exercisesInSuperSet = 3;
 let defaultNextBtnText = "Next Exercise";
+let currentDay = moment().format('dddd'); 
+console.log(currentDay)
 
 class Exercise extends Component {
     constructor(props){
@@ -29,9 +34,10 @@ class Exercise extends Component {
 
     nextExerciseEventHandler = () => {
         // track progress of workout
-        if (exerciseNum === exercisesInSuperSet -1) {
-            exerciseNum = 0;
+        if (exerciseNum === exercisesInSuperSet) {
+            exerciseNum = 1;
             round++;
+            completedRound++;
             completedExercises++;
         } else {
             exerciseNum++;
@@ -46,34 +52,35 @@ class Exercise extends Component {
         });
 
         // When finished with round change button text to "Next Round"
-        if (exerciseNum % (exercisesInSuperSet-1) === 0){
+        // Reset button to Default "Next Exercise" (Else Condition)
+        if (completedExercises % (exercisesInSuperSet) === 0){
             this.setState({ 
                 buttonText: "Next Round!"
             })
-        }
-        // Reset button to Default "Next Exercise"
-        if (exerciseNum % (exercisesInSuperSet) === 0){
+        } else {
             this.setState({ 
                 buttonText: defaultNextBtnText
             })
         }
+       
         // Finish Superset
         if (round === 4) {
             superSet++;
+            completedSuperSets++;
             round = 1;
             this.setState({
                 superSet: superSet,
                 round: round,
                 buttonText: "Next Superset!"
             })
-        }
+        } 
         // Completed final superset
-        if (this.state.superSet === superSetTargetNum+1){
+        if (this.state.completedSuperSet === superSetTargetNum){
             this.setState({ 
                 buttonText: "Done!"
             })
         }
-        console.log("ex: ", exerciseNum, "ss: ", superSet, "round ", round, "completed Exercises: ", completedExercises)
+        console.log("current Ex: ", exerciseNum, "ss: ", superSet, "round: ", round, "completed Ex: ", completedExercises, "completed Rounds: ", completedRounds)
     }
 
     render() {
