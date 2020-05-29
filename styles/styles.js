@@ -139,9 +139,11 @@ const styles = StyleSheet.create({
   },
 
   BtnStart: {
-    width: "75%",
-    height: "50%",
+    width: "100%",
+    // height: "50%",
     // alignItems: "center",
+    alignItems: "center",
+    alignSelf: "center",
     justifyContent: "center",
     // backgroundColor: "black",
     borderRadius: 17,
