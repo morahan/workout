@@ -5,27 +5,29 @@ import { TouchableOpacity } from 'react-native-gesture-handler';
 import { greaterThan } from 'react-native-reanimated';
 import styles from '../styles/styles.js';
 
-export default class App extends Component {
+export default class Timer extends Component {
     constructor(props) {
         super(props);
-        //initialize the counter duration
+        // initialize the counter duration
         this.state = {
             tempTime: '',
-            totalDuration: "120",
+            totalDuration: "",
+            restTime: this.props.restTime,
+            currentDuration: 120,
             sessionInProgress: true,
-            finishCount: 0,
-            restCount: 0,
+            completedExercises: this.props.completedE,
+            completedRounds: this.props.completedR,
+            completedSuperSets: this.props.completedS,
+            // restCount: 0,
         };
         this.timerFinishEventHandler = this.timerFinishEventHandler.bind(this);
     }
 
     stopSession = () => {
-        alert("You completed "+ this.state.finishCount + " sets! ")
+        alert("You completed " + this.state.completedExercises + " Exercises,  " + this.state.completedSuperSets + " Super Sets! Nice Work")
         this.setState({
             sessionInProgress: false,
-            finishCount: 0,
-            restCount: 0,
-        }, () => console.log("finishCount === ", this.state.finishCount, "restCount === ", this.state.restCount))
+        }, () => console.log("==== Stopped ===="))
     }
   
     startSession = () => {
@@ -34,33 +36,33 @@ export default class App extends Component {
         })
     }
 
-    typeDurationEventHandler(time){
-        let newDuration = '';
-        let numbers = '0123456789';
-        for (var i = 0; i < time.length; i++) {
-            if (numbers.indexOf(time[i]) > -1) {
-                newDuration = newDuration + time[i];
-            }
-            else {
-                alert("please enter numbers only");
-            }
-        }
-        this.setState({ tempTime: newDuration*3 }, () => {
-            console.log("temp time === ", this.state.tempTime)
-        });
-    }
+    // typeDurationEventHandler(time){
+    //     let newDuration = '';
+    //     let numbers = '0123456789';
+    //     for (var i = 0; i < time.length; i++) {
+    //         if (numbers.indexOf(time[i]) > -1) {
+    //             newDuration = newDuration + time[i];
+    //         }
+    //         else {
+    //             alert("please enter numbers only");
+    //         }
+    //     }
+    //     this.setState({ tempTime: newDuration*3 }, () => {
+    //         console.log("temp time === ", this.state.tempTime)
+    //     });
+    // }
 
-    enterDurationEventHandler(time){        
-        this.setState({ totalDuration: this.state.tempTime }, () => {
-            console.log("Total Duration === ", this.state.totalDuration)
-        });
-    }
+    // enterDurationEventHandler(time){        
+    //     this.setState({ currentDuration: this.state.tempTime }, () => {
+    //         console.log("Total Duration === ", this.state.totalDuration)
+    //     });
+    // }
 
     timerFinishEventHandler(){
-        if (this.state.finishCount === this.state.restCount){
+        if (this.state.completedExercises === this.state.restCount){
             this.setState({ finishCount: this.state.finishCount += 1, totalDuration: 15}, () => console.log("finishCount === ", this.state.finishCount, "restCount === ", this.state.restCount))
         } else {
-            this.setState({ restCount: this.state.restCount += 1, totalDuration: 30}, () => console.log("finishCount === ", this.state.finishCount, "restCount === ", this.state.restCount))
+            this.setState({ restCount: this.state.restCount += 1, totalDuration: 30}, () => console.log("finishCount else === ", this.state.finishCount, "restCount else === ", this.state.restCount))
         }
     }
 
@@ -72,7 +74,7 @@ export default class App extends Component {
                         // background of timer
                         digitStyle={timerStyles.digitBox}
                         //duration of countdown in seconds
-                        until={this.state.totalDuration}
+                        until={this.state.currentDuration}
                         //formate digits to show
                         timeToShow={['M', 'S']}
                         // format lables for digits
