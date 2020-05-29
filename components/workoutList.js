@@ -17,19 +17,22 @@ let workout = {
         weight: 25,
         incrementLbs: 5,
         reps: 34,
-        sets: 3
+        sets: 3,
+        infoUrl: "",
       },
       { id: 2,
         name:  "Shoulder Press",
         weight: 40,
         reps: 13,
-        sets: 3
+        sets: 3,
+        infoUrl: "",
       },
       { id: 3,
         name: "Bench Press",
         weight: 120,
         reps: 13,
-        sets: 3
+        sets: 3,
+        infoUrl: "",
       }
     ]
   },
@@ -41,21 +44,24 @@ let workout = {
         weight: "Body Weight",
         incrementLbs: null,
         reps: 12,
-        sets: 3
+        sets: 3,
+        infoUrl: "",
       },
       { id: 4,
         name: "Leg Extension",
         weight: 65,
         incrementLbs: 5,
         reps: 23,
-        sets: 3
+        sets: 3,
+        infoUrl: "",
       },
       { id: 4,
         name: "Leg Press",
         weight: 100,
         incrementLbs: 15,
         reps: 17,
-        sets: 3
+        sets: 3,
+        infoUrl: "",
       }
     ]
   },
