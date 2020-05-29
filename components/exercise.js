@@ -15,7 +15,6 @@ let superSetTargetNum = 3;
 let exercisesInSuperSet = 3;
 let defaultNextBtnText = "Next Exercise";
 let currentDay = moment().format('dddd'); 
-console.log(currentDay)
 
 class Exercise extends Component {
     constructor(props){
@@ -26,6 +25,9 @@ class Exercise extends Component {
             reps: workout.upperBody.exercises[exerciseNum].reps,
             superSet: superSet,
             buttonText: "Next Exercise",
+            completedExercises: 0,
+            completedRounds:  0,
+            completedSuperSets: 0,
         }
     }
 
@@ -37,31 +39,27 @@ class Exercise extends Component {
         if (exerciseNum === exercisesInSuperSet) {
             exerciseNum = 1;
             round++;
-            completedRound++;
+            completedRounds++;
             completedExercises++;
+            this.setState({
+                completedExercises: completedExercises,
+                completedRounds: completedRounds,
+                buttonText: "Next Round!"
+            })
         } else {
             exerciseNum++;
             completedExercises++;
+            this.setState({
+                completedExercises: completedExercises,
+                buttonText: defaultNextBtnText,
+            })
         }
 
         // Setting Exercise and Reps and Round
         this.setState({
             exercise: workout.upperBody.exercises[exerciseNum].name,
             reps: workout.upperBody.exercises[exerciseNum].reps,
-            round: round,
         });
-
-        // When finished with round change button text to "Next Round"
-        // Reset button to Default "Next Exercise" (Else Condition)
-        if (completedExercises % (exercisesInSuperSet) === 0){
-            this.setState({ 
-                buttonText: "Next Round!"
-            })
-        } else {
-            this.setState({ 
-                buttonText: defaultNextBtnText
-            })
-        }
        
         // Finish Superset
         if (round === 4) {
@@ -71,16 +69,20 @@ class Exercise extends Component {
             this.setState({
                 superSet: superSet,
                 round: round,
-                buttonText: "Next Superset!"
+                buttonText: "Next Superset!",
+                completedSuperSets: completedSuperSets
             })
         } 
         // Completed final superset
-        if (this.state.completedSuperSet === superSetTargetNum){
+        if (this.state.completedSuperSets === superSetTargetNum){
             this.setState({ 
                 buttonText: "Done!"
             })
+            alert("Nice Work! You Completed Your Goal Today!");
         }
-        console.log("current Ex: ", exerciseNum, "ss: ", superSet, "round: ", round, "completed Ex: ", completedExercises, "completed Rounds: ", completedRounds)
+        console.log("current Ex: ", exerciseNum, "round: ", round, "ss: ", superSet, "completed Ex: ", this.state.completedExercises, "completed Rounds: ", this.state.completedRounds, "completed SuperSets: ", this.state.completedRounds)
+        console.log("Current day ===== ", currentDay)
+
     }
 
     render() {
@@ -112,7 +114,7 @@ class Exercise extends Component {
                     onChangeText={(time) => this.enterDurationEventHandler(time)}
                 />   */}
 
-                    <Timer></Timer>
+                    <Timer restTime='30' completedE={this.state.completedExercises} completedR={this.state.completedRounds} completedS={this.state.completedSuperSets}  ></Timer>
                 </View>
 
             // </View>
