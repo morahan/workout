@@ -15,14 +15,32 @@ let superSetTargetNum = 3;
 let exercisesInSuperSet = 3;
 let defaultNextBtnText = "Next Exercise";
 let currentDay = moment().format('dddd'); 
+let targetMuscles = "";
+
+// set target muscles based on day of week
+let setTargetMuscles = function(){
+    if (workout.upperBody.days.includes(currentDay)){
+        targetMuscles = 'upperBody';
+    } 
+    if (workout.lowerBody.days.includes(currentDay)){
+        targetMuscles = 'lowerBody';
+    }
+    if (workout.core.days.includes(currentDay)){
+        targetMuscles = 'core';
+    }
+    // console.log(targetMuscles)
+}
+setTargetMuscles();
+
+
 
 class Exercise extends Component {
     constructor(props){
         super(props);
         this.state = {
             round: round,
-            exercise: workout.upperBody.exercises[exerciseNum].name,
-            reps: workout.upperBody.exercises[exerciseNum].reps,
+            exercise: workout.targetMuscles.exercises[exerciseNum].name,
+            reps: workout.targetMuscles.exercises[exerciseNum].reps,
             superSet: superSet,
             buttonText: "Next Exercise",
             completedExercises: 0,
@@ -33,6 +51,21 @@ class Exercise extends Component {
 
     // enterDurationEventHandler = (time) => {
     // }
+
+    //try two ==== setting target muscles based on day of week
+    // setTargetMuscles = () => {
+    //     if (workout.upperBody.days.includes(currentDay)) {
+    //         this.setState({ targetMuscles: 'upperBody' });
+    //     }
+    //     if (workout.lowerBody.days.includes(currentDay)) {
+    //         this.setState({ targetMuscles: 'lowerBody' });
+    //     }
+    //     if (workout.core.days.includes(currentDay)) {
+    //         this.setState({ targetMuscles: 'core' });
+    //     }
+    //     // console.log(targetMuscles)
+    // }
+    // setTargetMuscles; 
 
     nextExerciseEventHandler = () => {
         // track progress of workout
