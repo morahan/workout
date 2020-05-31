@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Text, TextInput, View, StyleSheet, Button } from 'react-native';
 import CountDown from 'react-native-countdown-component';
 import { TouchableOpacity } from 'react-native-gesture-handler';
-import { greaterThan } from 'react-native-reanimated';
+// import { greaterThan } from 'react-native-reanimated';
 import styles from '../styles/styles.js';
 
 export default class Timer extends Component {
