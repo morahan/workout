@@ -1,12 +1,12 @@
 // example workout app
 
-let user = {
-  firstName: "Michael",
-  lastName: "Morahan",
-  weight: 150,
-  days: "All",
-  favoriteWorkOut: "upperBody"
-};
+// let user = {
+//   firstName: "Michael",
+//   lastName: "Morahan",
+//   weight: 150,
+//   days: "All",
+//   favoriteWorkOut: "upperBody"
+// };
 
 let workout = {
   upperBody: {
