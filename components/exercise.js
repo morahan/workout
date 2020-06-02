@@ -17,28 +17,6 @@ let defaultNextBtnText = "Next Exercise";
 let currentDay = moment().format('dddd'); 
 
 
-// let targetMuscles = ;
-
-// ==== set target muscles based on day of week
-// let setTargetMuscles = function(){
-//     if (workout.upperBody.days.includes(currentDay)){
-//         targetMuscles = 'upperBody';
-//         // return "upperBody";
-//     } 
-//     if (workout.lowerBody.days.includes(currentDay)){
-//         targetMuscles = 'lowerBody';
-//         // return "upperBody";
-//     }
-//     if (workout.core.days.includes(currentDay)){
-//         targetMuscles = 'core';
-//         // return "upperBody";
-//     }
-//     // console.log(targetMuscles)
-// }
-// setTargetMuscles();
-
-
-
 class Exercise extends Component {
     constructor(props){
         super(props);
