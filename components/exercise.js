@@ -15,22 +15,27 @@ let superSetTargetNum = 3;
 let exercisesInSuperSet = 3;
 let defaultNextBtnText = "Next Exercise";
 let currentDay = moment().format('dddd'); 
-let targetMuscles = "";
 
-// set target muscles based on day of week
-let setTargetMuscles = function(){
-    if (workout.upperBody.days.includes(currentDay)){
-        targetMuscles = 'upperBody';
-    } 
-    if (workout.lowerBody.days.includes(currentDay)){
-        targetMuscles = 'lowerBody';
-    }
-    if (workout.core.days.includes(currentDay)){
-        targetMuscles = 'core';
-    }
-    // console.log(targetMuscles)
-}
-setTargetMuscles();
+
+// let targetMuscles = ;
+
+// ==== set target muscles based on day of week
+// let setTargetMuscles = function(){
+//     if (workout.upperBody.days.includes(currentDay)){
+//         targetMuscles = 'upperBody';
+//         // return "upperBody";
+//     } 
+//     if (workout.lowerBody.days.includes(currentDay)){
+//         targetMuscles = 'lowerBody';
+//         // return "upperBody";
+//     }
+//     if (workout.core.days.includes(currentDay)){
+//         targetMuscles = 'core';
+//         // return "upperBody";
+//     }
+//     // console.log(targetMuscles)
+// }
+// setTargetMuscles();
 
 
 
@@ -39,14 +44,20 @@ class Exercise extends Component {
         super(props);
         this.state = {
             round: round,
-            exercise: workout.targetMuscles.exercises[exerciseNum].name,
-            reps: workout.targetMuscles.exercises[exerciseNum].reps,
+            // === Dynamic
+            exercise: workout[props.target].exercises[exerciseNum].name,
+            reps: workout[props.target].exercises[exerciseNum].reps,
+            
+            // === Static
+            // exercise: workout.upperBody.exercises[exerciseNum].name,
+            // reps: workout.upperBody.exercises[exerciseNum].reps,
             superSet: superSet,
             buttonText: "Next Exercise",
             completedExercises: 0,
             completedRounds:  0,
             completedSuperSets: 0,
         }
+        // console.log("exercise.js props === ", props)
     }
 
     // enterDurationEventHandler = (time) => {
@@ -138,6 +149,7 @@ class Exercise extends Component {
                             </TouchableOpacity>
                         </View>
                     </View>
+                    {/* <Text style={styles.Text}>{this.props.day}</Text> */}
                 {/* <TextInput
                     placeholder="Enter Duration"
                     underlineColorAndroid='transparent'
