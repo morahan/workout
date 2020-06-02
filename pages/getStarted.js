@@ -13,13 +13,13 @@ class GetStarted extends Component {
     signInHandler = (props) => {
         this.setState({ name: "Lola Sign In"}),
         this.props.navigation.navigate('SignIn')
-        console.log("Sign In Handler")
+        console.log("Get Started Handler --> Sign In")
     }
 
     signUpHandler = () => {
         this.setState({ name: "Lola Sign Up"})
         this.props.navigation.navigate('SignUp')
-        console.log("Sign Up Handlers")
+        console.log("Get Started Handler --> Sign Up")
     }
 
 
