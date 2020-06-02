@@ -1,13 +1,15 @@
 import React, { useState } from 'react';
-import { Text, View, TextInput, ScrollView, Picker, Slider, Switch, TouchableOpacity, Button, Image, SafeAreaView } from 'react-native';
+import { View, Text } from 'react-native';
 import styles from '../styles/styles.js';
-import Timer from '../components/timer.js';
 import Exercise from '../components/exercise.js'
 
-function Workout() {
+function Workout(props) {
+    // console.log("Work Out props === ", props)
     return (
         <View style={styles.Screen}>
-            <Exercise></Exercise>
+            <Exercise target={props.navigation.state.params.day}></Exercise>
+            {/* ==== Text below is Proof that we are sending proper target day as props to exercise.js */}
+            {/* <Text>{props.navigation.state.params.day}</Text> */}
         </View>
     );
 }
