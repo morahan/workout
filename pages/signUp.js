@@ -1,6 +1,11 @@
 import React, { Component } from 'react';
 import { Text, View, TextInput, TouchableOpacity, Image } from 'react-native';
 import styles from '../styles/styles.js';
+import workout from '../components/workoutList.js';
+const moment = require('moment');
+
+let currentDay = moment().format('dddd'); 
+let target = '';
 
 export default class SignUp extends Component {
     constructor(props){
@@ -9,6 +14,7 @@ export default class SignUp extends Component {
             message: "Sign Up Below",
             name: '',
             step: 0,
+            // target: '',
         };
     }
 
@@ -17,7 +23,26 @@ export default class SignUp extends Component {
     }
 
     pressNextStepHandler = (props) => {
-       this.props.navigation.navigate('Workout')
+        let setTargetMuscles = function(){
+            if (workout.upperBody.days.includes(currentDay)) {
+                target =  'upperBody'
+                // return "upperBody";
+            }
+            if (workout.lowerBody.days.includes(currentDay)) {
+                target = 'lowerBody';
+                // return "upperBody";
+            }
+            if (workout.core.days.includes(currentDay)) {
+                target = 'core';
+                // return "upperBody";
+            }
+        }
+        setTargetMuscles();
+        // console.log(targetMuscles)
+
+        // pass through desired target muscles based on day
+        this.props.navigation.navigate('Workout', { day: target })
+     
     }
 
     render () {
@@ -58,7 +83,8 @@ export default class SignUp extends Component {
 
                     <View style={styles.LogIn}>
                         <TouchableOpacity style={styles.Btn} onPress={this.pressNextStepHandler} >
-                            <Text style={styles.WText}>Start Now</Text>
+                            <Text style={styles.WText} day={this.state.target}>Start Now</Text>
+                            {/* <Text style={styles.WText}>Start Now</Text> */}
                         </TouchableOpacity>
                     </View>
 
