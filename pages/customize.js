@@ -3,7 +3,7 @@ import { Text, View, TextInput, TouchableOpacity, Image } from 'react-native';
 import styles from '../styles/styles.js';
 import workout from '../components/workoutList.js';
 
-const fs = require('fs');
+
 
 export default class SignUp extends Component {
     constructor(props) {
@@ -18,22 +18,22 @@ export default class SignUp extends Component {
     }
 
     render() {
-        if (step === 1){
+        if (this.state.step === 1){
             return (
                 <View style={styles.Screen}>
                     <Text>Time To Customize Your Days</Text>
                     <TouchableOpacity onPress={this.dayPressHandler} >
-                        <Text>Next</Text>
+                        <Text>Next (Step 1)</Text>
                     </TouchableOpacity>
                 </View>
             )
         }
-        if (step === 2){
+        if (this.state.step === 2){
             return (
                 <View style={styles.Screen}>
                     <Text>Time To Customize Your Days</Text>
                     <TouchableOpacity>
-
+                        <Text>Step 2</Text>
                     </TouchableOpacity>
                 </View>
             )
