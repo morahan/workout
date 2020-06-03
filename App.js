@@ -18,6 +18,9 @@ import Customize from './pages/customize.js';
 
 // ==== components =====
 import Footer from './components/footer.js';
+import TagsView from './components/learning/TagsView.js'
+
+//=== Nav ===
 import Navigator from './routes/homeStack.js';
 
 // components to Test
@@ -46,7 +49,8 @@ function App(){
         // <SetWorkout></SetWorkout> 
         //  <GetStarted></GetStarted> 
         // <Timer></Timer>
-        <Customize></Customize>
+        // <Customize></Customize>
+        <TagsView></TagsView>
 
   );
 }
