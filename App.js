@@ -14,6 +14,7 @@ import SetWorkout from './pages/setWorkout.js';
 import GetStarted from './pages/getStarted.js';
 import SignUp from './pages/signUp.js';
 import SignIn from './pages/signIn.js';
+import Customize from './pages/customize.js';
 
 // ==== components =====
 import Footer from './components/footer.js';
@@ -37,7 +38,7 @@ function App(){
     // </SafeAreaView>
     
         // <Welcome></Welcome> 
-        <Navigator/>
+        // <Navigator/>
         // <SignUp></SignUp>
         // <SignIn></SignIn>
         // <Workout></Workout> 
@@ -45,6 +46,7 @@ function App(){
         // <SetWorkout></SetWorkout> 
         //  <GetStarted></GetStarted> 
         // <Timer></Timer>
+        <Customize></Customize>
 
   );
 }
