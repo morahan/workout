@@ -42,7 +42,6 @@ export default class SignUp extends Component {
 
         // pass through desired target muscles based on day
         this.props.navigation.navigate('Workout', { day: target })
-     
     }
 
     render () {
