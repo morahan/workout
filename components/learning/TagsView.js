@@ -1,10 +1,11 @@
-//  Link to article: https://medium.com/fantageek/how-to-make-tag-selection-view-in-react-native-b6f8b0adc891
+// Link to article: https://medium.com/fantageek/how-to-make-tag-selection-view-in-react-native-b6f8b0adc891
+//  Link to potential different appraoch article: https://medium.com/fantageek/how-to-make-tag-selection-view-in-react-native-b6f8b0adc891
 
 import React from 'react';
 import { View, StyleSheet, Button } from 'react-native';
 import R from 'res/R';
-import BackgroundButton from 'library/components/BackgroundButton';
-import addOrRemove from 'library/utils/addOrRemove';
+import BackgroundButton from './BackgroundButton.js';
+import addOrRemove from './addOrRemove.js';
 
 export default class TagsView extends React.Component {
     constructor(props) {
@@ -13,7 +14,7 @@ export default class TagsView extends React.Component {
             selected: props.selected
         }
     }
-    
+
     render() {
         return (
             <View style={styles.container}>
