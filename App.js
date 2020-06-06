@@ -19,6 +19,7 @@ import Customize from './pages/customize.js';
 // ==== components =====
 import Footer from './components/footer.js';
 import TagsView from './components/learning/TagsView.js'
+import Display from './components/learning/display.js'
 
 //=== Nav ===
 import Navigator from './routes/homeStack.js';
@@ -50,7 +51,8 @@ function App(){
         //  <GetStarted></GetStarted> 
         // <Timer></Timer>
         // <Customize></Customize>
-        <TagsView></TagsView>
+        // <TagsView></TagsView>
+        <Display></Display>
 
   );
 }
