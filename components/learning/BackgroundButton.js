@@ -1,6 +1,7 @@
 import React from 'react'
 import { TouchableOpacity, View, Text, StyleSheet, Image } from 'react-native'
 // import R from 'res/R'
+
 export default class BackgroundButton extends React.Component {
     render() {
         const styles = this.makeStyles()

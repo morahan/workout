@@ -2,7 +2,7 @@
 //  Link to potential different appraoch article: https://medium.com/fantageek/how-to-make-tag-selection-view-in-react-native-b6f8b0adc891
 
 import React from 'react';
-import { View, StyleSheet } from 'react-native';
+import { View, StyleSheet, TouchableOpacity, Text } from 'react-native';
 // import Styles from '../../styles/styles.js';
 import BackgroundButton from './BackgroundButton.js';
 import addOrRemove from './addOrRemove.js';
@@ -38,24 +38,26 @@ export default class TagsView extends React.Component {
     makeButtons() {
         return this.props.all.map((tag, i) => {
             const on = this.state.selected.includes(tag)
-            const backgroundColor = on ? "#44ace8" : "red"
+            const backgroundColor = on ? "#44ace8" : "lightgreen"
             const textColor = on ? "white" : "black"
-            const borderColor = on ? "blue" : "green"
+            const borderColor = on ? "blue" : "grey"
             // const backgroundColor = on ? R.colors.on.backgroundColor : R.colors.off.backgroundColor
             // const textColor = on ? R.colors.on.text : R.colors.off.text
             // const borderColor = on ? R.colors.on.border : R.colors.off.border
             return (
-                <BackgroundButton
-                    backgroundColor={backgroundColor}
-                    textColor={textColor}
-                    borderColor={borderColor}
-                    onPress={() => {
-                        this.onPress(tag)
-                    }}
-                    key={i}
-                    showImage={on}
-                    title={tag} 
-                />
+                <>
+                    <BackgroundButton
+                        backgroundColor={backgroundColor}
+                        textColor={textColor}
+                        borderColor={borderColor}
+                        onPress={() => {
+                            this.onPress(tag)
+                        }}
+                        key={i}
+                        showImage={on}
+                        title={tag} 
+                    />
+                </>
             )
         })
     }
