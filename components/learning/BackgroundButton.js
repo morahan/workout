@@ -1,6 +1,6 @@
 import React from 'react'
 import { TouchableOpacity, View, Text, StyleSheet, Image } from 'react-native'
-import R from 'res/R'
+// import R from 'res/R'
 export default class BackgroundButton extends React.Component {
     render() {
         const styles = this.makeStyles()
@@ -15,7 +15,7 @@ export default class BackgroundButton extends React.Component {
     }
     makeImageIfAny(styles) {
         if (this.props.showImage) {
-            return <Image style={styles.image} source={R.images.check} />
+            return <Image style={styles.image} source={"../../assets/icon.png"} />
         }
     }
     makeStyles() {
@@ -30,21 +30,21 @@ export default class BackgroundButton extends React.Component {
                 alignItems: 'center',
                 justifyContent: 'center',
                 paddingLeft: 16,
-                paddingRight: 16
+                paddingRight: 16,
             },
             touchable: {
                 marginLeft: 4,
                 marginRight: 4,
-                marginBottom: 8
+                marginBottom: 8,
             },
             image: {
-                marginRight: 8
+                marginRight: 8,
             },
             text: {
                 fontSize: 18,
                 textAlign: 'center',
                 color: this.props.textColor,
-                fontSize: 16
+                fontSize: 16,
             }
         })
     }
