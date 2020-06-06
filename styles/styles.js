@@ -10,6 +10,10 @@ const styles = StyleSheet.create({
     justifyContent: 'space-around',
     height: "100%",
   },
+  
+  ContainerSafeView: {
+    margin: 30,
+  },
 
   TopLogoAndHeading: {
     justifyContent: "center",
@@ -128,6 +132,16 @@ const styles = StyleSheet.create({
     borderRadius: 17,
   },
 
+  BtnBtm: {
+    width: "75%",
+    marginBottom: 37,
+    alignItems: "center",
+    alignSelf: "center",
+    backgroundColor: "black",
+    borderRadius: 17,
+    justifyContent: 'flex-end',
+  },
+
   BtnStop: {
     width: "100%",
     // height: "25%",
@@ -188,6 +202,7 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     paddingTop: "5%",
     paddingBottom: "5%",
+
   },
 
   HeaderText: {
@@ -255,7 +270,7 @@ const styles = StyleSheet.create({
   },
 
   TagUnselected: {
-    backgroundColor: "lightGreen",
+    backgroundColor: "blue",
     
   },
 
@@ -269,7 +284,7 @@ const styles = StyleSheet.create({
   },
 
   Spacer10: {
-    marginTop: "10%"
+    marginTop: "10%",
   },
 
   Spacer5: {
@@ -278,6 +293,21 @@ const styles = StyleSheet.create({
 
   Spacer3: {
     marginTop: "3%"
+  }, 
+
+  SpaceBtw: {
+    justifyContent: "space-between",
+    // alignItems: "space-between",
+  }, 
+
+  Center: {
+    display: "flex",
+    flexDirection: "column",
+    // alignItems: "center",
+    // alignSelf: "center",
+    // textAlign: "center",
+    // justifyContent: "center",
+
   }, 
 
 
