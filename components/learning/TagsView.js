@@ -2,7 +2,7 @@
 //  Link to potential different appraoch article: https://medium.com/fantageek/how-to-make-tag-selection-view-in-react-native-b6f8b0adc891
 
 import React from 'react';
-import { View, StyleSheet, Button } from 'react-native';
+import { View, StyleSheet } from 'react-native';
 // import Styles from '../../styles/styles.js';
 import BackgroundButton from './BackgroundButton.js';
 import addOrRemove from './addOrRemove.js';
