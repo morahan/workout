@@ -253,6 +253,34 @@ const styles = StyleSheet.create({
     borderWidth: 2,
     marginBottom: "-5%"
   },
+
+  TagUnselected: {
+    backgroundColor: "lightGreen",
+    
+  },
+
+  TagSelected: {
+    backgroundColor: "green",
+
+  },
+  
+  Spacer15: {
+    marginTop: "15%"
+  },
+
+  Spacer10: {
+    marginTop: "10%"
+  },
+
+  Spacer5: {
+    marginTop: "5%"
+  }, 
+
+  Spacer3: {
+    marginTop: "3%"
+  }, 
+
+
 });
 
 export default styles;
