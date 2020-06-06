@@ -3,7 +3,7 @@
 
 import React from 'react';
 import { View, StyleSheet, Button } from 'react-native';
-import R from 'res/R';
+// import Styles from '../../styles/styles.js';
 import BackgroundButton from './BackgroundButton.js';
 import addOrRemove from './addOrRemove.js';
 
@@ -38,9 +38,12 @@ export default class TagsView extends React.Component {
     makeButtons() {
         return this.props.all.map((tag, i) => {
             const on = this.state.selected.includes(tag)
-            const backgroundColor = on ? R.colors.on.backgroundColor : R.colors.off.backgroundColor
-            const textColor = on ? R.colors.on.text : R.colors.off.text
-            const borderColor = on ? R.colors.on.border : R.colors.off.border
+            const backgroundColor = on ? "#44ace8" : "red"
+            const textColor = on ? "white" : "black"
+            const borderColor = on ? "blue" : "green"
+            // const backgroundColor = on ? R.colors.on.backgroundColor : R.colors.off.backgroundColor
+            // const textColor = on ? R.colors.on.text : R.colors.off.text
+            // const borderColor = on ? R.colors.on.border : R.colors.off.border
             return (
                 <BackgroundButton
                     backgroundColor={backgroundColor}
@@ -51,7 +54,8 @@ export default class TagsView extends React.Component {
                     }}
                     key={i}
                     showImage={on}
-                    title={tag} />
+                    title={tag} 
+                />
             )
         })
     }
