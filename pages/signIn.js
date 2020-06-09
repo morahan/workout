@@ -20,7 +20,9 @@ export default class SignIn extends Component {
     }
 
     pressStartHandler = () => {
+        console.log(" === signIn.js, pressStartHandler === ", this.props.navigation)
         this.props.navigation.navigate('Workout')
+        
     }
 
     render () {
