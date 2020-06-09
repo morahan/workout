@@ -158,7 +158,7 @@ let workout = {
   },
   core: {
     days: ["Saturday", "Sunday"],
-    exercise: {
+    exercises: {
       1: { 
         // id: 7,
         name: "Sit-Ups",
