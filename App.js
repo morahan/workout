@@ -19,7 +19,7 @@ import Customize from './pages/customize.js';
 // ==== components =====
 import Footer from './components/footer.js';
 import TagsView from './components/learning/TagsView.js'
-import Display from './components/learning/display.js'
+import DisplayTags from './components/learning/DisplayTags.js'
 
 //=== Nav ===
 import Navigator from './routes/homeStack.js';
@@ -42,17 +42,17 @@ function App(){
     // </SafeAreaView>
     
         // <Welcome></Welcome> 
-        // <Navigator/>
+        <Navigator/>
         // <SignUp></SignUp>
         // <SignIn></SignIn>
         // <Workout></Workout> 
         // <Footer></Footer>
-        // <SetWorkout></SetWorkout> 
+        //  Broken --> // <SetWorkout></SetWorkout> 
         //  <GetStarted></GetStarted> 
         // <Timer></Timer>
         // <Customize></Customize>
         // <TagsView></TagsView>
-        <Display></Display>
+        // <DisplayTags></DisplayTags>
 
   );
 }
