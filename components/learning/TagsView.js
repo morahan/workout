@@ -42,6 +42,7 @@ export default class TagsView extends React.Component {
         } else {
             const result = array
             result.push(item)
+            console.log("TagView.js, addOrRemove, == ", result)
             return result
         }
     }
@@ -62,7 +63,7 @@ export default class TagsView extends React.Component {
                         textColor={textColor}
                         borderColor={borderColor}
                         onPress={() => {
-                            console.log("TagsView.js, backGroundButton on press== ")
+                            console.log("TagsView.js, makeButtons, return, backGroundButton on press== ", tag)
                             this.onPress(tag)
                         }}
                         key={i}
