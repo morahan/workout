@@ -7,8 +7,6 @@ import Styles from '../../styles/styles.js';
 import { TouchableOpacity } from 'react-native-gesture-handler';
 
 const selected = ['Today', 'Tomorrow'];
-let step = 1;
-
 const tags = ["one", "two", "Three"];
 
 class Display extends Component {
@@ -78,7 +76,7 @@ class Display extends Component {
                     all={tags}
                     selected={selected}
                     isExclusive={false}
-                    step={step}
+                    step={this.state.step}
                 />
 
                 <View>
