@@ -5,7 +5,7 @@ import React from 'react';
 import { View, StyleSheet, TouchableOpacity, Text } from 'react-native';
 // import Styles from '../../styles/styles.js';
 import BackgroundButton from './BackgroundButton.js';
-import addOrRemove from './addOrRemove.js';
+// import addOrRemove from './addOrRemove.js';
 
 export default class TagsView extends React.Component {
     constructor(props) {
@@ -13,7 +13,7 @@ export default class TagsView extends React.Component {
         this.state = {
             selected: props.selected
         }
-    }
+    }   
 
     render() {
         return (
@@ -28,12 +28,25 @@ export default class TagsView extends React.Component {
         if (this.props.isExclusive) {
             selected = [tag]
         } else {
-            selected = addOrRemove(this.state.selected, tag)
+            selected = this.addOrRemove(this.state.selected, tag)
         }
         this.setState({
             selected
         })
     }
+
+    addOrRemove = (array, item) => {
+        const exists = array.includes(item)
+        if (exists) {
+            return array.filter((c) => { return c !== item })
+        } else {
+            const result = array
+            result.push(item)
+            return result
+        }
+    }
+
+
 
     makeButtons() {
         return this.props.all.map((tag, i) => {
@@ -51,6 +64,7 @@ export default class TagsView extends React.Component {
                         textColor={textColor}
                         borderColor={borderColor}
                         onPress={() => {
+                            console.log("TagsView.js, backGroundButton on press== ")
                             this.onPress(tag)
                         }}
                         key={i}
