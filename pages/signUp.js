@@ -22,7 +22,7 @@ export default class SignUp extends Component {
         this.setState({ message: 'Welcome!', name: this.state.tempName, step: 1});
     }
 
-    pressNextStepHandler = (props) => {
+    pressStartHandler = (props) => {
         let setTargetMuscles = function(){
             if (workout.upperBody.days.includes(currentDay)) {
                 target =  'upperBody'
@@ -42,6 +42,12 @@ export default class SignUp extends Component {
 
         // pass through desired target muscles based on day
         this.props.navigation.navigate('Workout', { day: target })
+    }
+
+    pressCustomizeHandler = () => {
+        this.props.navigation.navigate('DisplayTags')
+
+        // console.log( this.props.navigation.navigate, "=== signUp.js, navigate to customize workout (displayTags.js) ====")
     }
 
     render () {
@@ -81,12 +87,14 @@ export default class SignUp extends Component {
                     </View>
 
                     <View style={styles.LogIn}>
-                        <TouchableOpacity style={styles.Btn} onPress={this.pressNextStepHandler} >
+                        <TouchableOpacity style={styles.Btn} onPress={this.pressStartHandler} >
                             <Text style={styles.WText} day={this.state.target}>Start Now</Text>
                             {/* <Text style={styles.WText}>Start Now</Text> */}
                         </TouchableOpacity>
+                        <TouchableOpacity onPress={this.pressCustomizeHandler} >
+                            <Text style={styles.Text} day={this.state.target}>Customize</Text>
+                        </TouchableOpacity>
                     </View>
-
                     <View>
                         <Text style={styles.foot}>© Freio Labs, All Rights Reserved</Text>
                     </View>
