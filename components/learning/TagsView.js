@@ -46,8 +46,6 @@ export default class TagsView extends React.Component {
         }
     }
 
-
-
     makeButtons() {
         return this.props.all.map((tag, i) => {
             const on = this.state.selected.includes(tag)
