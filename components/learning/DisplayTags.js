@@ -6,10 +6,10 @@ import Workout from '../workoutList.js';
 import Styles from '../../styles/styles.js';
 import { TouchableOpacity } from 'react-native-gesture-handler';
 
-const selected = ['Today', 'Tomorrow'];
+const selected = [];
 const tags = [];
 
-class Display extends Component {
+class DisplayTags extends Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -32,6 +32,9 @@ class Display extends Component {
         }
         if (this.state.step === 3){
             this.getCoreTags();
+        }
+        if (this.state.step > 3){
+            console.log("navigate to next page, completed customization")
         }
     }
     
@@ -68,7 +71,6 @@ class Display extends Component {
         }
     }
     
-
     nextEventHandler = () => {
         // step++;
         this.setState({step: this.state.step+=1})
@@ -76,7 +78,6 @@ class Display extends Component {
         this.iterateTags()
     }
 
-    
     render() {
         // this.iterateTags()
         return (
@@ -110,4 +111,4 @@ class Display extends Component {
     }
 }
 
-export default Display;
+export default DisplayTags;
