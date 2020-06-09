@@ -7,14 +7,31 @@ import Styles from '../../styles/styles.js';
 import { TouchableOpacity } from 'react-native-gesture-handler';
 
 const selected = ['Today', 'Tomorrow'];
-const tags = ["one", "two", "Three"];
+const tags = [];
 
 class Display extends Component {
     constructor(props) {
         super(props);
         this.state = {
             step: 1,
-            target: "target",
+            target: "Upper Body",
+        }
+        this.nextEventHandler = this.nextEventHandler.bind(this)
+    }
+
+    componentDidMount(){
+        this.iterateTags();
+    }
+
+    iterateTags = () => {
+        if (this.state.step === 1){
+            this.getUpperTags();
+        }
+        if (this.state.step === 2){
+            this.getLowerTags();
+        }
+        if (this.state.step === 3){
+            this.getCoreTags();
         }
     }
     
@@ -23,6 +40,7 @@ class Display extends Component {
         this.setState({
             target: "Upper Body"
         })
+        tags.splice(0, tags.length)
         for (let i = 1; i < num+1; i++){
             tags.push(Workout.upperBody.exercises[i].name)
         }
@@ -33,8 +51,9 @@ class Display extends Component {
         this.setState({
             target: "Lower Body"
         })
+        tags.splice(0, tags.length)
         for (let i = 1; i < num+1; i++){
-            tags.push(Workout.upperBody.exercises[i].name)
+            tags.push(Workout.lowerBody.exercises[i].name)
         }
     }
 
@@ -43,32 +62,31 @@ class Display extends Component {
         this.setState({
             target: "Core"
         })
+        tags.splice(0, tags.length)
         for (let i = 1; i < num+1; i++){
-            tags.push(Workout.upperBody.exercises[i].name)
+            tags.push(Workout.core.exercises[i].name)
         }
     }
-        
+    
 
     nextEventHandler = () => {
         // step++;
         this.setState({step: this.state.step+=1})
         console.log("step === ", this.state.step)
+        this.iterateTags()
     }
 
-    // getUpperTags();
     
     render() {
+        // this.iterateTags()
         return (
             <>
                 <View style={Styles.ContainerSafeView}>
                     <View style={Styles.Spacer10}>
-                            {/* <Text style={Styles.Text2}> 
-                            Choose {this.state.target} Exercises 
-                            </Text> */}
-                            <Text style={Styles.Text2}> 
-                            Choose Exercises 
-                            </Text>
-                            <Text>* Note: Not all exercises will be complted in one day. These exercises will be shuffled for you on your {this.state.target} days. </Text>
+                        <Text style={Styles.Text2}> 
+                        Choose {this.state.target} Exercises 
+                        </Text>
+                        <Text>* Note: Not all exercises will be complted in one day. These exercises will be shuffled for you on your {this.state.target} days. </Text>
                     </View>
                 </View>
 
@@ -77,15 +95,14 @@ class Display extends Component {
                     selected={selected}
                     isExclusive={false}
                     step={this.state.step}
+                    // key={key}
                 />
 
                 <View>
-                    <TouchableOpacity style={Styles.BtnBtm}>
-                        <Text style={Styles.WText} 
-                        onPress={this.nextEventHandler}>
+                    <TouchableOpacity style={Styles.BtnBtm} onPress={this.nextEventHandler}>
+                        <Text style={Styles.WText}>
                           Next
                         </Text>
-                        {/* <Text style={Styles.WText}>Next</Text> */}
                     </TouchableOpacity>
                 </View>
             </>
