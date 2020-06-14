@@ -4,7 +4,7 @@ import styles from '../styles/styles.js';
 import Exercise from '../components/exercise.js'
 
 function Workout(props) {
-    // console.log("Work Out props === ", props)
+    console.log("workout.js ~ Work Out props === ", props.navigation)
     return (
         <View style={styles.Screen}>
             <Exercise target={props.navigation.state.params.day}></Exercise>
