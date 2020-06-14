@@ -76,6 +76,14 @@ let workout = {
         reps: 13,
         sets: 3,
         infoUrl: "",
+      },
+      9: {
+        // id: ?,
+        name: "NO MORE EXERCISES",
+        weight: 25,
+        reps: 13,
+        sets: 3,
+        infoUrl: "",
       }
     }
   },
@@ -154,6 +162,14 @@ let workout = {
         sets: 3,
         infoUrl: "",
       },
+      9: {
+        // id: ?,
+        name: "NO MORE EXERCISES",
+        weight: 25,
+        reps: 13,
+        sets: 3,
+        infoUrl: "",
+      },
     }
   },
   core: {
@@ -222,6 +238,14 @@ let workout = {
         incrumentLbs: null,
         reps: 1,
         sets: 3,
+      },
+      9: {
+        // id: ?,
+        name: "NO MORE EXERCISES",
+        weight: 25,
+        reps: 13,
+        sets: 3,
+        infoUrl: "",
       },
     }
   }
