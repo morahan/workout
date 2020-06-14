@@ -45,9 +45,9 @@ export default class SignUp extends Component {
     }
 
     pressCustomizeHandler = () => {
+        console.log( this.props.navigation.navigate, "=== signUp.js, navigate to customize workout (displayTags.js) ====")
         this.props.navigation.navigate('DisplayTags')
 
-        // console.log( this.props.navigation.navigate, "=== signUp.js, navigate to customize workout (displayTags.js) ====")
     }
 
     render () {

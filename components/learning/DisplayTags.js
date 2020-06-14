@@ -38,7 +38,7 @@ class DisplayTags extends Component {
             console.log("== navigate to next page, completed customization ==", this.props.navigation.navigate)
         }
     }
-    
+      
     getUpperTags = () => { 
         const num = Object.keys(Workout.upperBody.exercises).length
         this.setState({
