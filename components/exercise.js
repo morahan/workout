@@ -5,14 +5,17 @@ import Timer from './timer.js';
 import workout from './workoutList.js';
 const moment = require('moment');
 
-let exerciseNum = 1;
+let currentExerciseNum = 1;
+let setInRound = 1;
+let round = 1;
+let superSet = 1;
 let completedExercises = 0;
 let completedRounds = 0;
 let completedSuperSets = 0;
-let round = 1;
-let superSet = 1;
+// let totalExerciseSets = 0;
+let exercisesPerRound = 3;
+let roundsPerSuperSet = 3;
 let superSetTargetNum = 3; 
-let exercisesInSuperSet = 3;
 let defaultNextBtnText = "Next Exercise";
 let currentDay = moment().format('dddd'); 
 
@@ -22,13 +25,14 @@ class Exercise extends Component {
         this.state = {
             round: round,
             // === Dynamic
-            exercise: workout[props.target].exercises[exerciseNum].name,
-            reps: workout[props.target].exercises[exerciseNum].reps,
+            exercise: workout[props.target].exercises[currentExerciseNum].name,
+            reps: workout[props.target].exercises[currentExerciseNum].reps,
             superSet: superSet,
             buttonText: "Next Exercise",
             completedExercises: 0,
             completedRounds:  0,
             completedSuperSets: 0,
+            // currentExerciseNum: 1,
         }
         console.log("exercise.js ~ props === ", props)
     }
@@ -36,43 +40,57 @@ class Exercise extends Component {
     // enterDurationEventHandler = (time) => {
     // }
 
+    // track progress of workout
     nextExerciseEventHandler = () => {
-        // track progress of workout
 
-        // iterate every round
-        if (exerciseNum+1 % exercisesInSuperSet === 0) {
-            exerciseNum = 1;
+        // iterate next exercise
+        setInRound++;
+        // totalExerciseSets++;
+        currentExerciseNum++;
+        completedExercises++;
+
+        // track completed exercise
+        this.setState({
+            completedExercises: completedExercises,
+        })
+
+        // Anticipate Next Round - Change Button Text
+        if (setInRound+1 % exercisesPerRound === 0) {
+            
+            // Anticipate Next SuperSet
+            if (round+1 % roundsPerSuperSet === 0) {
+                this.setState({
+                    buttonText: "Next Super Set!"
+                })
+            } else {
+                this.setState({
+                buttonText: "Next Round!"
+                })
+            }
+        } 
+        
+        // increment round && reset setInRound && currentExerciseNum && btnText
+        if (setInRound % exercisesPerRound === 0){
             round++;
             completedRounds++;
-            completedExercises++;
             this.setState({
-                completedExercises: completedExercises,
+                // round: round,
                 completedRounds: completedRounds,
-                buttonText: "Next Round!"
-            })
-        }  else if (currentExercise-1 % 3) {
-            exerciseNum -3;
-        }
-        
-        else if (exerciseNum + 1 % exercisesInSuperSet === 0 && round % 3 === 0) {
-            exerciseNum += 3;
-        } else {
-            exerciseNum++;
-            completedExercises++;
-            this.setState({
-                completedExercises: completedExercises,
                 buttonText: defaultNextBtnText,
+                
             })
+            setInRound = 1;
+            // currentExerciseNum -= 3
         }
 
-        // Setting Exercise and Reps and Round
+        // Setting Exercise and Reps
         this.setState({
-            exercise: workout[this.props.target].exercises[exerciseNum].name,
-            reps: workout[this.props.target].exercises[exerciseNum].reps,
+            exercise: workout[this.props.target].exercises[currentExerciseNum].name,
+            reps: workout[this.props.target].exercises[currentExerciseNum].reps,
         });
        
-        // Finish Superset
-        if (round === 3 && exerciseNum % exercisesInSuperSet === 0) {
+        // Increment Superset
+        if (round === 3 && currentExerciseNum % exercisesPerRound === 0) {
             superSet++;
             completedSuperSets++;
             round = 1;
@@ -83,14 +101,15 @@ class Exercise extends Component {
                 completedSuperSets: completedSuperSets
             })
         } 
+
         // Completed final superset
-        if (this.state.completedSuperSets === superSetTargetNum){
-            this.setState({ 
-                buttonText: "Done!"
-            })
-            alert("Nice Work! You Completed Your Goal Today!");
-        }
-        console.log("exercise.js ~ current Ex: ", exerciseNum, "round: ", round, "ss: ", superSet, "completed Ex: ", this.state.completedExercises, "completed Rounds: ", this.state.completedRounds, "completed SuperSets: ", this.state.completedRounds)
+        // if (this.state.completedSuperSets === superSetTargetNum){
+        //     this.setState({ 
+        //         buttonText: "Done!"
+        //     })
+        //     alert("Nice Work! You Completed Your Goal Today!");
+        // }
+        console.log("exercise.js ~ | currentExNum =", currentExerciseNum, " | Set In Round =", setInRound, " | current round =", round, " | ss =", superSet, " | completed Ex =", this.state.completedExercises, " | completed Rounds =", this.state.completedRounds, " | completed SuperSets =", this.state.completedSuperSets)
         console.log("exercise.js ~ Current day ===== ", currentDay)
     }
 
