@@ -11,11 +11,10 @@ let completedRounds = 0;
 let completedSuperSets = 0;
 let round = 1;
 let superSet = 1;
-let superSetTargetNum = 3;
+let superSetTargetNum = 3; 
 let exercisesInSuperSet = 3;
 let defaultNextBtnText = "Next Exercise";
 let currentDay = moment().format('dddd'); 
-
 
 class Exercise extends Component {
     constructor(props){
@@ -35,31 +34,17 @@ class Exercise extends Component {
             completedRounds:  0,
             completedSuperSets: 0,
         }
-        // console.log("exercise.js props === ", props)
+        console.log("exercise.js ~ props === ", props)
     }
 
     // enterDurationEventHandler = (time) => {
     // }
 
-    //try two ==== setting target muscles based on day of week
-    // setTargetMuscles = () => {
-    //     if (workout.upperBody.days.includes(currentDay)) {
-    //         this.setState({ targetMuscles: 'upperBody' });
-    //     }
-    //     if (workout.lowerBody.days.includes(currentDay)) {
-    //         this.setState({ targetMuscles: 'lowerBody' });
-    //     }
-    //     if (workout.core.days.includes(currentDay)) {
-    //         this.setState({ targetMuscles: 'core' });
-    //     }
-    //     // console.log(targetMuscles)
-    // }
-    // setTargetMuscles; 
 
     nextExerciseEventHandler = () => {
         // track progress of workout
-        if (exerciseNum === exercisesInSuperSet) {
-            exerciseNum = 1;
+        if (exerciseNum % exercisesInSuperSet === 0) {
+            exerciseNum++;
             round++;
             completedRounds++;
             completedExercises++;
@@ -79,12 +64,12 @@ class Exercise extends Component {
 
         // Setting Exercise and Reps and Round
         this.setState({
-            exercise: workout.upperBody.exercises[exerciseNum].name,
-            reps: workout.upperBody.exercises[exerciseNum].reps,
+            exercise: workout[this.props.target].exercises[exerciseNum].name,
+            reps: workout[this.props.target].exercises[exerciseNum].reps,
         });
        
         // Finish Superset
-        if (round === 4) {
+        if (round === 3 && exerciseNum % exercisesInSuperSet === 0) {
             superSet++;
             completedSuperSets++;
             round = 1;
@@ -102,9 +87,8 @@ class Exercise extends Component {
             })
             alert("Nice Work! You Completed Your Goal Today!");
         }
-        console.log("current Ex: ", exerciseNum, "round: ", round, "ss: ", superSet, "completed Ex: ", this.state.completedExercises, "completed Rounds: ", this.state.completedRounds, "completed SuperSets: ", this.state.completedRounds)
-        console.log("Current day ===== ", currentDay)
-
+        console.log("exercise.js ~ current Ex: ", exerciseNum, "round: ", round, "ss: ", superSet, "completed Ex: ", this.state.completedExercises, "completed Rounds: ", this.state.completedRounds, "completed SuperSets: ", this.state.completedRounds)
+        console.log("exercise.js ~ Current day ===== ", currentDay)
     }
 
     render() {
