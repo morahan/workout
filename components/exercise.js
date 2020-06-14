@@ -24,10 +24,6 @@ class Exercise extends Component {
             // === Dynamic
             exercise: workout[props.target].exercises[exerciseNum].name,
             reps: workout[props.target].exercises[exerciseNum].reps,
-            
-            // === Static
-            // exercise: workout.upperBody.exercises[exerciseNum].name,
-            // reps: workout.upperBody.exercises[exerciseNum].reps,
             superSet: superSet,
             buttonText: "Next Exercise",
             completedExercises: 0,
@@ -40,11 +36,12 @@ class Exercise extends Component {
     // enterDurationEventHandler = (time) => {
     // }
 
-
     nextExerciseEventHandler = () => {
         // track progress of workout
-        if (exerciseNum % exercisesInSuperSet === 0) {
-            exerciseNum++;
+
+        // iterate every round
+        if (exerciseNum+1 % exercisesInSuperSet === 0) {
+            exerciseNum = 1;
             round++;
             completedRounds++;
             completedExercises++;
@@ -53,6 +50,12 @@ class Exercise extends Component {
                 completedRounds: completedRounds,
                 buttonText: "Next Round!"
             })
+        }  else if (currentExercise-1 % 3) {
+            exerciseNum -3;
+        }
+        
+        else if (exerciseNum + 1 % exercisesInSuperSet === 0 && round % 3 === 0) {
+            exerciseNum += 3;
         } else {
             exerciseNum++;
             completedExercises++;
