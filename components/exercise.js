@@ -7,6 +7,7 @@ const moment = require('moment');
 
 let currentExerciseNum = 1;
 let setInRound = 1;
+let roundInSet = 1;
 let round = 1;
 let superSet = 1;
 let completedExercises = 0;
@@ -73,6 +74,7 @@ class Exercise extends Component {
         if (setInRound % exercisesPerRound === 0){
             round++;
             completedRounds++;
+            roundInSet++;
             this.setState({
                 // round: round,
                 completedRounds: completedRounds,
@@ -93,6 +95,7 @@ class Exercise extends Component {
         if (round === 3 && currentExerciseNum % exercisesPerRound === 0) {
             superSet++;
             completedSuperSets++;
+            roundInSet = 1;
             round = 1;
             this.setState({
                 superSet: superSet,
@@ -120,7 +123,7 @@ class Exercise extends Component {
                     <Text style={styles.HeaderText}>
                         {"Super Set #" + this.state.superSet}
                     </Text>
-                    <Text style={styles.HeaderText2}>{"Round " + this.state.round} </Text>
+                    <Text style={styles.HeaderText2}>{"Round " + roundInSet} </Text>
                     <View style={styles.Box}>
                         <View style={styles.EBox}>
                             <Text style={styles.Text2}>{this.state.exercise}</Text>
