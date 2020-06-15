@@ -32,10 +32,10 @@ class DisplayTags extends Component {
         }
         if (this.state.step === 3){
             this.getCoreTags();
+            console.log("~ DisplayTags.js ~ == navigate to next page, completed customization ==", this.props)
         }
         if (this.state.step > 3){
-            this.props.navigation.navigate('Workout')
-            console.log("== navigate to next page, completed customization ==", this.props.navigation.navigate)
+            props.navigation.navigate('Workout')
         }
     }
       
