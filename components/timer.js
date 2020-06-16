@@ -15,16 +15,16 @@ export default class Timer extends Component {
             restTime: this.props.restTime,
             currentDuration: 120,
             sessionInProgress: true,
-            completedExercises: this.props.completedE,
-            completedRounds: this.props.completedR,
-            completedSuperSets: this.props.completedS,
+            // completedExercises: this.props.completedE,
+            // completedRounds: this.props.completedR,
+            // completedSuperSets: this.props.completedS,
             // restCount: 0,
         };
         this.timerFinishEventHandler = this.timerFinishEventHandler.bind(this);
     }
 
     stopSession = () => {
-        alert("You completed " + this.state.completedExercises + " Exercises,  " + this.state.completedSuperSets + " Super Sets! Nice Work")
+        alert("You completed " + this.props.completedE + " Exercises,  " + this.props.completedR + " Rounds, and " + this.props.completedS + " Super Sets. Nice Work!")
         this.setState({
             sessionInProgress: false,
         }, () => console.log("==== Stopped ===="))
