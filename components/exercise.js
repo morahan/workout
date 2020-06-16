@@ -25,18 +25,9 @@ class Exercise extends Component {
     constructor(props){
         super(props);
         this.state = {
-            // round: round,
-            // === Dynamic
             exercise: workout[props.target].exercises[currentExVar].name,
             reps: workout[props.target].exercises[currentExVar].reps,
             buttonText: "Next Exxxercise",
-
-
-            // superSet: superSet,
-            // completedExercises: 0,
-            // completedRounds:  0,
-            // completedSuperSets: 0,
-            // currentEx: 1
         }
         console.log("exercise.js ~ props === ", props)
     }
