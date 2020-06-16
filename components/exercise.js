@@ -5,11 +5,13 @@ import Timer from './timer.js';
 import workout from './workoutList.js';
 const moment = require('moment');
 
-let currentExerciseNum = 1;
+// let currentExerciseNum = 1;
+let currentDay = moment().format('dddd'); 
+let currentExVar = 1;
+let currentRound = 1;
+let currentSuperSet = 1;
 let setInRound = 1;
 let roundInSuperSet = 1;
-let round = 1;
-let superSet = 1;
 let completedExercises = 0;
 let completedRounds = 0;
 let completedSuperSets = 0;
@@ -18,22 +20,23 @@ let exercisesPerRound = 3;
 let roundsPerSuperSet = 3;
 let superSetTargetNum = 3; 
 let defaultNextBtnText = "Next Exercise";
-let currentDay = moment().format('dddd'); 
 
 class Exercise extends Component {
     constructor(props){
         super(props);
         this.state = {
-            round: round,
+            // round: round,
             // === Dynamic
-            exercise: workout[props.target].exercises[currentExerciseNum].name,
-            reps: workout[props.target].exercises[currentExerciseNum].reps,
-            superSet: superSet,
+            exercise: workout[props.target].exercises[currentExVar].name,
+            reps: workout[props.target].exercises[currentExVar].reps,
             buttonText: "Next Exxxercise",
-            completedExercises: 0,
-            completedRounds:  0,
-            completedSuperSets: 0,
-            // currentExerciseNum: 1,
+
+
+            // superSet: superSet,
+            // completedExercises: 0,
+            // completedRounds:  0,
+            // completedSuperSets: 0,
+            // currentEx: 1
         }
         console.log("exercise.js ~ props === ", props)
     }
@@ -46,14 +49,8 @@ class Exercise extends Component {
 
         // iterate next exercise
         setInRound++;
-        // totalExerciseSets++;
-        currentExerciseNum++;
         completedExercises++;
-
-        // track completed exercise
-        this.setState({
-            completedExercises: completedExercises,
-        })
+        currentExVar++
 
         // Anticipate Next Round - Change Button Text
         if (setInRound % exercisesPerRound === 0) {
@@ -62,48 +59,42 @@ class Exercise extends Component {
             })
 
             // Anticipate Next SuperSet
-            let plusOneRound = round + 1
+            let plusOneRound = currentRound + 1
             if (plusOneRound % roundsPerSuperSet === 0) {
                 this.setState({
                     buttonText: "Next Super Set!"
                 })
             }
-            round++
         } 
         
         let plusOne = exercisesPerRound + 1;
         // increment round && reset setInRound && currentExerciseNum && btnText
-        if (setInRound % plusOne === 0){
-            round++;
+        if (setInRound % plusOne === 0 && completedRounds !== roundInSuperSet){
+            currentRound++;
             completedRounds++;
-            roundInSuperSet++;
             this.setState({
                 // round: round,
-                completedRounds: completedRounds,
+                // completedRounds: completedRounds,
                 buttonText: defaultNextBtnText,
             })
             setInRound = 1;
+            currentExVar = 1;
             // currentExerciseNum -= 3
         }
 
         // Setting Exercise and Reps
         this.setState({
-            exercise: workout[this.props.target].exercises[currentExerciseNum].name,
-            reps: workout[this.props.target].exercises[currentExerciseNum].reps,
+            exercise: workout[this.props.target].exercises[currentExVar].name,
+            reps: workout[this.props.target].exercises[currentExVar].reps,
         });
        
         // Increment Superset
-        if (round === 3 && currentExerciseNum % exercisesPerRound === 0) {
-            superSet++;
+        if (currentRound === 3 && completedExercises % exercisesPerRound === 0) {
+            currentSuperSet++;
+            completedRounds++
             completedSuperSets++;
-            roundInSuperSet = 1;
-            round = 1;
-            this.setState({
-                superSet: superSet,
-                round: round,
-                buttonText: "Next Superset!",
-                completedSuperSets: completedSuperSets
-            })
+            // currentExVar = setInRound * completedSuperSets+ 1;
+            currentRound = 1;
         } 
 
         // Completed final superset
@@ -113,7 +104,7 @@ class Exercise extends Component {
         //     })
         //     alert("Nice Work! You Completed Your Goal Today!");
         // }
-        console.log("exercise.js ~ | currentExNum =", currentExerciseNum, " | Set In Round =", setInRound, " | current round =", round, " | ss =", superSet, " | completed Ex =", this.state.completedExercises, " | completed Rounds =", this.state.completedRounds, " | completed SuperSets =", this.state.completedSuperSets, " | setInRound", setInRound)
+        console.log("exercise.js ~ | currentExVar=", currentExVar, " | Set In Round =", setInRound, " | current round =", currentRound, " | currentSuperS =", currentSuperSet, " | completed Ex =", completedExercises, " | completed Rounds =", this.state.completedRounds, " | completed SuperSets =", this.state.completedSuperSets, " | setInRound", setInRound)
         console.log("exercise.js ~ Current day ===== ", currentDay)
     }
 
@@ -122,9 +113,9 @@ class Exercise extends Component {
             // <View style={styles.Screen}>
                 <View style={styles.WorkoutScreen}>
                     <Text style={styles.HeaderText}>
-                        {"Super Set #" + this.state.superSet}
+                        {"Super Set #" + currentSuperSet}
                     </Text>
-                    <Text style={styles.HeaderText2}>{"Round " + roundInSuperSet} </Text>
+                    <Text style={styles.HeaderText2}>{"Round " + currentRound} </Text>
                     <View style={styles.Box}>
                         <View style={styles.EBox}>
                             <Text style={styles.Text2}>{this.state.exercise}</Text>
@@ -147,7 +138,7 @@ class Exercise extends Component {
                     onChangeText={(time) => this.enterDurationEventHandler(time)}
                 />   */}
 
-                    <Timer restTime='30' completedE={this.state.completedExercises} completedR={this.state.completedRounds} completedS={this.state.completedSuperSets}  ></Timer>
+                    <Timer restTime='30' completedE={completedExercises} completedR={completedRounds} completedS={completedSuperSets}  ></Timer>
                 </View>
 
             // </View>
