@@ -29,7 +29,7 @@ class Exercise extends Component {
             exercise: workout[props.target].exercises[currentExerciseNum].name,
             reps: workout[props.target].exercises[currentExerciseNum].reps,
             superSet: superSet,
-            buttonText: "Next Exercise",
+            buttonText: "Next Exxxercise",
             completedExercises: 0,
             completedRounds:  0,
             completedSuperSets: 0,
@@ -56,22 +56,24 @@ class Exercise extends Component {
         })
 
         // Anticipate Next Round - Change Button Text
-        if (setInRound+1 % exercisesPerRound === 0) {
-            
+        if (setInRound % exercisesPerRound === 0) {
+            this.setState({
+                buttonText: "Next Round!",
+            })
+
             // Anticipate Next SuperSet
-            if (round+1 % roundsPerSuperSet === 0) {
+            let plusOneRound = round + 1
+            if (plusOneRound % roundsPerSuperSet === 0) {
                 this.setState({
                     buttonText: "Next Super Set!"
                 })
-            } else {
-                this.setState({
-                buttonText: "Next Round!"
-                })
             }
+            round++
         } 
         
+        let plusOne = exercisesPerRound + 1;
         // increment round && reset setInRound && currentExerciseNum && btnText
-        if (setInRound % exercisesPerRound === 0){
+        if (setInRound % plusOne === 0){
             round++;
             completedRounds++;
             roundInSuperSet++;
@@ -111,7 +113,7 @@ class Exercise extends Component {
         //     })
         //     alert("Nice Work! You Completed Your Goal Today!");
         // }
-        console.log("exercise.js ~ | currentExNum =", currentExerciseNum, " | Set In Round =", setInRound, " | current round =", round, " | ss =", superSet, " | completed Ex =", this.state.completedExercises, " | completed Rounds =", this.state.completedRounds, " | completed SuperSets =", this.state.completedSuperSets)
+        console.log("exercise.js ~ | currentExNum =", currentExerciseNum, " | Set In Round =", setInRound, " | current round =", round, " | ss =", superSet, " | completed Ex =", this.state.completedExercises, " | completed Rounds =", this.state.completedRounds, " | completed SuperSets =", this.state.completedSuperSets, " | setInRound", setInRound)
         console.log("exercise.js ~ Current day ===== ", currentDay)
     }
 
