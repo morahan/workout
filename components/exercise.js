@@ -48,7 +48,6 @@ class Exercise extends Component {
     nextExerciseEventHandler = () => {
 
         // iterate next exercise
-        setInRound++;
         completedExercises++;
         currentExVar++
 
@@ -67,35 +66,32 @@ class Exercise extends Component {
             }
         } 
         
-        let plusOne = exercisesPerRound + 1;
-        // increment round && reset setInRound && currentExerciseNum && btnText
-        if (setInRound % plusOne === 0 && completedRounds !== roundInSuperSet){
+
+        // increment round & reset currentExerciseNum && btnText
+        if (completedExercises % exercisesPerRound === 0 && currentRound !== roundInSuperSet){
             currentRound++;
             completedRounds++;
             this.setState({
-                // round: round,
-                // completedRounds: completedRounds,
                 buttonText: defaultNextBtnText,
             })
-            setInRound = 1;
             currentExVar = 1;
             // currentExerciseNum -= 3
         }
+       
+        // Increment Superset
+        if (currentRound === roundInSuperSet && completedExercises % exercisesPerRound === 0) {
+            currentSuperSet++;
+            completedRounds++
+            completedSuperSets++;
+            currentRound = 1;
+            currentExVar = exercisesPerRound * completedRounds + 1;
+        } 
 
         // Setting Exercise and Reps
         this.setState({
             exercise: workout[this.props.target].exercises[currentExVar].name,
             reps: workout[this.props.target].exercises[currentExVar].reps,
         });
-       
-        // Increment Superset
-        if (currentRound === 3 && completedExercises % exercisesPerRound === 0) {
-            currentSuperSet++;
-            completedRounds++
-            completedSuperSets++;
-            // currentExVar = setInRound * completedSuperSets+ 1;
-            currentRound = 1;
-        } 
 
         // Completed final superset
         // if (this.state.completedSuperSets === superSetTargetNum){
