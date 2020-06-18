@@ -50,8 +50,8 @@ class Exercise extends Component {
             })
 
             // Anticipate Next SuperSet
-            let plusOneRound = currentRound + 1
-            if (plusOneRound % roundsPerSuperSet === 0) {
+            // let plusOneRound = currentRound + 1
+            if (currentRound % roundsPerSuperSet === 0) {
                 this.setState({
                     buttonText: "Next Super Set!"
                 })
@@ -59,7 +59,9 @@ class Exercise extends Component {
         } 
         
         // increment round & reset currentExerciseNum && btnText
-        if ((completedExercises-1) % exercisesPerRound === 0 && currentRound !== roundsInSuperSet){
+        // if ((completedExercises-1) !== 0 && (completedExercises-1 % exercisesPerRound === 0) && currentRound !== roundsInSuperSet){
+        if ((completedExercises-1) !== 0 && (completedExercises-1) % exercisesPerRound === 0){
+        // if (completedExercises-1 % exercisesPerRound === 0){
             currentRound++;
             completedRounds++;
             currentExVar = 1;
