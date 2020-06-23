@@ -20,6 +20,7 @@ let exercisesPerRound = 3;
 let roundsPerSuperSet = 3;
 let superSetTargetNum = 3; 
 let defaultNextBtnText = "Next Exercise";
+let baseExInRound = 1
 
 class Exercise extends Component {
     constructor(props){
@@ -28,13 +29,9 @@ class Exercise extends Component {
             exercise: workout[props.target].exercises[currentEx].name,
             reps: workout[props.target].exercises[currentEx].reps,
             buttonText: "Next Exxxercise",
-            // currentEx: 0,
         }
         console.log("exercise.js ~ props === ", props)
     }
-
-    // enterDurationEventHandler = (time) => {
-    // }
 
     // track progress of workout
     nextExerciseEventHandler = () => {
@@ -62,7 +59,7 @@ class Exercise extends Component {
         if (completedExercises !== 0 && completedExercises % exercisesPerRound === 0){
             currentRound++;
             completedRounds++;
-            currentEx = 1;
+            currentEx = baseExInRound;
             roundInSuperSet ++;
             console.log("~~~~~ inside here =============")
             this.setState({
@@ -77,21 +74,12 @@ class Exercise extends Component {
                 completedSuperSets++;
                 currentRound = 1;
                 roundInSuperSet = 1;
-                currentEx = exercisesPerRound * completedSuperSets + 1;
+                baseExInRound = exercisesPerRound * completedSuperSets + 1;
+                currentEx = baseExInRound;
                 console.log("===== new currentEx =====", currentEx)
             } 
             // currentExerciseNum -= 3
         }
-       
-        // // Increment Superset
-        // if (roundInSuperSet === roundsPerSuperSet && completedExercises % exercisesPerRound === 0) {
-        //     console.log("~~~~~ increment SS here =============")
-        //     currentSuperSet++;
-        //     completedRounds++
-        //     completedSuperSets++;
-        //     // currentRound = 1;
-        //     currentEx = exercisesPerRound * completedRounds + 1;
-        // } 
 
         // Setting Exercise and Reps
         this.setState({
