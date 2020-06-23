@@ -14,7 +14,6 @@ export default class SignUp extends Component {
             message: "Sign Up Below",
             name: '',
             step: 0,
-            // target: '',
         };
     }
 
@@ -26,19 +25,15 @@ export default class SignUp extends Component {
         let setTargetMuscles = function(){
             if (workout.upperBody.days.includes(currentDay)) {
                 target =  'upperBody'
-                // return "upperBody";
             }
             if (workout.lowerBody.days.includes(currentDay)) {
                 target = 'lowerBody';
-                // return "upperBody";
             }
             if (workout.core.days.includes(currentDay)) {
                 target = 'core';
-                // return "upperBody";
             }
         }
         setTargetMuscles();
-        // console.log(targetMuscles)
 
         // pass through desired target muscles based on day
         this.props.navigation.navigate('Workout', { day: target })
@@ -47,7 +42,6 @@ export default class SignUp extends Component {
     pressCustomizeHandler = () => {
         console.log( this.props.navigation.navigate, "=== signUp.js, navigate to customize workout (displayTags.js) ====")
         this.props.navigation.navigate('DisplayTags')
-
     }
 
     render () {
