@@ -3,6 +3,8 @@ import { Text, View, TextInput, StyleSheet, TouchableOpacity } from 'react-nativ
 import styles from '../styles/styles.js';
 import Timer from './timer.js';
 import workout from './workoutList.js';
+import Sound from 'react-native-sound';
+
 const moment = require('moment');
 
 // let currentExerciseNum = 1;
@@ -32,10 +34,12 @@ class Exercise extends Component {
         }
         console.log("exercise.js ~ props === ", props)
     }
-
+    
+    audio = new Sound('../assets/DrumBuild.mp3');
     // track progress of workout
     nextExerciseEventHandler = () => {
 
+        audio.play();
         // iterate next exercise
         completedExercises++;
         currentEx++;
