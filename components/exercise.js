@@ -5,7 +5,7 @@ import Timer from './timer.js';
 import workout from './workoutList.js';
 // import { Audio } from 'expo-av';
 // import { Sound } from 'expo-av';
-import Sound from 'react-native-sound';
+// import Sound from 'react-native-sound';
 
 const moment = require('moment');
 
