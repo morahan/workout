@@ -5,7 +5,6 @@ import { TouchableOpacity } from 'react-native-gesture-handler';
 // import { greaterThan } from 'react-native-reanimated';
 import styles from '../styles/styles.js';
 // import { Audio } from 'expo-av';
-import { Audio } from 'expo-av';
 
 // let audio = new Audio('../assets/GongSample.mp3');
 
