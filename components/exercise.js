@@ -3,6 +3,8 @@ import { Text, View, TextInput, StyleSheet, TouchableOpacity } from 'react-nativ
 import styles from '../styles/styles.js';
 import Timer from './timer.js';
 import workout from './workoutList.js';
+// import { Audio } from 'expo-av';
+// import { Sound } from 'expo-av';
 import Sound from 'react-native-sound';
 
 const moment = require('moment');
@@ -24,6 +26,11 @@ let superSetTargetNum = 3;
 let defaultNextBtnText = "Next Exercise";
 let baseExInRound = 1
 
+// let audio = Audio.Sound.createAsync(
+//     { uri: '../assets/GongSample.mp3' },
+//     { shouldPlay: true }
+// );
+
 class Exercise extends Component {
     constructor(props){
         super(props);
@@ -35,11 +42,25 @@ class Exercise extends Component {
         console.log("exercise.js ~ props === ", props)
     }
     
-    audio = new Sound('../assets/DrumBuild.mp3');
+    // audio = new Audio('../assets/DrumBuild.mp3');
+
+  
+
     // track progress of workout
     nextExerciseEventHandler = () => {
 
-        audio.play();
+        // play audio --> 
+        
+        const sound = new Sound('../assets/GongSample.mp3', null, (error) => {
+            if (error) {
+                // do something
+            }
+            // play when loaded
+            sound.play();
+        });
+
+
+        // audio.play();
         // iterate next exercise
         completedExercises++;
         currentEx++;
