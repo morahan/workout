@@ -4,9 +4,15 @@ import CountDown from 'react-native-countdown-component';
 import { TouchableOpacity } from 'react-native-gesture-handler';
 // import { greaterThan } from 'react-native-reanimated';
 import styles from '../styles/styles.js';
-import Sound from 'react-native-sound';
+// import { Audio } from 'expo-av';
+import { Audio } from 'expo-av';
 
-let audio = new Sound('../assets/GongSample.mp3');
+// let audio = new Audio('../assets/GongSample.mp3');
+
+// const audio = await Audio.Sound.createAsync(
+//     { uri: '../assets/GongSample.mp3' },
+//     { shouldPlay: true }
+// );
 
 export default class Timer extends Component {
     constructor(props) {
@@ -61,7 +67,7 @@ export default class Timer extends Component {
 
 
     timerFinishEventHandler = () => {
-        audio.play()
+        // audio.play()
         if (this.state.completedExercises === this.state.restCount){
             this.setState({ finishCount: this.state.finishCount += 1, totalDuration: 15}, () => console.log("finishCount === ", this.state.finishCount, "restCount === ", this.state.restCount))
         } else {
