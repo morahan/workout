@@ -46,19 +46,18 @@ class Exercise extends Component {
     // audio = new Audio('../assets/DrumBuild.mp3');
 
     // new audio attempt baced on https://www.youtube.com/watch?v=HCvp2fZh--A
-
     async componentDidMount() {
         Audio.setAudioModeAsync({
             allowsRecordingIOS: false,
             interruptionModeIOS: Audio.INTERRUPTION_MODE_IOS_DO_NOT_MIX,
             playsInSilentModeIOS: true,
-            interruptionModeAndroid: Audio.INTERRUPTION_MODE_ANDROID_DUCK_OTHERS,
-            shouldDuckAndroid: true,
+            // interruptionModeAndroid: Audio.INTERRUPTION_MODE_ANDROID_DUCK_OTHERS,
+            // shouldDuckAndroid: true,
             staysActicveInBackground: true,
-            playsThroughEarpieceAndroid: true,
+            // playsThroughEarpieceAndroid: true,
         })
 
-        this.sound = new Audio.sound();
+        this.sound = new Audio.Sound();
 
         const status = {
           shouldPlay: false
@@ -67,17 +66,18 @@ class Exercise extends Component {
         this.sound.loadAsync(require('../assets/DrumBuild.mp3'), status, false);
     }
 
-   
+    playSound() {
+        this.sound.playAsync();
+        //  this.sound.setPosition.async = 0;
+    };
+
 
     // track progress of workout
     nextExerciseEventHandler = () => {
 
         // ========  play audio --> 
         // new try from youtube video 
-        // playSound() {
-            this.sound.playAsync();
-        // };
-
+       this.playSound()
 
 
 
