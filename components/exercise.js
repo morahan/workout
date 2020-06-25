@@ -3,7 +3,7 @@ import { Text, View, TextInput, StyleSheet, TouchableOpacity } from 'react-nativ
 import styles from '../styles/styles.js';
 import Timer from './timer.js';
 import workout from './workoutList.js';
-// import { Audio } from 'expo-av';
+import { Audio } from 'expo-av';
 // import { Sound } from 'expo-av';
 // import Sound from 'react-native-sound';
 
@@ -26,6 +26,7 @@ let superSetTargetNum = 3;
 let defaultNextBtnText = "Next Exercise";
 let baseExInRound = 1
 
+// let sound = Audio.Sound.createAsync('../assets/GongSample.mp3', initialStatus = {}, onPlaybackStatusUpdate = null, downloadFirst = true)
 // let audio = Audio.Sound.createAsync(
 //     { uri: '../assets/GongSample.mp3' },
 //     { shouldPlay: true }
@@ -44,20 +45,52 @@ class Exercise extends Component {
     
     // audio = new Audio('../assets/DrumBuild.mp3');
 
-  
+    // new audio attempt baced on https://www.youtube.com/watch?v=HCvp2fZh--A
+
+    async componentDidMount() {
+        Audio.setAudioModeAsync({
+            allowsRecordingIOS: false,
+            interruptionModeIOS: Audio.INTERRUPTION_MODE_IOS_DO_NOT_MIX,
+            playsInSilentModeIOS: true,
+            interruptionModeAndroid: Audio.INTERRUPTION_MODE_ANDROID_DUCK_OTHERS,
+            shouldDuckAndroid: true,
+            staysActicveInBackground: true,
+            playsThroughEarpieceAndroid: true,
+        })
+
+        this.sound = new Audio.sound();
+
+        const status = {
+          shouldPlay: false
+        }
+
+        this.sound.loadAsync(require('../assets/DrumBuild.mp3'), status, false);
+    }
+
+   
 
     // track progress of workout
     nextExerciseEventHandler = () => {
 
-        // play audio --> 
-        
-        const sound = new Sound('../assets/GongSample.mp3', null, (error) => {
-            if (error) {
-                // do something
-            }
-            // play when loaded
-            sound.play();
-        });
+        // ========  play audio --> 
+        // new try from youtube video 
+        // playSound() {
+            this.sound.playAsync();
+        // };
+
+
+
+
+
+        // audio.play()
+        // sound.play();
+        // const sound = new Sound('../assets/GongSample.mp3', null, (error) => {
+        //     if (error) {
+        //         // do something
+        //     }
+        //     // play when loaded
+        //     sound.play();
+        // });
 
 
         // audio.play();
