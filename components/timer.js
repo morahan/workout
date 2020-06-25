@@ -6,13 +6,6 @@ import { TouchableOpacity } from 'react-native-gesture-handler';
 import styles from '../styles/styles.js';
 import { Audio } from 'expo-av';
 
-// let audio = new Audio('../assets/GongSample.mp3');
-
-// const audio = await Audio.Sound.createAsync(
-//     { uri: '../assets/GongSample.mp3' },
-//     { shouldPlay: true }
-// );
-
 export default class Timer extends Component {
     constructor(props) {
         super(props);
@@ -33,10 +26,10 @@ export default class Timer extends Component {
             allowsRecordingIOS: false,
             interruptionModeIOS: Audio.INTERRUPTION_MODE_IOS_DO_NOT_MIX,
             playsInSilentModeIOS: true,
-            // interruptionModeAndroid: Audio.INTERRUPTION_MODE_ANDROID_DUCK_OTHERS,
-            // shouldDuckAndroid: true,
+            interruptionModeAndroid: Audio.INTERRUPTION_MODE_ANDROID_DUCK_OTHERS,
+            shouldDuckAndroid: true,
             staysActicveInBackground: true,
-            // playsThroughEarpieceAndroid: true,
+            playsThroughEarpieceAndroid: true,
         })
 
         this.sound = new Audio.Sound();
