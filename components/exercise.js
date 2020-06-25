@@ -4,8 +4,6 @@ import styles from '../styles/styles.js';
 import Timer from './timer.js';
 import workout from './workoutList.js';
 import { Audio } from 'expo-av';
-// import { Sound } from 'expo-av';
-// import Sound from 'react-native-sound';
 
 const moment = require('moment');
 
@@ -26,11 +24,6 @@ let superSetTargetNum = 3;
 let defaultNextBtnText = "Next Exercise";
 let baseExInRound = 1
 
-// let sound = Audio.Sound.createAsync('../assets/GongSample.mp3', initialStatus = {}, onPlaybackStatusUpdate = null, downloadFirst = true)
-// let audio = Audio.Sound.createAsync(
-//     { uri: '../assets/GongSample.mp3' },
-//     { shouldPlay: true }
-// );
 
 class Exercise extends Component {
     constructor(props){
@@ -42,8 +35,6 @@ class Exercise extends Component {
         }
         console.log("exercise.js ~ props === ", props)
     }
-    
-    // audio = new Audio('../assets/DrumBuild.mp3');
 
     // new audio attempt baced on https://www.youtube.com/watch?v=HCvp2fZh--A
     async componentDidMount() {
@@ -79,21 +70,6 @@ class Exercise extends Component {
         // new try from youtube video 
        this.playSound()
 
-
-
-
-        // audio.play()
-        // sound.play();
-        // const sound = new Sound('../assets/GongSample.mp3', null, (error) => {
-        //     if (error) {
-        //         // do something
-        //     }
-        //     // play when loaded
-        //     sound.play();
-        // });
-
-
-        // audio.play();
         // iterate next exercise
         completedExercises++;
         currentEx++;
@@ -105,7 +81,6 @@ class Exercise extends Component {
             })
 
             // Anticipate Next SuperSet
-            // let plusOneRound = currentRound + 1
             if (currentRound % roundsPerSuperSet === 0) {
                 this.setState({
                     buttonText: "Next Super Set!"
@@ -147,12 +122,12 @@ class Exercise extends Component {
         });
 
         // Completed final superset
-        // if (this.state.completedSuperSets === superSetTargetNum){
-        //     this.setState({ 
-        //         buttonText: "Done!"
-        //     })
-        //     alert("Nice Work! You Completed Your Goal Today!");
-        // }
+        if (this.state.completedSuperSets === superSetTargetNum){
+            this.setState({ 
+                buttonText: "Done!"
+            })
+            alert("Nice Work! You Completed Your Goal Today!");
+        }
         console.log("exercise.js ~", "| compEx =", completedExercises, " | curEx=", currentEx, " | compRounds =", completedRounds, " | curRound=", currentRound, " | compSS =", completedSuperSets, " | curSS =", currentSuperSet, " | SetInRound =", setInRound, " | roundInSS =", roundInSuperSet)
         console.log("exercise.js ~ Current day ===== ", currentDay)
     }
