@@ -4,7 +4,7 @@ import CountDown from 'react-native-countdown-component';
 import { TouchableOpacity } from 'react-native-gesture-handler';
 // import { greaterThan } from 'react-native-reanimated';
 import styles from '../styles/styles.js';
-// import { Audio } from 'expo-av';
+import { Audio } from 'expo-av';
 
 // let audio = new Audio('../assets/GongSample.mp3');
 
@@ -27,6 +27,31 @@ export default class Timer extends Component {
         };
         this.timerFinishEventHandler = this.timerFinishEventHandler.bind(this);
     }
+
+    async componentDidMount() {
+        Audio.setAudioModeAsync({
+            allowsRecordingIOS: false,
+            interruptionModeIOS: Audio.INTERRUPTION_MODE_IOS_DO_NOT_MIX,
+            playsInSilentModeIOS: true,
+            // interruptionModeAndroid: Audio.INTERRUPTION_MODE_ANDROID_DUCK_OTHERS,
+            // shouldDuckAndroid: true,
+            staysActicveInBackground: true,
+            // playsThroughEarpieceAndroid: true,
+        })
+
+        this.sound = new Audio.Sound();
+
+        const status = {
+            shouldPlay: false
+        }
+
+        this.sound.loadAsync(require('../assets/GongSample.mp3'), status, false);
+    }
+
+    playSound() {
+        this.sound.playAsync();
+        //  this.sound.setPosition.async = 0;
+    };
 
     stopSession = () => {
         alert("You completed " + this.props.completedE + " Exercises,  " + this.props.completedR + " Rounds, and " + this.props.completedS + " Super Sets. Nice Work!")
@@ -66,7 +91,7 @@ export default class Timer extends Component {
 
 
     timerFinishEventHandler = () => {
-        // audio.play()
+        this.playSound()
         if (this.state.completedExercises === this.state.restCount){
             this.setState({ finishCount: this.state.finishCount += 1, totalDuration: 15}, () => console.log("finishCount === ", this.state.finishCount, "restCount === ", this.state.restCount))
         } else {
