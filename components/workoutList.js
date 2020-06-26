@@ -54,21 +54,21 @@ let workout = {
         infoUrl: "",
       },
       7: {
-        name: "Ineverted Row",
+        name: "Ineverted Row / Front Lever",
         weight: "body weight",
         reps: 25,
         sets: 3,
         infoUrl: "https://youtu.be/XZV9IwluPjw?t=53",
       },
       8: {
-        name: "",
+        name: "Head Stand",
         weight: "body weight",
         reps: 25,
         sets: 3,
         infoUrl: "",
       },
       9: {
-        name: "",
+        name: "Arm Circles",
         weight: "body weight",
         reps: 25,
         sets: 3,
@@ -98,21 +98,21 @@ let workout = {
         infoUrl: "",
       },
       3: {
-        name: "",
+        name: "Squats",
         weight: "body weight",
         reps: 25,
         sets: 3,
         infoUrl: "",
       },
       4: {
-        name: "",
+        name: "Jump Squats",
         weight: "body weight",
         reps: 25,
         sets: 3,
         infoUrl: "",
       },
       5: {
-        name: "",
+        name: "Lunges",
         weight: "body weight",
         reps: 25,
         sets: 3,
@@ -153,7 +153,6 @@ let workout = {
         sets: 3,
         infoUrl: "",
       },
-
     },
     core: {
       1: {
@@ -199,7 +198,7 @@ let workout = {
         infoUrl: "",
       },
       7: {
-        name: "",
+        name: "Leg Lifts",
         weight: "body weight",
         reps: 25,
         sets: 3,
