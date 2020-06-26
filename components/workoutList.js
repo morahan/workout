@@ -9,6 +9,17 @@
 // };
 
 let workout = {
+  kinesthetic: {
+    upperBody:{
+
+    },
+    lowerBody: {
+
+    },
+    core: {
+
+    },
+  },
   upperBody: {
     days: ["Monday", "Wednesday", "Friday"],
     exercises: {
