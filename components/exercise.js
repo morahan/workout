@@ -54,7 +54,7 @@ class Exercise extends Component {
           shouldPlay: false
         }
 
-        this.sound.loadAsync(require('../assets/DrumBuild.mp3'), status, false);
+        this.sound.loadAsync(require('../assets/audio/DrumBuild.mp3'), status, false);
     }
 
     playSound() {
