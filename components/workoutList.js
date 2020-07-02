@@ -329,12 +329,52 @@ let workout = {
       },
       9: {
         // id: ?,
+        name: "Pull-ups",
+        weight: 'body',
+        reps: 13,
+        sets: 3,
+        infoUrl: "",
+      },
+      10: {
+        // id: ?,
+        name: "Rows",
+        weight: 25,
+        reps: 13,
+        sets: 3,
+        infoUrl: "",
+      },
+      11: {
+        // id: ?,
+        name: "Renegade Rows",
+        weight: 25,
+        reps: 13,
+        sets: 3,
+        infoUrl: "",
+      },
+      12: {
+        // id: ?,
+        name: "Dumbbell Single Arm Row",
+        weight: 25,
+        reps: 13,
+        sets: 3,
+        infoUrl: "",
+      },
+      13: {
+        // id: ?,
+        name: "Chest-Supported Dumbbell Row",
+        weight: 25,
+        reps: 13,
+        sets: 3,
+        infoUrl: "https://youtu.be/H75im9fAUMc?t=36",
+      },
+      14: {
+        // id: ?,
         name: "NO MORE EXERCISES",
         weight: 25,
         reps: 13,
         sets: 3,
         infoUrl: "",
-      }
+      },
     }
   },
   lowerBody: {
