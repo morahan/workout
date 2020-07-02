@@ -17,6 +17,7 @@ let workout = {
         reps: 25,
         sets: 3,
         infoUrl: "",
+        available: true,
       },
       2: {
         name: "Cobra Wings",
@@ -24,6 +25,7 @@ let workout = {
         reps: 25,
         sets: 3,
         infoUrl: "https://youtu.be/yGJZTK257k0?t=61",
+        available: true,
       },
       3: {
         name: "Superman Waves",
@@ -31,6 +33,7 @@ let workout = {
         reps: 25,
         sets: 3,
         infoUrl: "https://youtu.be/yGJZTK257k0?t=185",
+        available: true,
       },
       4: {
         name: "Pull Ups",
@@ -38,6 +41,7 @@ let workout = {
         reps: 25,
         sets: 3,
         infoUrl: "",
+        available: true,
       },
       5: {
         name: "Chin Ups",
@@ -45,6 +49,7 @@ let workout = {
         reps: 25,
         sets: 3,
         infoUrl: "",
+        available: true,
       },
       6: {
         name: "Dips",
@@ -52,6 +57,7 @@ let workout = {
         reps: 25,
         sets: 3,
         infoUrl: "",
+        available: true,
       },
       7: {
         name: "Ineverted Row / Front Lever",
@@ -59,6 +65,7 @@ let workout = {
         reps: 25,
         sets: 3,
         infoUrl: "https://youtu.be/XZV9IwluPjw?t=53",
+        available: true,
       },
       8: {
         name: "Head Stand",
@@ -66,6 +73,7 @@ let workout = {
         reps: 25,
         sets: 3,
         infoUrl: "",
+        available: true,
       },
       9: {
         name: "Arm Circles",
@@ -73,6 +81,7 @@ let workout = {
         reps: 25,
         sets: 3,
         infoUrl: "",
+        available: true,
       },
       10: {
         name: "",
@@ -80,6 +89,7 @@ let workout = {
         reps: 25,
         sets: 3,
         infoUrl: "",
+        available: true,
       },
     },
     lowerBody: {
@@ -89,6 +99,7 @@ let workout = {
         reps: 25,
         sets: 3,
         infoUrl: "",
+        available: true,
       },
       2: {
         name: "Jump Lunges",
@@ -96,6 +107,7 @@ let workout = {
         reps: 25,
         sets: 3,
         infoUrl: "",
+        available: true,
       },
       3: {
         name: "Squats",
@@ -103,6 +115,7 @@ let workout = {
         reps: 25,
         sets: 3,
         infoUrl: "",
+        available: true,
       },
       4: {
         name: "Jump Squats",
@@ -110,6 +123,7 @@ let workout = {
         reps: 25,
         sets: 3,
         infoUrl: "",
+        available: true,
       },
       5: {
         name: "Lunges",
@@ -117,6 +131,7 @@ let workout = {
         reps: 25,
         sets: 3,
         infoUrl: "",
+        available: true,
       },
       6: {
         name: "",
@@ -124,6 +139,7 @@ let workout = {
         reps: 25,
         sets: 3,
         infoUrl: "",
+        available: true,
       },
       7: {
         name: "",
@@ -131,6 +147,7 @@ let workout = {
         reps: 25,
         sets: 3,
         infoUrl: "",
+        available: true,
       },
       8: {
         name: "",
@@ -138,6 +155,7 @@ let workout = {
         reps: 25,
         sets: 3,
         infoUrl: "",
+        available: true,
       },
       9: {
         name: "",
@@ -145,6 +163,7 @@ let workout = {
         reps: 25,
         sets: 3,
         infoUrl: "",
+        available: true,
       },
       10: {
         name: "",
@@ -152,6 +171,7 @@ let workout = {
         reps: 25,
         sets: 3,
         infoUrl: "",
+        available: true,
       },
     },
     core: {
@@ -161,6 +181,7 @@ let workout = {
         reps: 25,
         sets: 3,
         infoUrl: "",
+        available: true,
       },
       2: {
         name: "Jumping Jacks",
@@ -168,6 +189,7 @@ let workout = {
         reps: 25,
         sets: 3,
         infoUrl: "",
+        available: true,
       },
       3: {
         name: "Sit Ups",
@@ -175,6 +197,7 @@ let workout = {
         reps: 25,
         sets: 3,
         infoUrl: "",
+        available: true,
       },
       4: {
         name: "Bicycles",
@@ -182,6 +205,7 @@ let workout = {
         reps: 25,
         sets: 3,
         infoUrl: "",
+        available: true,
       },
       5: {
         name: "Burpees",
@@ -189,6 +213,7 @@ let workout = {
         reps: 25,
         sets: 3,
         infoUrl: "",
+        available: true,
       },
       6: {
         name: "Jump Rope",
@@ -196,6 +221,7 @@ let workout = {
         reps: 25,
         sets: 3,
         infoUrl: "",
+        available: true,
       },
       7: {
         name: "Leg Lifts",
@@ -203,6 +229,7 @@ let workout = {
         reps: 25,
         sets: 3,
         infoUrl: "",
+        available: true,
       },
       8: {
         name: "",
@@ -210,6 +237,7 @@ let workout = {
         reps: 25,
         sets: 3,
         infoUrl: "",
+        available: true,
       },
       9: {
         name: "",
@@ -217,6 +245,7 @@ let workout = {
         reps: 25,
         sets: 3,
         infoUrl: "",
+        available: true,
       },
       10: {
         name: "",
@@ -224,6 +253,7 @@ let workout = {
         reps: 25,
         sets: 3,
         infoUrl: "",
+        available: true,
       },
     },
   },
@@ -238,6 +268,7 @@ let workout = {
         reps: 34,
         sets: 3,
         infoUrl: "",
+        available: true,
       },
       2: { 
         // id: 2,
@@ -246,6 +277,7 @@ let workout = {
         reps: 13,
         sets: 3,
         infoUrl: "",
+        available: true,
       },
       3: { 
         // id: 3,
@@ -400,6 +432,8 @@ let workout = {
         incrumentLbs: null,
         reps: 53,
         sets: 3,
+        infoUrl: "",
+        available: true,
       },
       2: { 
         // id: 7,
@@ -408,6 +442,8 @@ let workout = {
         incrumentLbs: null,
         reps: 53,
         sets: 3,
+        infoUrl: "",
+        available: true,
       },
       3: {
         // id: 8,
@@ -416,6 +452,8 @@ let workout = {
         incrementLbs: null,
         reps: 53,
         sets: 3,
+        infoUrl: "",
+        available: true,
       },
       4: {
         // id: 9,
@@ -424,6 +462,8 @@ let workout = {
         incrumentLbs: null,
         reps: 1,
         sets: 3,
+        infoUrl: "",
+        available: true,
       },
       5: {
         // id: 9,
@@ -432,6 +472,8 @@ let workout = {
         incrumentLbs: null,
         reps: 1,
         sets: 3,
+        infoUrl: "",
+        available: true,
       },
       6: {
         // id: 9,
@@ -440,6 +482,8 @@ let workout = {
         incrumentLbs: null,
         reps: 1,
         sets: 3,
+        infoUrl: "",
+        available: true,
       },
       7: {
         // id: 9,
@@ -448,6 +492,8 @@ let workout = {
         incrumentLbs: null,
         reps: 1,
         sets: 3,
+        infoUrl: "",
+        available: true,
       },
       8: {
         // id: 9,
@@ -456,6 +502,8 @@ let workout = {
         incrumentLbs: null,
         reps: 1,
         sets: 3,
+        infoUrl: "",
+        available: true,
       },
       9: {
         // id: ?,
@@ -464,6 +512,7 @@ let workout = {
         reps: 13,
         sets: 3,
         infoUrl: "",
+        available: true,
       },
     }
   }
