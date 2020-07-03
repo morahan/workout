@@ -9,16 +9,11 @@
 // };
 
 
-// let upperBodyList = [ub.1,ub.2,ub.3,ub.4,ub.5,ub.6.ub.7,ub.8,ub.9,ub.10,ub.11,ub.12,ub.13];
-// let lowerBodyList = [lb.1,lb.2,lb.3,lb.4,lb.5,lb.6.lb.7,lb.8,lb.9,lb.10,lb.11,lb.12,lb.13];
-// let coreList = [c.1, c.2, c.3, c.4, c.5, c.6.c.7, c.8, c.9, c.10, c.11, c.12, c.13];
-
-
 let workout = {
   calisthenics: {
     upperBody:{
       1: {
-        id: 001,
+        id: 1,
         name: "Push Ups",
         weight: "body weight",
         reps: 25,
@@ -27,7 +22,7 @@ let workout = {
         available: true,
       },
       2: {
-        id: 002,
+        id: 2,
         name: "Cobra Wings",
         weight: "body weight",
         reps: 25,
@@ -36,7 +31,7 @@ let workout = {
         available: true,
       },
       3: {
-        id: 003,
+        id: 3,
         name: "Superman Waves",
         weight: "body weight",
         reps: 25,
@@ -45,7 +40,7 @@ let workout = {
         available: true,
       },
       4: {
-        id: 004,
+        id: 4,
         name: "Pull Ups",
         weight: "body weight",
         reps: 25,
@@ -54,7 +49,7 @@ let workout = {
         available: true,
       },
       5: {
-        id: 005,
+        id: 5,
         name: "Chin Ups",
         weight: "body weight",
         reps: 25,
@@ -63,7 +58,7 @@ let workout = {
         available: true,
       },
       6: {
-        id: 006,
+        id: 6,
         name: "Dips",
         weight: "body weight",
         reps: 25,
@@ -72,7 +67,7 @@ let workout = {
         available: true,
       },
       7: {
-        id: 007,
+        id: 7,
         name: "Ineverted Row / Front Lever",
         weight: "body weight",
         reps: 25,
@@ -81,7 +76,7 @@ let workout = {
         available: true,
       },
       8: {
-        id: 008,
+        id: 8,
         name: "Head Stand",
         weight: "body weight",
         reps: 25,
@@ -90,7 +85,7 @@ let workout = {
         available: true,
       },
       9: {
-        id: 009,
+        id: 9,
         name: "Arm Circles",
         weight: "body weight",
         reps: 25,
@@ -99,7 +94,7 @@ let workout = {
         available: true,
       },
       10: {
-        id: 010,
+        id: 10,
         name: "",
         weight: "body weight",
         reps: 25,
@@ -110,7 +105,7 @@ let workout = {
     },
     lowerBody: {
       1: {
-        id: 011,
+        // id: 11,
         name: "Forward Lunges",
         weight: "body weight",
         reps: 25,
@@ -119,6 +114,7 @@ let workout = {
         available: true,
       },
       2: {
+        // id: 11,
         name: "Jump Lunges",
         weight: "body weight",
         reps: 25,
@@ -127,6 +123,7 @@ let workout = {
         available: true,
       },
       3: {
+        // id: 11,
         name: "Squats",
         weight: "body weight",
         reps: 25,
@@ -135,6 +132,7 @@ let workout = {
         available: true,
       },
       4: {
+        // id: 11,
         name: "Jump Squats",
         weight: "body weight",
         reps: 25,
@@ -143,6 +141,7 @@ let workout = {
         available: true,
       },
       5: {
+        // id: 11,
         name: "Lunges",
         weight: "body weight",
         reps: 25,
@@ -151,6 +150,7 @@ let workout = {
         available: true,
       },
       6: {
+        // id: 11,
         name: "",
         weight: "body weight",
         reps: 25,
@@ -159,6 +159,7 @@ let workout = {
         available: true,
       },
       7: {
+        // id: 11,
         name: "",
         weight: "body weight",
         reps: 25,
@@ -167,6 +168,7 @@ let workout = {
         available: true,
       },
       8: {
+        // id: 11,
         name: "",
         weight: "body weight",
         reps: 25,
@@ -175,6 +177,7 @@ let workout = {
         available: true,
       },
       9: {
+        // id: 11,
         name: "",
         weight: "body weight",
         reps: 25,
@@ -183,6 +186,7 @@ let workout = {
         available: true,
       },
       10: {
+        // id: 11,
         name: "",
         weight: "body weight",
         reps: 25,
@@ -193,6 +197,7 @@ let workout = {
     },
     core: {
       1: {
+        // id: 11,
         name: "Plank",
         weight: "body weight",
         reps: 25,
@@ -201,6 +206,7 @@ let workout = {
         available: true,
       },
       2: {
+        // id: 11,
         name: "Jumping Jacks",
         weight: "body weight",
         reps: 25,
@@ -209,6 +215,7 @@ let workout = {
         available: true,
       },
       3: {
+        // id: 11,
         name: "Sit Ups",
         weight: "body weight",
         reps: 25,
@@ -217,6 +224,7 @@ let workout = {
         available: true,
       },
       4: {
+        // id: 11,
         name: "Bicycles",
         weight: "body weight",
         reps: 25,
@@ -225,6 +233,7 @@ let workout = {
         available: true,
       },
       5: {
+        // id: 11,
         name: "Burpees",
         weight: "body weight",
         reps: 25,
@@ -233,6 +242,7 @@ let workout = {
         available: true,
       },
       6: {
+        // id: 11,
         name: "Jump Rope",
         weight: "body weight",
         reps: 25,
@@ -241,6 +251,7 @@ let workout = {
         available: true,
       },
       7: {
+        // id: 11,
         name: "Leg Lifts",
         weight: "body weight",
         reps: 25,
@@ -249,6 +260,7 @@ let workout = {
         available: true,
       },
       8: {
+        // id: 11,
         name: "",
         weight: "body weight",
         reps: 25,
@@ -257,6 +269,7 @@ let workout = {
         available: true,
       },
       9: {
+        // id: 11,
         name: "",
         weight: "body weight",
         reps: 25,
@@ -265,6 +278,7 @@ let workout = {
         available: true,
       },
       10: {
+        // id: 11,
         name: "",
         weight: "body weight",
         reps: 25,
@@ -635,14 +649,15 @@ let workout = {
         available: true,
       },
     }
-  }
+  },
+  workOutList: {
+    upperBodyList: [workout.upperBody.exercises[1], workout.upperBody.exercises[2], workout.upperBody.exercises[3], workout.upperBody.exercises[4], workout.upperBody.exercises[5], workout.upperBody.exercises[6], workout.upperBody.exercises[7], workout.upperBody.exercises[8], workout.upperBody.exercises[9], workout.upperBody.exercises[10], workout.upperBody.exercises[11], workout.upperBody.exercises[12], workout.upperBody.exercises[13]],
+    lowerBodyList: [workout.upperBody.exercises[1], workout.upperBody.exercises[2], workout.upperBody.exercises[3], workout.upperBody.exercises[4], workout.upperBody.exercises[5], workout.upperBody.exercises[6], workout.upperBody.exercises[7], workout.upperBody.exercises[8], workout.upperBody.exercises[9], workout.upperBody.exercises[10], workout.upperBody.exercises[11], workout.upperBody.exercises[12], workout.upperBody.exercises[14]],
+    coreList: [workout.core.exercises[1], workout.core.exercises[2], workout.core.exercises[3], workout.core.exercises[4], workout.core.exercises[5], workout.core.exercises[6], workout.core.exercises[7], workout.core.exercises[8], workout.core.exercises[9]],
+    favorites: [],
+
+  },
+
 };
 
-let ub = workout.upperBody.exercises;
-let lb = workout.upperBody.exercises;
-let c = workout.upperBody.exercises;
-
-console.log(c[1])
-
-
-// export default workout;
+export default workout;
