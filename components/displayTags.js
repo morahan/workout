@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import { View, Text } from 'react-native';
-import TagsView from './TagsView.js';
+import TagsView from './tagsView.js';
 // import { getActiveChildNavigationOptions } from 'react-navigation';
-import Workout from '../workoutList.js';
-import Styles from '../../styles/styles.js';
+import Workout from './workoutList.js';
+import Styles from '../styles/styles.js';
 import { TouchableOpacity } from 'react-native-gesture-handler';
 
 const selected = [];
