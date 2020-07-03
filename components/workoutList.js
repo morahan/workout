@@ -442,7 +442,7 @@ let workout = {
     exercises: {
       1: { 
         // id: 4,
-        muscleGroups: [gluteal, quadriceps, hamstrings],
+        muscleGroups: ["gluteal", "quadriceps", "hamstrings"],
         detailedMuscleDescription: "",
         name: "Lunges",
         weight: "Body Weight",
@@ -453,7 +453,7 @@ let workout = {
       },
       2: { 
         // id: 5,
-        muscleGroups: [gluteal, quadriceps, hamstrings],
+        muscleGroups: ["quadriceps"],
         detailedMuscleDescription: "Quadriceps inclued rectus femoris, the vastus lateralis, the vastus medialis, and the vastus intermedius",
         name: "Leg Extension",
         weight: 65,
@@ -464,7 +464,7 @@ let workout = {
       },
       3: { 
         // id: 6,
-        muscleGroups: [gluteal, quadriceps, hamstrings],
+        muscleGroups: ["gluteal", "quadriceps", "hamstrings"],
         detailedMuscleDescription: "",
         name: "Leg Press",
         weight: 100,
@@ -650,14 +650,15 @@ let workout = {
       },
     }
   },
-  workoutList: {
-    upperBodyList: [workout.upperBody.exercises[1], workout.upperBody.exercises[2], workout.upperBody.exercises[3], workout.upperBody.exercises[4], workout.upperBody.exercises[5], workout.upperBody.exercises[6], workout.upperBody.exercises[7], workout.upperBody.exercises[8], workout.upperBody.exercises[9], workout.upperBody.exercises[10], workout.upperBody.exercises[11], workout.upperBody.exercises[12], workout.upperBody.exercises[13]],
-    lowerBodyList: [workout.upperBody.exercises[1], workout.upperBody.exercises[2], workout.upperBody.exercises[3], workout.upperBody.exercises[4], workout.upperBody.exercises[5], workout.upperBody.exercises[6], workout.upperBody.exercises[7], workout.upperBody.exercises[8], workout.upperBody.exercises[9], workout.upperBody.exercises[10], workout.upperBody.exercises[11], workout.upperBody.exercises[12], workout.upperBody.exercises[14]],
-    coreList: [workout.core.exercises[1], workout.core.exercises[2], workout.core.exercises[3], workout.core.exercises[4], workout.core.exercises[5], workout.core.exercises[6], workout.core.exercises[7], workout.core.exercises[8], workout.core.exercises[9]],
-    favorites: [],
-
+  workoutList: function() {
+    let upperBodyList = [this.upperBody.exercises[1], this.upperBody.exercises[2], this.upperBody.exercises[3], this.upperBody.exercises[4], this.upperBody.exercises[5], this.upperBody.exercises[6], this.upperBody.exercises[7], this.upperBody.exercises[8], this.upperBody.exercises[9], this.upperBody.exercises[10], this.upperBody.exercises[11], this.upperBody.exercises[12], this.upperBody.exercises[13]];
+    let lowerBodyList = [this.upperBody.exercises[1], this.upperBody.exercises[2], this.upperBody.exercises[3], this.upperBody.exercises[4], this.upperBody.exercises[5], this.upperBody.exercises[6], this.upperBody.exercises[7], this.upperBody.exercises[8], this.upperBody.exercises[9], this.upperBody.exercises[10], this.upperBody.exercises[11], this.upperBody.exercises[12], this.upperBody.exercises[14]];
+    let coreList = [this.core.exercises[1], this.core.exercises[2], this.core.exercises[3], this.core.exercises[4], this.core.exercises[5], this.core.exercises[6], this.core.exercises[7], this.core.exercises[8], this.core.exercises[9]];
+    let favorites = [];
+    // console.log("Inside and working! = ", this.upperBody.exercises[1])
+    // test: this.workout.upperBody.exercises[1].name
   },
-
 };
 
+// workout.workoutList();
 export default workout;
