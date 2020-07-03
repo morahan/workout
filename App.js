@@ -18,8 +18,8 @@ import Customize from './pages/customize.js';
 
 // ==== components =====
 import Footer from './components/footer.js';
-import TagsView from './components/learning/TagsView.js'
-import DisplayTags from './components/learning/DisplayTags.js'
+import TagsView from './components/tagsView.js'
+import DisplayTags from './components/displayTags.js'
 
 //=== Nav ===
 import Navigator from './routes/homeStack.js';
