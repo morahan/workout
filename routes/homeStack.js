@@ -8,7 +8,7 @@ import SetWorkout from '../pages/setWorkout.js';
 import SignIn from '../pages/signIn.js';
 import SignUp from '../pages/signUp.js';
 import Workout from '../pages/workout.js';
-import DisplayTags from '../components/learning/DisplayTags.js';
+import DisplayTags from '../components/displayTags.js';
 
 const screens = {
     Welcome: {
