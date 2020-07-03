@@ -8,10 +8,17 @@
 //   favoriteWorkOut: "upperBody"
 // };
 
+
+// let upperBodyList = [ub.1,ub.2,ub.3,ub.4,ub.5,ub.6.ub.7,ub.8,ub.9,ub.10,ub.11,ub.12,ub.13];
+// let lowerBodyList = [lb.1,lb.2,lb.3,lb.4,lb.5,lb.6.lb.7,lb.8,lb.9,lb.10,lb.11,lb.12,lb.13];
+// let coreList = [c.1, c.2, c.3, c.4, c.5, c.6.c.7, c.8, c.9, c.10, c.11, c.12, c.13];
+
+
 let workout = {
   calisthenics: {
     upperBody:{
       1: {
+        id: 001,
         name: "Push Ups",
         weight: "body weight",
         reps: 25,
@@ -20,6 +27,7 @@ let workout = {
         available: true,
       },
       2: {
+        id: 002,
         name: "Cobra Wings",
         weight: "body weight",
         reps: 25,
@@ -28,6 +36,7 @@ let workout = {
         available: true,
       },
       3: {
+        id: 003,
         name: "Superman Waves",
         weight: "body weight",
         reps: 25,
@@ -36,6 +45,7 @@ let workout = {
         available: true,
       },
       4: {
+        id: 004,
         name: "Pull Ups",
         weight: "body weight",
         reps: 25,
@@ -44,6 +54,7 @@ let workout = {
         available: true,
       },
       5: {
+        id: 005,
         name: "Chin Ups",
         weight: "body weight",
         reps: 25,
@@ -52,6 +63,7 @@ let workout = {
         available: true,
       },
       6: {
+        id: 006,
         name: "Dips",
         weight: "body weight",
         reps: 25,
@@ -60,6 +72,7 @@ let workout = {
         available: true,
       },
       7: {
+        id: 007,
         name: "Ineverted Row / Front Lever",
         weight: "body weight",
         reps: 25,
@@ -68,6 +81,7 @@ let workout = {
         available: true,
       },
       8: {
+        id: 008,
         name: "Head Stand",
         weight: "body weight",
         reps: 25,
@@ -76,6 +90,7 @@ let workout = {
         available: true,
       },
       9: {
+        id: 009,
         name: "Arm Circles",
         weight: "body weight",
         reps: 25,
@@ -84,6 +99,7 @@ let workout = {
         available: true,
       },
       10: {
+        id: 010,
         name: "",
         weight: "body weight",
         reps: 25,
@@ -94,6 +110,7 @@ let workout = {
     },
     lowerBody: {
       1: {
+        id: 011,
         name: "Forward Lunges",
         weight: "body weight",
         reps: 25,
@@ -258,10 +275,13 @@ let workout = {
     },
   },
   upperBody: {
+    description: "Back and Biceps",
     days: ["Monday", "Wednesday", "Friday"],
     exercises: {
       1: {
         // id: 1,
+        muscleGroups: [],
+        detailedMuscleDescription: "",
         name: "Curls",
         weight: 25,
         incrementLbs: 5,
@@ -272,6 +292,8 @@ let workout = {
       },
       2: { 
         // id: 2,
+        muscleGroups: [],
+        detailedMuscleDescription: "",
         name:  "Shoulder Press",
         weight: 40,
         reps: 13,
@@ -281,6 +303,8 @@ let workout = {
       },
       3: { 
         // id: 3,
+        muscleGroups: [],
+        detailedMuscleDescription: "",
         name: "Bench Press",
         weight: 120,
         reps: 13,
@@ -289,6 +313,8 @@ let workout = {
       },
       4: {
         // id: ?,
+        muscleGroups: [],
+        detailedMuscleDescription: "",
         name: "Chest Flys",
         weight: 40,
         reps: 13,
@@ -297,6 +323,8 @@ let workout = {
       },
       5: {
         // id: ?,
+        muscleGroups: [],
+        detailedMuscleDescription: "",
         name: "Dips",
         weight: "body",
         reps: 13,
@@ -305,6 +333,8 @@ let workout = {
       },
       6: {
         // id: ?,
+        muscleGroups: [],
+        detailedMuscleDescription: "",
         name: "Pushups",
         weight: "body",
         reps: 13,
@@ -313,6 +343,8 @@ let workout = {
       },
       7: {
         // id: ?,
+        muscleGroups: [],
+        detailedMuscleDescription: "",
         name: "Skull Crushers",
         weight: "body",
         reps: 13,
@@ -321,6 +353,8 @@ let workout = {
       },
       8: {
         // id: ?,
+        muscleGroups: [],
+        detailedMuscleDescription: "",
         name: "Arm Extensions",
         weight: 25,
         reps: 13,
@@ -329,6 +363,8 @@ let workout = {
       },
       9: {
         // id: ?,
+        muscleGroups: [],
+        detailedMuscleDescription: "",
         name: "Pull-ups",
         weight: 'body',
         reps: 13,
@@ -337,6 +373,8 @@ let workout = {
       },
       10: {
         // id: ?,
+        muscleGroups: [],
+        detailedMuscleDescription: "",
         name: "Rows",
         weight: 25,
         reps: 13,
@@ -345,6 +383,8 @@ let workout = {
       },
       11: {
         // id: ?,
+        muscleGroups: [],
+        detailedMuscleDescription: "",
         name: "Renegade Rows",
         weight: 25,
         reps: 13,
@@ -353,6 +393,8 @@ let workout = {
       },
       12: {
         // id: ?,
+        muscleGroups: [],
+        detailedMuscleDescription: "",
         name: "Dumbbell Single Arm Row",
         weight: 25,
         reps: 13,
@@ -361,6 +403,8 @@ let workout = {
       },
       13: {
         // id: ?,
+        muscleGroups: [],
+        detailedMuscleDescription: "",
         name: "Chest-Supported Dumbbell Row",
         weight: 25,
         reps: 13,
@@ -369,6 +413,8 @@ let workout = {
       },
       14: {
         // id: ?,
+        muscleGroups: [],
+        detailedMuscleDescription: "",
         name: "NO MORE EXERCISES",
         weight: 25,
         reps: 13,
@@ -382,6 +428,8 @@ let workout = {
     exercises: {
       1: { 
         // id: 4,
+        muscleGroups: [gluteal, quadriceps, hamstrings],
+        detailedMuscleDescription: "",
         name: "Lunges",
         weight: "Body Weight",
         incrementLbs: null,
@@ -391,6 +439,8 @@ let workout = {
       },
       2: { 
         // id: 5,
+        muscleGroups: [gluteal, quadriceps, hamstrings],
+        detailedMuscleDescription: "Quadriceps inclued rectus femoris, the vastus lateralis, the vastus medialis, and the vastus intermedius",
         name: "Leg Extension",
         weight: 65,
         incrementLbs: 5,
@@ -400,6 +450,8 @@ let workout = {
       },
       3: { 
         // id: 6,
+        muscleGroups: [gluteal, quadriceps, hamstrings],
+        detailedMuscleDescription: "",
         name: "Leg Press",
         weight: 100,
         incrementLbs: 15,
@@ -409,6 +461,8 @@ let workout = {
       },
       4: { 
         // id: 6,
+        muscleGroups: [],
+        detailedMuscleDescription: "",
         name: "Squats",
         weight: "body",
         incrementLbs: 15,
@@ -418,6 +472,8 @@ let workout = {
       },
       5: { 
         // id: 6,
+        muscleGroups: [],
+        detailedMuscleDescription: "",
         name: "Reverse Lunges",
         weight: "body",
         incrementLbs: 15,
@@ -427,6 +483,8 @@ let workout = {
       },
       6: { 
         // id: 6,
+        muscleGroups: [],
+        detailedMuscleDescription: "",
         name: "Side Lunges",
         weight: "body",
         incrementLbs: 15,
@@ -436,6 +494,8 @@ let workout = {
       },
       7: { 
         // id: 6,
+        muscleGroups: [],
+        detailedMuscleDescription: "",
         name: "Skaters",
         weight: "body",
         incrementLbs: 15,
@@ -445,6 +505,8 @@ let workout = {
       },
       8: { 
         // id: 6,
+        muscleGroups: [],
+        detailedMuscleDescription: "",
         name: "Pulsing Lunges",
         weight: "body",
         incrementLbs: 15,
@@ -454,6 +516,8 @@ let workout = {
       },
       9: {
         // id: ?,
+        muscleGroups: [],
+        detailedMuscleDescription: "",
         name: "NO MORE EXERCISES",
         weight: 25,
         reps: 13,
@@ -467,6 +531,8 @@ let workout = {
     exercises: {
       1: { 
         // id: 7,
+        muscleGroups: [],
+        detailedMuscleDescription: "",
         name: "Sit-Ups",
         weight: "body-weight",
         incrumentLbs: null,
@@ -477,6 +543,8 @@ let workout = {
       },
       2: { 
         // id: 7,
+        muscleGroups: [],
+        detailedMuscleDescription: "",
         name: "Crunches",
         weight: "body-weight",
         incrumentLbs: null,
@@ -487,6 +555,8 @@ let workout = {
       },
       3: {
         // id: 8,
+        muscleGroups: [],
+        detailedMuscleDescription: "",
         name: "Leg Lifts",
         weight: "body-weight",
         incrementLbs: null,
@@ -497,6 +567,8 @@ let workout = {
       },
       4: {
         // id: 9,
+        muscleGroups: [],
+        detailedMuscleDescription: "",
         name: "Plank",
         weight: "body-weight",
         incrumentLbs: null,
@@ -507,6 +579,8 @@ let workout = {
       },
       5: {
         // id: 9,
+        muscleGroups: [],
+        detailedMuscleDescription: "",
         name: "Bicycles",
         weight: "body-weight",
         incrumentLbs: null,
@@ -517,6 +591,8 @@ let workout = {
       },
       6: {
         // id: 9,
+        muscleGroups: [],
+        detailedMuscleDescription: "",
         name: "Bear Crawl",
         weight: "body-weight",
         incrumentLbs: null,
@@ -537,6 +613,8 @@ let workout = {
       },
       8: {
         // id: 9,
+        muscleGroups: [],
+        detailedMuscleDescription: "",
         name: "Leg Circles",
         weight: "body-weight",
         incrumentLbs: null,
@@ -547,6 +625,8 @@ let workout = {
       },
       9: {
         // id: ?,
+        muscleGroups: [],
+        detailedMuscleDescription: "",
         name: "NO MORE EXERCISES",
         weight: 25,
         reps: 13,
@@ -558,4 +638,11 @@ let workout = {
   }
 };
 
-export default workout;
+let ub = workout.upperBody.exercises;
+let lb = workout.upperBody.exercises;
+let c = workout.upperBody.exercises;
+
+console.log(c[1])
+
+
+// export default workout;
