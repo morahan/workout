@@ -62,7 +62,6 @@ class Exercise extends Component {
         //  this.sound.setPosition.async = 0;
     };
 
-
     // track progress of workout
     nextExerciseEventHandler = () => {
 
