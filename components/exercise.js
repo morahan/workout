@@ -22,7 +22,7 @@ let exercisesPerRound = 3;
 let roundsPerSuperSet = 3;
 let superSetTargetNum = 3; 
 let defaultNextBtnText = "Next Exercise";
-let baseExInRound = 1
+let baseExInRound = 1;
 
 
 class Exercise extends Component {
@@ -40,7 +40,7 @@ class Exercise extends Component {
     async componentDidMount() {
         Audio.setAudioModeAsync({
             allowsRecordingIOS: false,
-            interruptionModeIOS: Audio.INTERRUPTION_MODE_IOS_DO_NOT_MIX,
+            interruptionModeIOS: Audio.INTERRUPTION_MODE_IOS_DUCK_OTHERS,
             playsInSilentModeIOS: true,
             interruptionModeAndroid: Audio.INTERRUPTION_MODE_ANDROID_DUCK_OTHERS,
             shouldDuckAndroid: true,
