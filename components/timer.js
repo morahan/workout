@@ -24,7 +24,7 @@ export default class Timer extends Component {
     async componentDidMount() {
         Audio.setAudioModeAsync({
             allowsRecordingIOS: false,
-            interruptionModeIOS: Audio.INTERRUPTION_MODE_IOS_DO_NOT_MIX,
+            interruptionModeIOS: Audio.INTERRUPTION_MODE_IOS_DUCK_OTHERS,
             playsInSilentModeIOS: true,
             interruptionModeAndroid: Audio.INTERRUPTION_MODE_ANDROID_DUCK_OTHERS,
             shouldDuckAndroid: true,
@@ -81,15 +81,13 @@ export default class Timer extends Component {
     //     });
     // }
 
-
-
     timerFinishEventHandler = () => {
         this.playSound()
-        if (this.state.completedExercises === this.state.restCount){
-            this.setState({ finishCount: this.state.finishCount += 1, totalDuration: 15}, () => console.log("finishCount === ", this.state.finishCount, "restCount === ", this.state.restCount))
-        } else {
-            this.setState({ restCount: this.state.restCount += 1, totalDuration: 30}, () => console.log("finishCount else === ", this.state.finishCount, "restCount else === ", this.state.restCount))
-        }
+        // if (this.state.completedExercises === this.state.restCount){
+        //     this.setState({ finishCount: this.state.finishCount += 1, totalDuration: 15}, () => console.log("finishCount === ", this.state.finishCount, "restCount === ", this.state.restCount))
+        // } else {
+        //     this.setState({ restCount: this.state.restCount += 1, totalDuration: 30}, () => console.log("finishCount else === ", this.state.finishCount, "restCount else === ", this.state.restCount))
+        // }
     }
 
     render() {
@@ -111,7 +109,7 @@ export default class Timer extends Component {
                         onFinish={this.timerFinishEventHandler}
                         // onFinish={() => alert('Nice Work! Time for next Set')}
                         //on Press call
-                        onPress={() => alert('Pump It!')}
+                        onPress={() => {this.playSound(); alert('Pump It!')}}
                         // size of duration Text
                         size={23}
                         // Play Pause
