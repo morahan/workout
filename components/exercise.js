@@ -48,17 +48,23 @@ class Exercise extends Component {
             playsThroughEarpieceAndroid: true,
         })
 
-        this.sound = new Audio.Sound();
+        this.soundChing = new Audio.Sound();
+        this.soundChaChing = new Audio.Sound();
 
         const status = {
           shouldPlay: false
         }
 
-        this.sound.loadAsync(require('../assets/audio/DrumBuild.mp3'), status, false);
+        this.soundChing.loadAsync(require('../assets/audio/Ching.mp3'), status, false);
+        this.soundChaChing.loadAsync(require('../assets/audio/DrumBuild.mp3'), status, false);
     }
 
-    playSound() {
-        this.sound.playAsync();
+    playChingSound() {
+        this.soundChing.playAsync();
+        //  this.sound.setPosition.async = 0;
+    };
+    playChaChingSound() {
+        this.soundChing.playAsync();
         //  this.sound.setPosition.async = 0;
     };
 
@@ -67,7 +73,7 @@ class Exercise extends Component {
 
         // ========  play audio --> 
         // new try from youtube video 
-       this.playSound()
+       this.playChingSound()
 
         // iterate next exercise
         completedExercises++;
