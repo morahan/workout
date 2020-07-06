@@ -50,6 +50,7 @@ class Exercise extends Component {
 
         this.soundChing = new Audio.Sound();
         this.soundChaChing = new Audio.Sound();
+        this.soundCountMoney = new Audio.Sound();
 
         const status = {
           shouldPlay: false
@@ -57,6 +58,7 @@ class Exercise extends Component {
 
         this.soundChing.loadAsync(require('../assets/audio/Ching.mp3'), status, false);
         this.soundChaChing.loadAsync(require('../assets/audio/ChaChing.mp3'), status, false);
+        this.soundCountMoney.loadAsync(require('../assets/audio/CountMoney.mp3'), status, false);
     }
 
     playChingSound() {
@@ -65,6 +67,10 @@ class Exercise extends Component {
     };
     playChaChingSound() {
         this.soundChaChing.replayAsync();
+        //  this.sound.setPosition.async = 0;
+    };
+    playCountMoneySound() {
+        this.soundCountMoney.replayAsync();
         //  this.sound.setPosition.async = 0;
     };
 
@@ -109,6 +115,7 @@ class Exercise extends Component {
             // Increment Superset
             if (roundInSuperSet-1 === roundsPerSuperSet) {
                 console.log("~~~~~ increment SS here =============")
+                this.playCountMoney();
                 this.playChaChingSound();
                 currentSuperSet++;
                 completedRounds++;
@@ -119,7 +126,7 @@ class Exercise extends Component {
                 currentEx = baseExInRound;
                 console.log("===== new currentEx =====", currentEx)
             } else {
-                this.playChingSound();
+                this.playChaChingSound();
             }
         } else {
             this.playChingSound();
