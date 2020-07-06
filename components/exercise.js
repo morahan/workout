@@ -31,7 +31,7 @@ class Exercise extends Component {
         this.state = {
             exercise: workout[props.target].exercises[currentEx].name,
             reps: workout[props.target].exercises[currentEx].reps,
-            buttonText: "Next Exxxercise",
+            buttonText: "Next Exercise",
         }
         console.log("exercise.js ~ props === ", props)
     }
@@ -93,7 +93,6 @@ class Exercise extends Component {
             }
         } 
       
-        
         // increment round & reset currentExerciseNum && btnText
         if (completedExercises !== 0 && completedExercises % exercisesPerRound === 0){
             currentRound++;
@@ -106,6 +105,7 @@ class Exercise extends Component {
                 buttonText: defaultNextBtnText,
                 // currentEx: currentEx
             })
+
             // Increment Superset
             if (roundInSuperSet-1 === roundsPerSuperSet) {
                 console.log("~~~~~ increment SS here =============")
@@ -121,7 +121,6 @@ class Exercise extends Component {
             } else {
                 this.playChingSound();
             }
-            // currentExerciseNum -= 3
         } else {
             this.playChingSound();
         }
