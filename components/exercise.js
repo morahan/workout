@@ -71,9 +71,9 @@ class Exercise extends Component {
     // track progress of workout
     nextExerciseEventHandler = () => {
 
-        // ========  play audio --> 
+        // ========  play audio every button press --> 
         // new try from youtube video 
-       this.playChingSound()
+    //    this.playChingSound()
 
         // iterate next exercise
         completedExercises++;
@@ -92,6 +92,7 @@ class Exercise extends Component {
                 })
             }
         } 
+      
         
         // increment round & reset currentExerciseNum && btnText
         if (completedExercises !== 0 && completedExercises % exercisesPerRound === 0){
@@ -99,6 +100,7 @@ class Exercise extends Component {
             completedRounds++;
             currentEx = baseExInRound;
             roundInSuperSet ++;
+
             console.log("~~~~~ inside here =============")
             this.setState({
                 buttonText: defaultNextBtnText,
@@ -107,8 +109,9 @@ class Exercise extends Component {
             // Increment Superset
             if (roundInSuperSet-1 === roundsPerSuperSet) {
                 console.log("~~~~~ increment SS here =============")
+                this.playChaChingSound();
                 currentSuperSet++;
-                completedRounds++
+                completedRounds++;
                 completedSuperSets++;
                 currentRound = 1;
                 roundInSuperSet = 1;
@@ -117,6 +120,8 @@ class Exercise extends Component {
                 console.log("===== new currentEx =====", currentEx)
             } 
             // currentExerciseNum -= 3
+        } else {
+            this.playChingSound();
         }
 
         // Setting Exercise and Reps
