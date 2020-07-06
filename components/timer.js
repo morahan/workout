@@ -38,7 +38,7 @@ export default class Timer extends Component {
             shouldPlay: false
         }
 
-        this.sound.loadAsync(require('../assets/audio/GongSample.mp3'), status, false);
+        this.sound.loadAsync(require('../assets/audio/ChaChing.mp3'), status, false);
     }
 
     playSound() {
