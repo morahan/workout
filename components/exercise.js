@@ -60,11 +60,11 @@ class Exercise extends Component {
     }
 
     playChingSound() {
-        this.soundChing.playAsync();
+        this.soundChing.replayAsync();
         //  this.sound.setPosition.async = 0;
     };
     playChaChingSound() {
-        this.soundChing.playAsync();
+        this.soundChaChing.replayAsync();
         //  this.sound.setPosition.async = 0;
     };
 
@@ -73,7 +73,7 @@ class Exercise extends Component {
 
         // ========  play audio every button press --> 
         // new try from youtube video 
-    //    this.playChingSound()
+        // this.playChingSound()
 
         // iterate next exercise
         completedExercises++;
@@ -118,7 +118,9 @@ class Exercise extends Component {
                 baseExInRound = exercisesPerRound * completedSuperSets + 1;
                 currentEx = baseExInRound;
                 console.log("===== new currentEx =====", currentEx)
-            } 
+            } else {
+                this.playChingSound();
+            }
             // currentExerciseNum -= 3
         } else {
             this.playChingSound();
