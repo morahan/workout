@@ -4,6 +4,7 @@ import TagsView from './tagsView.js';
 // import { getActiveChildNavigationOptions } from 'react-navigation';
 import Workout from './workoutList.js';
 import Styles from '../styles/styles.js';
+import customEx from './customExercises.js';
 import { TouchableOpacity } from 'react-native-gesture-handler';
 
 const selected = [];
@@ -73,11 +74,13 @@ class DisplayTags extends Component {
     }
     
     nextEventHandler = () => {
-        // step++;
         console.log("displayTags.js- nextEventHandler - SelectedTags ===", selected)
         this.setState({step: this.state.step+=1})
         console.log("step === ", this.state.step)
         this.iterateTags()
+
+        // add selected tags to customExercises array. 
+        // customEx.customExercises.selected.push(selected)
     }
 
     render() {
