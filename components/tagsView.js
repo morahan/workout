@@ -63,12 +63,13 @@ export default class TagsView extends React.Component {
                         textColor={textColor}
                         borderColor={borderColor}
                         onPress={() => {
-                            console.log("TagsView.js, backGroundButton on press== ", tag)
+                            console.log("TagsView.js, backGroundButton onPress RemoveTag == ", tag)
                             this.onPress(tag)
                         }}
                         key={i}
                         showImage={on}
                         title={tag} 
+                        selected={this.state.selected}
                     />
                 </>
             )
