@@ -24,7 +24,6 @@ let superSetTargetNum = 3;
 let defaultNextBtnText = "Next Exercise";
 let baseExInRound = 1;
 
-
 class Exercise extends Component {
     constructor(props){
         super(props);
