@@ -58,7 +58,7 @@ class Exercise extends Component {
 
         this.soundChing.loadAsync(require('../assets/audio/Ching.mp3'), status, false);
         this.soundChaChing.loadAsync(require('../assets/audio/ChaChing.mp3'), status, false);
-        // this.soundCountMoney.loadAsync(require('../assets/audio/CountMoney.mp3'), status, false);
+        this.soundCountMoney.loadAsync(require('../assets/audio/CountMoney.mp3'), status, false);
     }
 
     playChingSound() {
