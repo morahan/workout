@@ -115,8 +115,8 @@ class Exercise extends Component {
             // Increment Superset
             if (roundInSuperSet-1 === roundsPerSuperSet) {
                 console.log("~~~~~ increment SS here =============")
-                this.playCountMoney();
-                this.playChaChingSound();
+                setTimeout(() => { this.playChaChingSound(); }, 3700);
+                this.playCountMoneySound();
                 currentSuperSet++;
                 completedRounds++;
                 completedSuperSets++;
