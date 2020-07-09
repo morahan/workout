@@ -1,7 +1,5 @@
 import workout from './workoutList.js';
 
-
-
 let customWorkouts = {
     calisthenics: {
         upperBody: [],
