@@ -69,11 +69,12 @@ class DisplayTags extends Component {
         tags.splice(0, tags.length)
         for (let i = 1; i < num+1; i++){
             tags.push(Workout.core.exercises[i].name)
-        }
+        } 
     }
     
     nextEventHandler = () => {
         // step++;
+        console.log("displayTags.js- nextEventHandler - SelectedTags ===", selected)
         this.setState({step: this.state.step+=1})
         console.log("step === ", this.state.step)
         this.iterateTags()
