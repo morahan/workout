@@ -12,7 +12,7 @@ let workout = {
   calisthenics: {
     upperBody:{
       1: {
-        id: 1,
+        // id: 1,
         name: "Push Ups",
         weight: "body weight",
         reps: 25,
@@ -25,7 +25,7 @@ let workout = {
         // switchAfter: 30,
       },
       2: {
-        id: 2,
+        // id: 2,
         name: "Cobra Wings",
         weight: "body weight",
         reps: 25,
@@ -38,7 +38,7 @@ let workout = {
         // switchAfter: 30,
       },
       3: {
-        id: 3,
+        // id: 3,
         name: "Superman Waves",
         weight: "body weight",
         reps: 25,
@@ -51,7 +51,7 @@ let workout = {
         // switchAfter: 30,
       },
       4: {
-        id: 4,
+        // id: 4,
         name: "Pull Ups",
         weight: "body weight",
         reps: 25,
@@ -60,7 +60,7 @@ let workout = {
         available: true,
       },
       5: {
-        id: 5,
+        // id: 5,
         name: "Chin Ups",
         weight: "body weight",
         reps: 25,
@@ -73,7 +73,7 @@ let workout = {
         // switchAfter: 30,
       },
       6: {
-        id: 6,
+        // id: 6,
         name: "Dips",
         weight: "body weight",
         reps: 25,
@@ -86,7 +86,7 @@ let workout = {
         // switchAfter: 30,
       },
       7: {
-        id: 7,
+        // id: 7,
         name: "Ineverted Row / Front Lever",
         weight: "body weight",
         reps: 25,
@@ -99,7 +99,7 @@ let workout = {
         // switchAfter: 30,
       },
       8: {
-        id: 8,
+        // id: 8,
         name: "Head Stand",
         weight: "body weight",
         reps: 25,
@@ -112,7 +112,7 @@ let workout = {
         // switchAfter: 30,
       },
       9: {
-        id: 9,
+        // id: 9,
         name: "Arm Circles",
         weight: "body weight",
         reps: 25,
@@ -125,7 +125,7 @@ let workout = {
         // switchAfter: 30,
       },
       10: {
-        id: 10,
+        // id: 10,
         name: "",
         weight: "body weight",
         reps: 25,
@@ -630,7 +630,7 @@ let workout = {
         // switchAfter: 30,
       },
 
-      
+
       15: {
         // id: ?,
         name: "NO MORE EXERCISES",
