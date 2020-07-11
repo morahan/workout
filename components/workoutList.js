@@ -919,7 +919,6 @@ let workout = {
 
 
 
-
       17: {
         // id: ?,
         name: "NO MORE EXERCISES",
@@ -940,6 +939,8 @@ let workout = {
   },
   core: {
     days: ["Saturday", "Sunday"],
+    group1: [1,2,3,4],
+    group1: [5,6,7,8],
     exercises: {
       1: { 
         // id: 7,
@@ -952,6 +953,9 @@ let workout = {
         sets: 3,
         infoUrl: "",
         available: true,
+        alternate: false,
+        // switchSides: true,
+        // switchAfter: 30,
       },
       2: { 
         // id: 7,
@@ -964,6 +968,9 @@ let workout = {
         sets: 3,
         infoUrl: "",
         available: true,
+        alternate: false,
+        // switchSides: true,
+        // switchAfter: 30,
       },
       3: {
         // id: 8,
@@ -976,6 +983,9 @@ let workout = {
         sets: 3,
         infoUrl: "",
         available: true,
+        alternate: false,
+        // switchSides: true,
+        // switchAfter: 30,
       },
       4: {
         // id: 9,
@@ -988,6 +998,9 @@ let workout = {
         sets: 3,
         infoUrl: "",
         available: true,
+        alternate: false,
+        // switchSides: true,
+        // switchAfter: 30,
       },
       5: {
         // id: 9,
@@ -1000,6 +1013,9 @@ let workout = {
         sets: 3,
         infoUrl: "",
         available: true,
+        alternate: false,
+        // switchSides: true,
+        // switchAfter: 30,
       },
       6: {
         // id: 9,
@@ -1012,6 +1028,9 @@ let workout = {
         sets: 3,
         infoUrl: "",
         available: true,
+        alternate: false,
+        // switchSides: true,
+        // switchAfter: 30,
       },
       7: {
         // id: 9,
@@ -1022,6 +1041,9 @@ let workout = {
         sets: 3,
         infoUrl: "",
         available: true,
+        alternate: false,
+        // switchSides: true,
+        // switchAfter: 30,
       },
       8: {
         // id: 9,
@@ -1034,6 +1056,9 @@ let workout = {
         sets: 3,
         infoUrl: "",
         available: true,
+        alternate: false,
+        // switchSides: true,
+        // switchAfter: 30,
       },
       9: {
         // id: ?,
@@ -1045,6 +1070,9 @@ let workout = {
         sets: 3,
         infoUrl: "",
         available: true,
+        alternate: false,
+        // switchSides: true,
+        // switchAfter: 30,
       },
     }
   },
