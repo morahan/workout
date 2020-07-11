@@ -289,12 +289,23 @@ let workout = {
     },
   },
   upperBody: {
-    description: "Back and Biceps",
+    group1: {
+      description: "Back and Biceps",
+      ex: [1,9,10,11,12,13,14]
+    },
+    group2: {
+      description: "Chest and Triceps",
+      ex: [2,3,4,5,6,7,8]
+
+    },
     days: ["Monday", "Wednesday", "Friday"],
     exercises: {
       1: {
         // id: 1,
         muscleGroups: [],
+        alternate: false,
+        // switchSides: true,
+        // switchAfter: 30,
         detailedMuscleDescription: "",
         name: "Curls",
         weight: 25,
@@ -307,6 +318,7 @@ let workout = {
       2: { 
         // id: 2,
         muscleGroups: [],
+        alternate: false,
         detailedMuscleDescription: "",
         name:  "Shoulder Press",
         weight: 40,
@@ -318,6 +330,7 @@ let workout = {
       3: { 
         // id: 3,
         muscleGroups: [],
+        alternate: false,
         detailedMuscleDescription: "",
         name: "Bench Press",
         weight: 120,
@@ -328,6 +341,7 @@ let workout = {
       4: {
         // id: ?,
         muscleGroups: [],
+        alternate: false,
         detailedMuscleDescription: "",
         name: "Chest Flys",
         weight: 40,
@@ -338,6 +352,7 @@ let workout = {
       5: {
         // id: ?,
         muscleGroups: [],
+        alternate: false,
         detailedMuscleDescription: "",
         name: "Dips",
         weight: "body",
@@ -348,6 +363,7 @@ let workout = {
       6: {
         // id: ?,
         muscleGroups: [],
+        alternate: false,
         detailedMuscleDescription: "",
         name: "Pushups",
         weight: "body",
@@ -358,6 +374,7 @@ let workout = {
       7: {
         // id: ?,
         muscleGroups: [],
+        alternate: false,
         detailedMuscleDescription: "",
         name: "Skull Crushers",
         weight: "body",
@@ -368,6 +385,7 @@ let workout = {
       8: {
         // id: ?,
         muscleGroups: [],
+        alternate: false,
         detailedMuscleDescription: "",
         name: "Arm Extensions",
         weight: 25,
@@ -378,6 +396,7 @@ let workout = {
       9: {
         // id: ?,
         muscleGroups: [],
+        alternate: false,
         detailedMuscleDescription: "",
         name: "Pull-ups",
         weight: 'body',
@@ -388,6 +407,7 @@ let workout = {
       10: {
         // id: ?,
         muscleGroups: [],
+        alternate: false,
         detailedMuscleDescription: "",
         name: "Rows",
         weight: 25,
@@ -398,22 +418,28 @@ let workout = {
       11: {
         // id: ?,
         muscleGroups: [],
+        alternate: true,
+        switchSides: true,
+        switchAfterReps: 30,
         detailedMuscleDescription: "",
         name: "Renegade Rows",
         weight: 25,
         reps: 13,
         sets: 3,
         infoUrl: "",
+        asset: "../assets/gifs/weights/RenegadeRow.gif"
       },
       12: {
         // id: ?,
         muscleGroups: [],
+        alternate: false,
         detailedMuscleDescription: "",
         name: "Dumbbell Single Arm Row",
         weight: 25,
         reps: 13,
         sets: 3,
         infoUrl: "",
+        asset: "DumbbellSingleArmRow.gif",
       },
       13: {
         // id: ?,
@@ -427,6 +453,16 @@ let workout = {
       },
       14: {
         // id: ?,
+        muscleGroups: ["bicepts"],
+        detailedMuscleDescription: "",
+        name: "Cable Curls",
+        weight: 25,
+        reps: 13,
+        sets: 3,
+        infoUrl: "https://youtu.be/H75im9fAUMc?t=36",
+      },
+      15: {
+        // id: ?,
         muscleGroups: [],
         detailedMuscleDescription: "",
         name: "NO MORE EXERCISES",
@@ -438,6 +474,14 @@ let workout = {
     }
   },
   lowerBody: {
+    group1: {
+      description: "Quadriceps and Gluteal",
+      ex: [1,2,3,4,5,6,7,8]
+    },
+    group2: {
+      description: "Hamstrings and Calves",
+      ex: [9,10,11,12,13,]
+    },
     days: ["Tuesday", "Thursday"],
     exercises: {
       1: { 
@@ -510,16 +554,21 @@ let workout = {
         // id: 6,
         muscleGroups: [],
         detailedMuscleDescription: "",
+        alternate: true,
         name: "Skaters",
         weight: "body",
         incrementLbs: 15,
         reps: 17,
         sets: 3,
         infoUrl: "",
+        asset: "",
       },
       8: { 
         // id: 6,
         muscleGroups: [],
+        alternate: false,
+        switchSides: true,
+        switchAfterTime: 30,
         detailedMuscleDescription: "",
         name: "Pulsing Lunges",
         weight: "body",
@@ -527,8 +576,109 @@ let workout = {
         reps: 17,
         sets: 3,
         infoUrl: "",
+        asset: "",
       },
-      9: {
+      9: { 
+        // id: 6,
+        muscleGroups: [],
+        detailedMuscleDescription: "",
+        name: "Leg Curls",
+        weight: "body",
+        incrementLbs: 15,
+        reps: 17,
+        sets: 3,
+        infoUrl: "",
+        asset: "",
+      },
+      10: { 
+        // id: 6,
+        muscleGroups: [],
+        detailedMuscleDescription: "",
+        name: "Swiss Ball Hamstring Curl",
+        weight: "body",
+        incrementLbs: 15,
+        reps: 17,
+        sets: 3,
+        infoUrl: "",
+        asset: "",
+      },
+      11: { 
+        // id: 6,
+        muscleGroups: [],
+        detailedMuscleDescription: "",
+        name: "Single-leg Swiss Ball Hamstring Curl",
+        weight: "body",
+        incrementLbs: 15,
+        reps: 17,
+        sets: 3,
+        infoUrl: "",
+        asset: "",
+      },
+      12: { 
+        // id: 6,
+        muscleGroups: [],
+        detailedMuscleDescription: "",
+        name: "Calf Raises",
+        weight: "body",
+        incrementLbs: 15,
+        reps: 17,
+        sets: 3,
+        infoUrl: "",
+        asset: "../assets/gifs/calisthenics/CalfRaises.gif",
+      },
+      13: { 
+        // id: 6,
+        muscleGroups: [],
+        detailedMuscleDescription: "",
+        name: "Glute Bridge",
+        weight: "body",
+        incrementLbs: 15,
+        reps: 17,
+        sets: 3,
+        infoUrl: "",
+        asset: "../assets/gifs/calisthenics/GluteBridge.gif",
+      },
+      14: { 
+        // id: 6,
+        muscleGroups: [],
+        detailedMuscleDescription: "",
+        name: "Glute Bridge March",
+        weight: "body",
+        incrementLbs: 15,
+        reps: 17,
+        sets: 3,
+        infoUrl: "",
+        asset: "../assets/gifs/calisthenics/GluteBridgeMarch.gif",
+      },
+      15: { 
+        // id: 6,
+        muscleGroups: [],
+        detailedMuscleDescription: "",
+        name: "Glute Bridge",
+        weight: "body",
+        incrementLbs: 15,
+        reps: 17,
+        sets: 3,
+        infoUrl: "",
+        asset: "../assets/gifs/calisthenics/GluteBridgeSingleLeg.gif",
+      },
+      16: { 
+        // id: 6,
+        muscleGroups: [],
+        detailedMuscleDescription: "",
+        name: "Romanian Dumbbell lift",
+        weight: "body",
+        incrementLbs: 15,
+        reps: 17,
+        sets: 3,
+        infoUrl: "",
+        asset: "../assets/gifs/calisthenics/CalfRaises.gif",
+      },
+
+
+
+
+      12: {
         // id: ?,
         muscleGroups: [],
         detailedMuscleDescription: "",
@@ -537,6 +687,7 @@ let workout = {
         reps: 13,
         sets: 3,
         infoUrl: "",
+        asset: "",
       },
     }
   },
