@@ -9,11 +9,13 @@
   },
   "dependencies": {
     "@react-native-community/masked-view": "0.1.6",
+    "@react-navigation/bottom-tabs": "^5.7.0",
     "@react-navigation/native": "^5.1.6",
     "@react-navigation/stack": "^5.2.13",
     "expo": "~37.0.3",
     "expo-av": "~8.1.0",
     "express": "^4.17.1",
+    "firebase": "7.9.0",
     "moment": "^2.26.0",
     "postgres": "^1.0.2",
     "react": "~16.9.0",
@@ -29,8 +31,7 @@
     "react-native-web": "~0.11.7",
     "react-navigation": "^4.3.9",
     "react-navigation-stack": "^2.4.0",
-    "xstate": "^4.9.1",
-    "firebase": "7.9.0"
+    "xstate": "^4.9.1"
   },
   "devDependencies": {
     "babel-preset-expo": "~8.1.0",
