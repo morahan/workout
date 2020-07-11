@@ -407,17 +407,17 @@ let workout = {
     groups: {
       1: {
         description: "Back and Biceps",
-        ex: [1, 9, 10, 11, 12, 13, 14]
+        ex: [1, 9, 10, 11, 12, 13, 14],
       },
       2: {
         description: "Chest and Triceps",
-        ex: [2, 3, 4, 5, 6, 7, 8]
+        ex: [2, 3, 4, 5, 6, 7, 8],
       },
     },
     days: ["Monday", "Wednesday", "Friday"],
     exercises: {
       1: {
-        // id: 1,
+        id: 1,
         name: "Curls",
         muscleGroups: [],
         detailedMuscleDescription: "",
@@ -433,7 +433,7 @@ let workout = {
         // switchAfter: 30,
       },
       2: { 
-        // id: 2,
+        id: 2,
         name:  "Shoulder Press",
         muscleGroups: [],
         alternate: false,
@@ -449,7 +449,7 @@ let workout = {
         // switchAfter: 30,
       },
       3: { 
-        // id: 3,
+        id: 3,
         name: "Bench Press",
         muscleGroups: [],
         alternate: false,
@@ -465,7 +465,7 @@ let workout = {
         // switchAfter: 30,
       },
       4: {
-        // id: ?,
+        id: 4,
         name: "Chest Flys",
         muscleGroups: [],
         detailedMuscleDescription: "",
@@ -480,7 +480,7 @@ let workout = {
         // switchAfter: 30,
       },
       5: {
-        // id: ?,
+        id: 5,
         name: "Dips",
         muscleGroups: [],
         detailedMuscleDescription: "",
@@ -495,7 +495,7 @@ let workout = {
         // switchAfter: 30,
       },
       6: {
-        // id: ?,
+        id: 6,
         name: "Pushups",
         muscleGroups: [],
         detailedMuscleDescription: "",
@@ -510,7 +510,7 @@ let workout = {
         // switchAfter: 30,
       },
       7: {
-        // id: ?,
+        id: 7,
         name: "Skull Crushers",
         muscleGroups: [],
         detailedMuscleDescription: "",
@@ -525,7 +525,7 @@ let workout = {
         // switchAfter: 30,
       },
       8: {
-        // id: ?,
+        id: 8,
         name: "Arm Extensions",
         muscleGroups: [],
         detailedMuscleDescription: "",
@@ -540,7 +540,7 @@ let workout = {
         // switchAfter: 30,
       },
       9: {
-        // id: ?,
+        id: 9,
         name: "Pull-ups",
         muscleGroups: [],
         detailedMuscleDescription: "",
@@ -555,7 +555,7 @@ let workout = {
         // switchAfter: 30,
       },
       10: {
-        // id: ?,
+        id: 10,
         name: "Rows",
         muscleGroups: [],
         detailedMuscleDescription: "",
@@ -570,7 +570,7 @@ let workout = {
         // switchAfter: 30,
       },      
       11: {
-        // id: ?,
+        id: 11,
         name: "Renegade Rows",
         muscleGroups: [],
         detailedMuscleDescription: "",
@@ -585,7 +585,7 @@ let workout = {
         // switchAfter: 30,
       },
       12: {
-        // id: ?,
+        id: 12,
         name: "Dumbbell Single Arm Row",
         muscleGroups: [],
         detailedMuscleDescription: "",
@@ -600,7 +600,7 @@ let workout = {
         // switchAfter: 30,
       },
       13: {
-        // id: ?,
+        id: 13,
         name: "Chest-Supported Dumbbell Row",
         muscleGroups: [],
         detailedMuscleDescription: "",
@@ -615,7 +615,7 @@ let workout = {
         // switchAfter: 30,
       },
       14: {
-        // id: ?,
+        id: 14,
         name: "Cable Curls",
         muscleGroups: ["bicepts"],
         detailedMuscleDescription: "",
@@ -629,6 +629,8 @@ let workout = {
         // switchSides: true,
         // switchAfter: 30,
       },
+
+      
       15: {
         // id: ?,
         name: "NO MORE EXERCISES",
@@ -654,7 +656,7 @@ let workout = {
       },
       2: {
         description: "Hamstrings and Calves",
-        ex: [9, 10, 11, 12, 13, 14, 15]
+        ex: [9, 10, 11, 12, 13, 14, 15],
       },
     },
     days: ["Tuesday", "Thursday"],
