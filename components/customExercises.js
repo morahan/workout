@@ -5,7 +5,6 @@ let customExercises = {
 //     seperateTags: function(){
 //         let result = [];
 //         this.selected.split(',');
-
 //     }
 };
 console.log("customExercises.js selected === ", customExercises.selected)
