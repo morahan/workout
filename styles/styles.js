@@ -139,7 +139,19 @@ const styles = StyleSheet.create({
     alignSelf: "center",
     backgroundColor: "black",
     borderRadius: 17,
+    // position: 'absolute',
+    // bottom: -10,
     justifyContent: 'flex-end',
+  },
+
+  TagsView: {
+    width: "95%",
+    height: "35%",
+    marginBottom: 37,
+    // alignItems: "center",
+    alignSelf: "center",
+    backgroundColor: "white",
+    borderRadius: 17,
   },
 
   BtnStop: {
