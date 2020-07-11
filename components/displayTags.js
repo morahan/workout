@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, Text } from 'react-native';
+import { View, Text, ScrollView } from 'react-native';
 import TagsView from './tagsView.js';
 // import { getActiveChildNavigationOptions } from 'react-navigation';
 import Workout from './workoutList.js';
@@ -78,7 +78,6 @@ class DisplayTags extends Component {
         this.setState({step: this.state.step+=1})
         console.log("step === ", this.state.step)
         this.iterateTags()
-
         // add selected tags to customExercises array. 
         // customEx.customExercises.selected.push(selected)
     }
@@ -88,7 +87,7 @@ class DisplayTags extends Component {
         return (
             <>
                 <View style={Styles.ContainerSafeView}>
-                    <View style={Styles.Spacer10}>
+                    <View style={Styles.Spacer3}>
                         <Text style={Styles.Text2}> 
                         Choose {this.state.target} Exercises 
                         </Text>
@@ -96,21 +95,26 @@ class DisplayTags extends Component {
                     </View>
                 </View>
 
-                <TagsView
-                    all={tags}
-                    selected={selected}
-                    isExclusive={false}
-                    step={this.state.step}
-                    // key={key}
-                />
-
+                <ScrollView style={Styles.TagsView}>
+                    <View>
+                        <TagsView
+                            all={tags}
+                            selected={selected}
+                            isExclusive={false}
+                            step={this.state.step}
+                            // key={key}
+                        />
+                    </View>
+                </ScrollView>
+                
                 <View>
                     <TouchableOpacity style={Styles.BtnBtm} onPress={this.nextEventHandler}>
                         <Text style={Styles.WText}>
-                          Next
+                        Next
                         </Text>
                     </TouchableOpacity>
                 </View>
+
             </>
         );
     }
