@@ -4,7 +4,7 @@ import TagsView from './tagsView.js';
 // import { getActiveChildNavigationOptions } from 'react-navigation';
 import Workout from './workoutList.js';
 import Styles from '../styles/styles.js';
-import customEx from './customExercises.js';
+// import customEx from './customExercises.js';
 import { TouchableOpacity } from 'react-native-gesture-handler';
 
 const selected = [];
