@@ -404,14 +404,15 @@ let workout = {
     },
   },
   upperBody: {
-    group1: {
-      description: "Back and Biceps",
-      ex: [1,9,10,11,12,13,14]
-    },
-    group2: {
-      description: "Chest and Triceps",
-      ex: [2,3,4,5,6,7,8]
-
+    groups: {
+      1: {
+        description: "Back and Biceps",
+        ex: [1, 9, 10, 11, 12, 13, 14]
+      },
+      2: {
+        description: "Chest and Triceps",
+        ex: [2, 3, 4, 5, 6, 7, 8]
+      },
     },
     days: ["Monday", "Wednesday", "Friday"],
     exercises: {
@@ -646,13 +647,15 @@ let workout = {
     }
   },
   lowerBody: {
-    group1: {
-      description: "Quadriceps and Gluteal",
-      ex: [1,2,3,4,5,6,7,8]
-    },
-    group2: {
-      description: "Hamstrings and Calves",
-      ex: [9,10,11,12,13,14,15]
+    groups: {
+      1: {
+        description: "Quadriceps and Gluteal",
+        ex: [1, 2, 3, 4, 5, 6, 7, 8],
+      },
+      2: {
+        description: "Hamstrings and Calves",
+        ex: [9, 10, 11, 12, 13, 14, 15]
+      },
     },
     days: ["Tuesday", "Thursday"],
     exercises: {
@@ -939,8 +942,16 @@ let workout = {
   },
   core: {
     days: ["Saturday", "Sunday"],
-    group1: [1,2,3,4],
-    group1: [5,6,7,8],
+    groups: {
+      1: {
+        description: "Core pt. 1",
+        ex: [1, 2, 3, 4],
+      },
+      2: {
+        description: "Core pt. 2",
+        ex: [5, 6, 7, 8],
+      },
+    },
     exercises: {
       1: { 
         // id: 7,
