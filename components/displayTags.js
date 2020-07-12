@@ -33,7 +33,7 @@ class DisplayTags extends Component {
         }
         if (this.state.step === 3){
             this.getCoreTags();
-            console.log("~ DisplayTags.js ~ == navigate to next page, completed customization ==", this.props)
+            console.log("~ DisplayTags.js ~ == navigate to next page, completed customization ==", this.props.navigation)
         }
         if (this.state.step > 3){
             customEx.selected.push(selected);
