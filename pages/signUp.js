@@ -50,10 +50,10 @@ export default class SignUp extends Component {
                 <View style={styles.Screen}>
                     <View>
                         <Image source={require('../assets/fl-icon.png')} style={{ height: 117, width: 117, alignSelf: "center" }} />
-                    </View>
-                    <View>
                         <Text style={styles.cta2}>{this.state.message}</Text>
                         <Text style={styles.cta2}>{this.state.name}</Text>
+                    </View>
+                    <View>
                     </View>
                     
                     <View style={styles.LogIn}>
@@ -81,12 +81,12 @@ export default class SignUp extends Component {
                     </View>
 
                     <View style={styles.LogIn}>
+                        <TouchableOpacity onPress={this.pressCustomizeHandler} >
+                            <Text style={styles.Text} day={this.state.target}>Customize</Text>
+                        </TouchableOpacity>
                         <TouchableOpacity style={styles.Btn} onPress={this.pressStartHandler} >
                             <Text style={styles.WText} day={this.state.target}>Start Now</Text>
                             {/* <Text style={styles.WText}>Start Now</Text> */}
-                        </TouchableOpacity>
-                        <TouchableOpacity onPress={this.pressCustomizeHandler} >
-                            <Text style={styles.Text} day={this.state.target}>Customize</Text>
                         </TouchableOpacity>
                     </View>
                     <View>
