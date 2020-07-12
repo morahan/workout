@@ -6,6 +6,7 @@ import { View, StyleSheet, TouchableOpacity, Text } from 'react-native';
 // import Styles from '../../styles/styles.js';
 import BackgroundButton from './backgroundButton.js';
 // import addOrRemove from './addOrRemove.js';
+// import customEx from './customExercises.js';
 
 export default class TagsView extends React.Component {
     constructor(props) {
