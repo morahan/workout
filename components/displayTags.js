@@ -4,7 +4,7 @@ import TagsView from './tagsView.js';
 // import { getActiveChildNavigationOptions } from 'react-navigation';
 import Workout from './workoutList.js';
 import Styles from '../styles/styles.js';
-// import customEx from './customExercises.js';
+import customEx from './customExercises.js';
 import { TouchableOpacity } from 'react-native-gesture-handler';
 
 const selected = [];
@@ -36,7 +36,10 @@ class DisplayTags extends Component {
             console.log("~ DisplayTags.js ~ == navigate to next page, completed customization ==", this.props)
         }
         if (this.state.step > 3){
-            props.navigation.navigate('Workout')
+            customEx.selected.push(selected);
+            console.log("~displayTags.js - iterate tags - step is > 3.  step = ", this.state.step);
+            console.log("displayTags.js - Custom Selected Exercises = ", customEx.selected)
+            this.props.navigation.navigate('Workout')
         }
     }
       
@@ -78,8 +81,6 @@ class DisplayTags extends Component {
         this.setState({step: this.state.step+=1})
         console.log("step === ", this.state.step)
         this.iterateTags()
-        // add selected tags to customExercises array. 
-        // customEx.customExercises.selected.push(selected)
     }
 
     render() {
@@ -110,7 +111,7 @@ class DisplayTags extends Component {
                 <View>
                     <TouchableOpacity style={Styles.BtnBtm} onPress={this.nextEventHandler}>
                         <Text style={Styles.WText}>
-                        Next
+                             Next
                         </Text>
                     </TouchableOpacity>
                 </View>
