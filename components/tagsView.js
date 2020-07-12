@@ -18,7 +18,7 @@ export default class TagsView extends React.Component {
 
     render() {
         return (
-            <View style={styles.container}>
+            <View style={styles.container} key={index}>
                 {this.makeButtons()}
             </View>
         )
