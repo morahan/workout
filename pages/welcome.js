@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
-import { Text, View, TextInput, ScrollView, Picker, Slider, Switch, TouchableOpacity, Image } from 'react-native';
+import { Text, View, TouchableOpacity, Image } from 'react-native';
 import styles from '../styles/styles.js';
 
 export default function Welcome({ navigation }) {
     const [welcome, setWelcome] = useState('Welcome');
     
     const clickHandler = () => {
-        setWelcome('  Loading...');
+        // setWelcome('  Loading...');
         // console.log("props ==== ", props)
         navigation.navigate('GetStarted');
     }
