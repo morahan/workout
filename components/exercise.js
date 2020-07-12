@@ -5,10 +5,10 @@ import Timer from './timer.js';
 import workout from './workoutList.js';
 import { Audio } from 'expo-av';
 
-const moment = require('moment');
+// const moment = require('moment');
 
 // let currentExerciseNum = 1;
-let currentDay = moment().format('dddd'); 
+// let currentDay = moment().format('dddd'); 
 let currentEx = 1;
 let currentRound = 1;
 let currentSuperSet = 1;
@@ -146,7 +146,7 @@ class Exercise extends Component {
             alert("Nice Work! You Completed Your Goal Today!");
         }
         console.log("exercise.js ~", "| compEx =", completedExercises, " | curEx=", currentEx, " | compRounds =", completedRounds, " | curRound=", currentRound, " | compSS =", completedSuperSets, " | curSS =", currentSuperSet, " | SetInRound =", setInRound, " | roundInSS =", roundInSuperSet)
-        console.log("exercise.js ~ Current day ===== ", currentDay)
+        // console.log("exercise.js ~ Current day ===== ", currentDay)
     }
 
     render() {
