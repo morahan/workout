@@ -179,7 +179,7 @@ class Exercise extends Component {
                     onChangeText={(time) => this.enterDurationEventHandler(time)}
                 />   */}
 
-                    <Timer restTime='30' completedE={completedExercises} completedR={completedRounds} completedS={completedSuperSets}  ></Timer>
+                    <Timer restTime='30' completedE={completedExercises} completedR={completedRounds} completedS={completedSuperSets}> </Timer>
                 </View>
 
             // </View>
