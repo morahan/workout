@@ -1,5 +1,5 @@
 import React, { Component, useState } from 'react';
-import { Text, View, TextInput, StyleSheet, TouchableOpacity } from 'react-native';
+import { Text, View, Image, TextInput, StyleSheet, TouchableOpacity } from 'react-native';
 import styles from '../styles/styles.js';
 import Timer from './timer.js';
 import workout from './workoutList.js';
@@ -161,6 +161,11 @@ class Exercise extends Component {
                         <View style={styles.EBox}>
                             <Text style={styles.Text2}>{this.state.exercise}</Text>
                             <Text style={styles.Text2}>{this.state.reps + " Reps"}</Text>
+                            {/* add i icon for info about each exercise */}
+                        <TouchableOpacity onPress={() => { console.log('exercise.js - render -> ') }}>
+                            <Image style={styles.icon} name='info' />
+                        </TouchableOpacity>
+                            {/* <Image></Image> */}
                         </View>
                         <View style={styles.Btn}>
                             <TouchableOpacity>
