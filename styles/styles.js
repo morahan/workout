@@ -65,14 +65,7 @@ const styles = StyleSheet.create({
     paddingTop: "5%",
   },
 
-  Welcome: {
-    color: "#ffff",
-    fontSize: 23,
-    paddingTop: "2%",
-    // paddingBottom: "5%",
-    alignSelf: "center",
-  },
-
+  
   LogIn: {
     // margin: "5%",
     display: "flex",
@@ -82,6 +75,14 @@ const styles = StyleSheet.create({
     borderRadius: 17,
     height: '25%',
     width: "50%",
+  },
+  
+  Welcome: {
+    color: "#ffff",
+    fontSize: 23,
+    paddingTop: "2%",
+    // paddingBottom: "5%",
+    alignSelf: "center",
   },
 
   Box: {
@@ -191,6 +192,11 @@ const styles = StyleSheet.create({
    paddingRight: "3%",
    paddingLeft: "3%",
    borderRadius: 17,
+  },
+
+  Icon: {
+    height: 23,
+    width: 23,
   },
 
   Text: {
