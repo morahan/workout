@@ -163,7 +163,10 @@ class Exercise extends Component {
                             <Text style={styles.Text2}>{this.state.reps + " Reps"}</Text>
                             {/* add i icon for info about each exercise */}
                         <TouchableOpacity onPress={() => { console.log('exercise.js - render -> ') }}>
-                            <Image style={styles.icon} name='info' />
+                            <Image
+                                style={styles.Icon}
+                                source={require("../assets/icons/info.png")}
+                            />
                         </TouchableOpacity>
                             {/* <Image></Image> */}
                         </View>
