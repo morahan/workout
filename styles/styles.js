@@ -197,6 +197,10 @@ const styles = StyleSheet.create({
   Icon: {
     height: 23,
     width: 23,
+    // alignItems: "center",
+    left: '47%',
+    top: 10,
+
   },
 
   Text: {
