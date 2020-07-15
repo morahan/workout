@@ -810,7 +810,6 @@ let workout = {
         muscleGroups: [],
         name: "Skaters",
         // detailedMuscleDescription: "",
-        alternate: true,
         weight: "body",
         // incrementWeight: 15,
         reps: 17,
@@ -825,7 +824,6 @@ let workout = {
       8: { 
         // id: 6,
         muscleGroups: [],
-        alternate: false,
         switchSides: true,
         name: "Pulsing Lunges",
         switchAfterTime: 30,
