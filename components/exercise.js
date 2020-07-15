@@ -1,5 +1,5 @@
 import React, { Component, useState } from 'react';
-import { Text, View, Image, TextInput, StyleSheet, TouchableOpacity } from 'react-native';
+import { Text, View, Image, modal, TextInput, StyleSheet, TouchableOpacity } from 'react-native';
 import styles from '../styles/styles.js';
 import Timer from './timer.js';
 import workout from './workoutList.js';
@@ -149,6 +149,10 @@ class Exercise extends Component {
         // console.log("exercise.js ~ Current day ===== ", currentDay)
     }
 
+    infoEventHandler = () => {
+        console.log('exercise.js - render -> ')
+    }
+
     render() {
         return (
             // <View style={styles.Screen}>
@@ -162,7 +166,7 @@ class Exercise extends Component {
                             <Text style={styles.Text2}>{this.state.exercise}</Text>
                             <Text style={styles.Text2}>{this.state.reps + " Reps"}</Text>
                             {/* add i icon for info about each exercise */}
-                        <TouchableOpacity onPress={() => { console.log('exercise.js - render -> ') }}>
+                        <TouchableOpacity onPress={this.infoEventHandler}>
                             <Image
                                 style={styles.Icon}
                                 source={require("../assets/icons/info.png")}
