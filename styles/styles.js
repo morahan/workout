@@ -199,8 +199,7 @@ const styles = StyleSheet.create({
     width: 23,
     // alignItems: "center",
     left: '47%',
-    top: 10,
-
+    top: '5%',
   },
 
   Text: {
