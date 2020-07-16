@@ -1,12 +1,11 @@
 import React, { Component, useState } from 'react';
-import { Text, View, Image, modal, TextInput, StyleSheet, TouchableOpacity } from 'react-native';
+import { Text, View, Image, Modal, TextInput, StyleSheet, TouchableOpacity } from 'react-native';
 import styles from '../styles/styles.js';
 import Timer from './timer.js';
 import workout from './workoutList.js';
 import { Audio } from 'expo-av';
 
-// const moment = require('moment');
-
+// const moment = require('moment');    
 // let currentExerciseNum = 1;
 // let currentDay = moment().format('dddd'); 
 let currentEx = 1;
@@ -31,6 +30,7 @@ class Exercise extends Component {
             exercise: workout[props.target].exercises[currentEx].name,
             reps: workout[props.target].exercises[currentEx].reps,
             buttonText: "Next Exercise",
+            modalVisable: false,
         }
         console.log("exercise.js ~ props === ", props)
     }
@@ -150,11 +150,51 @@ class Exercise extends Component {
     }
 
     infoEventHandler = () => {
+        this.setState({ modalVisible: visible });
         console.log('exercise.js - render -> ')
     }
 
     render() {
+        const { modalVisible } = this.state; 
         return (
+        // Modal from react website
+            // ======
+            // <View style={styles.centeredView}>
+            //     <Modal
+            //         animationType="slide"
+            //         transparent={true}
+            //         visible={modalVisible}
+            //         onRequestClose={() => {
+            //             Alert.alert("Modal has been closed.");
+            //         }}
+            //     >
+            //         <View style={styles.centeredView}>
+            //             <View style={styles.modalView}>
+            //                 <Text style={styles.modalText}>Hello World!</Text>
+
+            //                 <TouchableHighlight
+            //                     style={{ ...styles.openButton, backgroundColor: "#2196F3" }}
+            //                     onPress={() => {
+            //                         this.setModalVisible(!modalVisible);
+            //                     }}
+            //                 >
+            //                     <Text style={styles.textStyle}>Hide Modal</Text>
+            //                 </TouchableHighlight>
+            //             </View>
+            //         </View>
+            //     </Modal>
+
+            //     <TouchableHighlight
+            //         style={styles.openButton}
+            //         onPress={() => {
+            //             this.setModalVisible(true);
+            //         }}
+            //     >
+            //         <Text style={styles.textStyle}>Show Modal</Text>
+            //     </TouchableHighlight>
+            // </View>
+            // ======
+
             // <View style={styles.Screen}>
                 <View style={styles.WorkoutScreen}>
                     <Text style={styles.HeaderText}>
