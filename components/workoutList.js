@@ -1135,14 +1135,14 @@ let workout = {
       },
     }
   },
-  workoutList: function() {
-    let upperBodyList = [this.upperBody.exercises[1], this.upperBody.exercises[2], this.upperBody.exercises[3], this.upperBody.exercises[4], this.upperBody.exercises[5], this.upperBody.exercises[6], this.upperBody.exercises[7], this.upperBody.exercises[8], this.upperBody.exercises[9], this.upperBody.exercises[10], this.upperBody.exercises[11], this.upperBody.exercises[12], this.upperBody.exercises[13]];
-    let lowerBodyList = [this.upperBody.exercises[1], this.upperBody.exercises[2], this.upperBody.exercises[3], this.upperBody.exercises[4], this.upperBody.exercises[5], this.upperBody.exercises[6], this.upperBody.exercises[7], this.upperBody.exercises[8], this.upperBody.exercises[9], this.upperBody.exercises[10], this.upperBody.exercises[11], this.upperBody.exercises[12], this.upperBody.exercises[14]];
-    let coreList = [this.core.exercises[1], this.core.exercises[2], this.core.exercises[3], this.core.exercises[4], this.core.exercises[5], this.core.exercises[6], this.core.exercises[7], this.core.exercises[8], this.core.exercises[9]];
-    let favorites = [];
-    // console.log("Inside and working! = ", this.upperBody.exercises[1])
-    // test: this.workout.upperBody.exercises[1].name
-  },
+  // workoutList: function() {
+  //   let upperBodyList = [this.upperBody.exercises[1], this.upperBody.exercises[2], this.upperBody.exercises[3], this.upperBody.exercises[4], this.upperBody.exercises[5], this.upperBody.exercises[6], this.upperBody.exercises[7], this.upperBody.exercises[8], this.upperBody.exercises[9], this.upperBody.exercises[10], this.upperBody.exercises[11], this.upperBody.exercises[12], this.upperBody.exercises[13]];
+  //   let lowerBodyList = [this.upperBody.exercises[1], this.upperBody.exercises[2], this.upperBody.exercises[3], this.upperBody.exercises[4], this.upperBody.exercises[5], this.upperBody.exercises[6], this.upperBody.exercises[7], this.upperBody.exercises[8], this.upperBody.exercises[9], this.upperBody.exercises[10], this.upperBody.exercises[11], this.upperBody.exercises[12], this.upperBody.exercises[14]];
+  //   let coreList = [this.core.exercises[1], this.core.exercises[2], this.core.exercises[3], this.core.exercises[4], this.core.exercises[5], this.core.exercises[6], this.core.exercises[7], this.core.exercises[8], this.core.exercises[9]];
+  //   let favorites = [];
+  //   // console.log("Inside and working! = ", this.upperBody.exercises[1])
+  //   // test: this.workout.upperBody.exercises[1].name
+  // },
 };
 
 // workout.workoutList();
