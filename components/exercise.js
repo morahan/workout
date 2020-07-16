@@ -199,7 +199,6 @@ class Exercise extends Component {
     }
 }
 
-
 export default Exercise;
 
 // const timerStyles = StyleSheet.create({
