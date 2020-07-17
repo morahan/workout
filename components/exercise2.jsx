@@ -29,6 +29,8 @@ function Exercise(props){
     const [reps, setReps] = useState(workout[props.target].exercises[currentEx].reps);
     const [buttonText, setButtonText] = useState("Next Exercise");
     const [modalVisible, setModalVisible] = useState(false);
+    console.log("exercise.js ~ props === ", props)
+
     // constructor(props) {
     //     super(props);
     //     this.state = {
@@ -37,14 +39,17 @@ function Exercise(props){
     //         buttonText: "Next Exercise",
     //         modalVisable: false,
     //     }
-    //     console.log("exercise.js ~ props === ", props)
     // }
-
     // new audio attempt baced on https://www.youtube.com/watch?v=HCvp2fZh--A
-    async componentDidMount(){
+    
+    componentDidMount() {
+        this.loadAudioSamples();
+    };
+
+    loadAudioSamples = async () => {
         Audio.setAudioModeAsync({
             allowsRecordingIOS: false,
-            interruptionModeIOS: Audio.INTERRUPTION_MODE_IOS_DUCK_OTHERS,
+            interruptionModeIOS: Audio.INTERRUPTION_MODE_IOS_MIX_WITH_OTHERS,
             playsInSilentModeIOS: true,
             interruptionModeAndroid: Audio.INTERRUPTION_MODE_ANDROID_DUCK_OTHERS,
             shouldDuckAndroid: true,
@@ -64,6 +69,31 @@ function Exercise(props){
         this.soundChaChing.loadAsync(require('../assets/audio/ChaChing.mp3'), status, false);
         this.soundCountMoney.loadAsync(require('../assets/audio/CountMoney.mp3'), status, false);
     }
+    
+    // ==== original audio setup below
+    // async componentDidMount(){
+    //     Audio.setAudioModeAsync({
+    //         allowsRecordingIOS: false,
+    //         interruptionModeIOS: Audio.INTERRUPTION_MODE_IOS_MIX_WITH_OTHERS,
+    //         playsInSilentModeIOS: true,
+    //         interruptionModeAndroid: Audio.INTERRUPTION_MODE_ANDROID_DUCK_OTHERS,
+    //         shouldDuckAndroid: true,
+    //         staysActicveInBackground: true,
+    //         playsThroughEarpieceAndroid: true,
+    //     })
+
+    //     this.soundChing = new Audio.Sound();
+    //     this.soundChaChing = new Audio.Sound();
+    //     this.soundCountMoney = new Audio.Sound();
+
+    //     const status = {
+    //         shouldPlay: false
+    //     }
+
+    //     this.soundChing.loadAsync(require('../assets/audio/Ching.mp3'), status, false);
+    //     this.soundChaChing.loadAsync(require('../assets/audio/ChaChing.mp3'), status, false);
+    //     this.soundCountMoney.loadAsync(require('../assets/audio/CountMoney.mp3'), status, false);
+    // }
 
     playChingSound = () => {
         this.soundChing.replayAsync();
