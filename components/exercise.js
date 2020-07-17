@@ -63,15 +63,17 @@ class Exercise extends Component {
     playChingSound() {
         this.soundChing.replayAsync();
         //  this.sound.setPosition.async = 0;
-    };
+    }
+
     playChaChingSound() {
         this.soundChaChing.replayAsync();
         //  this.sound.setPosition.async = 0;
-    };
+    }
+
     playCountMoneySound() {
         this.soundCountMoney.replayAsync();
         //  this.sound.setPosition.async = 0;
-    };
+    }
 
     // track progress of workout
     nextExerciseEventHandler = () => {
