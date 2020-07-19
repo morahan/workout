@@ -26,6 +26,7 @@ import Navigator from './routes/homeStack.js';
 
 // components to Test
 import Timer from './components/timer.js'
+import Exercise2 from './components/exercise2.jsx';
 
 function App(){
   return (
@@ -42,7 +43,8 @@ function App(){
     // </SafeAreaView>
     
         // <Welcome></Welcome> 
-        <Navigator/>
+        // <Navigator/>
+        <Exercise2></Exercise2>
         // <SignUp></SignUp>
         // <SignIn></SignIn>
         // <Workout></Workout> 
