@@ -1,5 +1,5 @@
 import React, { Component, useState } from 'react';
-import { Text, View, Image, Modal, TextInput, StyleSheet, TouchableOpacity } from 'react-native';
+import { Text, View, Image, Modal, TextInput, StyleSheet, TouchableOpacity, Alert } from 'react-native';
 import styles from '../styles/styles.js';
 import Timer from './timer.js';
 import workout from './workoutList.js';
@@ -152,12 +152,33 @@ class Exercise extends Component {
     }
 
     infoEventHandler = () => {
-        this.setState({ modalVisible: visible });
-        console.log('exercise.js - render -> ')
+        const { modalVisible } = this.state; 
+        this.setState({ modalVisible: "visible" });
+        console.log('exercise.js - render -> ');
+        <Modal 
+            animationType="slide"
+            transparent={true}
+            visible={modalVisible}
+            onRequestClose={() => {
+                Alert.alert("If you dont know, now you know... Keep Working out")
+            }}
+        >
+            <View>
+                <View>
+                    <Text> Inside Modal</Text>
+                </View>
+                <TouchableOpacity onPress={() => {
+                    this.setModalVisible(!modalVisible);
+                }}>
+                    <Text>Close Modal</Text>
+                </TouchableOpacity>
+            </View>
+
+        </Modal>
     }
 
     render() {
-        const { modalVisible } = this.state; 
+        // const { modalVisible } = this.state; 
         return (
         // Modal from react website
             // ======

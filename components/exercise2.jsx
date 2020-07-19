@@ -1,5 +1,5 @@
-import React, { Component, useState } from 'react';
-import { Text, View, Image, Modal, TextInput, StyleSheet, TouchableOpacity } from 'react-native';
+import React, { useState } from 'react';
+import { Text, View, Image, Modal, TouchableOpacity, Alert } from 'react-native';
 import styles from '../styles/styles.js';
 import Timer from './timer.js';
 import workout from './workoutList.js';
@@ -42,9 +42,9 @@ function Exercise(props){
     // }
     // new audio attempt baced on https://www.youtube.com/watch?v=HCvp2fZh--A
     
-    componentDidMount() {
-        this.loadAudioSamples();
-    };
+    // componentDidMount() {
+    //     this.loadAudioSamples()
+    // }
 
     loadAudioSamples = async () => {
         Audio.setAudioModeAsync({
@@ -95,27 +95,27 @@ function Exercise(props){
     //     this.soundCountMoney.loadAsync(require('../assets/audio/CountMoney.mp3'), status, false);
     // }
 
-    playChingSound = () => {
+    const playChingSound = () => {
         this.soundChing.replayAsync();
         //  this.sound.setPosition.async = 0;
     }
 
-    playChaChingSound = () => {
+    const playChaChingSound = () => {
         this.soundChaChing.replayAsync();
         //  this.sound.setPosition.async = 0;
     }
 
-    playCountMoneySound = () => {
+    const playCountMoneySound = () => {
         this.soundCountMoney.replayAsync();
         //  this.sound.setPosition.async = 0;
     }
 
     // track progress of workout
-    nextExerciseEventHandler = () => {
+    const nextExerciseEventHandler = () => {
 
         // ========  play audio every button press --> 
         // new try from youtube video 
-        // this.playChingSound()
+        // playChingSound()
 
         // iterate next exercise
         completedExercises++;
@@ -151,8 +151,8 @@ function Exercise(props){
             // Increment Superset
             if (roundInSuperSet - 1 === roundsPerSuperSet) {
                 console.log("~~~~~ increment SS here =============")
-                setTimeout(() => { this.playChaChingSound(); }, 3700);
-                this.playCountMoneySound();
+                setTimeout(() => { playChaChingSound(); }, 3700);
+                playCountMoneySound();
                 currentSuperSet++;
                 completedRounds++;
                 completedSuperSets++;
@@ -165,7 +165,7 @@ function Exercise(props){
                 this.playChaChingSound();
             }
         } else {
-            this.playChingSound();
+            playChingSound();
         }
 
         // Setting Exercise and Reps
@@ -186,97 +186,81 @@ function Exercise(props){
         // console.log("exercise.js ~ Current day ===== ", currentDay)
     }
 
-    infoEventHandler = () => {
-        this.setState({ modalVisible: visible });
+    const infoEventHandler = () => {
+        // this.setState({ modalVisible: visible });
         console.log('exercise.js - render -> ')
+
+        // const { modalVisible } = this.state; 
+        setModalVisible(true);
+        // this.setState({ modalVisible: "visible" });
+        <View>
+            <Modal 
+                animationType="slide"
+                transparent={true}
+                visible={modalVisible}
+                onRequestClose={() => {
+                    Alert.alert("If you dont know, now you know... Keep Working out")
+                }}
+            >
+                <View>
+                    <View>
+                        <Text> Inside Modal</Text>
+                    </View>
+                    <TouchableOpacity onPress={() => {
+                        setModalVisible(!modalVisible);
+                        }}
+                    >
+                        <Text>Close Modal</Text>
+                    </TouchableOpacity>
+                </View>
+            </Modal>
+        </View>
     }
 
-    // render() {
-        // const { modalVisible } = this.state;
-        return (
-            // Modal from react website
-            // ======
-            // <View style={styles.centeredView}>
-            //     <Modal
-            //         animationType="slide"
-            //         transparent={true}
-            //         visible={modalVisible}
-            //         onRequestClose={() => {
-            //             Alert.alert("Modal has been closed.");
-            //         }}
-            //     >
-            //         <View style={styles.centeredView}>
-            //             <View style={styles.modalView}>
-            //                 <Text style={styles.modalText}>Hello World!</Text>
-
-            //                 <TouchableHighlight
-            //                     style={{ ...styles.openButton, backgroundColor: "#2196F3" }}
-            //                     onPress={() => {
-            //                         this.setModalVisible(!modalVisible);
-            //                     }}
-            //                 >
-            //                     <Text style={styles.textStyle}>Hide Modal</Text>
-            //                 </TouchableHighlight>
-            //             </View>
-            //         </View>
-            //     </Modal>
-
-            //     <TouchableHighlight
-            //         style={styles.openButton}
-            //         onPress={() => {
-            //             this.setModalVisible(true);
-            //         }}
-            //     >
-            //         <Text style={styles.textStyle}>Show Modal</Text>
-            //     </TouchableHighlight>
-            // </View>
-            // ======
-
-            // <View style={styles.Screen}>
-            <View style={styles.WorkoutScreen}>
-                <Text style={styles.HeaderText}>
-                    {"Super Set #" + currentSuperSet}
-                </Text>
-                <Text style={styles.HeaderText2}>{"Round " + currentRound} </Text>
-                <View style={styles.Box}>
-                    <View style={styles.EBox}>
-                        <Text style={styles.Text2}>{this.state.exercise}</Text>
-                        <Text style={styles.Text2}>{this.state.reps + " Reps"}</Text>
-                        {/* add i icon for info about each exercise */}
-                        <TouchableOpacity onPress={this.infoEventHandler}>
-                            <Image
-                                style={styles.Icon}
-                                source={require("../assets/icons/info.png")}
-                            />
-                        </TouchableOpacity>
-                        {/* <Image></Image> */}
-                    </View>
-                    <View style={styles.Btn}>
-                        <TouchableOpacity>
-                            <Text style={styles.WText} onPress={this.nextExerciseEventHandler}>{this.state.buttonText}</Text>
-                            {/* <Text style={styles.WText} onPress={() => this.props.nextExerciseEventHandler(23)}>{this.state.buttonText}</Text> */}
-                        </TouchableOpacity>
-                    </View>
+    return (
+        <View style={styles.WorkoutScreen}>
+            <Text style={styles.HeaderText}>
+                {"Super Set #" + currentSuperSet}
+            </Text>
+            <Text style={styles.HeaderText2}>{"Round " + currentRound} </Text>
+            <View style={styles.Box}>
+                <View style={styles.EBox}>
+                    <Text style={styles.Text2}>{this.state.exercise}</Text>
+                    <Text style={styles.Text2}>{this.state.reps + " Reps"}</Text>
+                    {/* add i icon for info about each exercise */}
+                    <TouchableOpacity onPress={infoEventHandler}>
+                        <Image
+                            style={styles.Icon}
+                            source={require("../assets/icons/info.png")}
+                        />
+                    </TouchableOpacity>
+                    {/* <Image></Image> */}
                 </View>
-                {/* <Text style={styles.Text}>{this.props.day}</Text> */}
-                {/* <TextInput
-                    placeholder="Enter Duration"
-                    underlineColorAndroid='transparent'
-                    style={timerStyles.TextInputStyle}
-                    keyboardType='numeric'
-                    maxLength={10} 
-                    onChangeText={(time) => this.enterDurationEventHandler(time)}
-                />   */}
-
-                <Timer restTime='30' completedE={completedExercises} completedR={completedRounds} completedS={completedSuperSets}> </Timer>
+                <View style={styles.Btn}>
+                    <TouchableOpacity>
+                        <Text style={styles.WText} onPress={nextExerciseEventHandler}>{this.state.buttonText}</Text>
+                        {/* <Text style={styles.WText} onPress={() => this.props.nextExerciseEventHandler(23)}>{this.state.buttonText}</Text> */}
+                    </TouchableOpacity>
+                </View>
             </View>
+            {/* <Text style={styles.Text}>{this.props.day}</Text> */}
+            {/* <TextInput
+                placeholder="Enter Duration"
+                underlineColorAndroid='transparent'
+                style={timerStyles.TextInputStyle}
+                keyboardType='numeric'
+                maxLength={10} 
+                onChangeText={(time) => this.enterDurationEventHandler(time)}
+            />   */}
 
-            // </View>
-        );
+            <Timer restTime='30' completedE={completedExercises} completedR={completedRounds} completedS={completedSuperSets}> </Timer>
+        </View>
+
+    );
     // };
 }
 
-export default Exercise;
+export default Exercise2;
 
 // const timerStyles = StyleSheet.create({
 //     TextInputStyle: {
