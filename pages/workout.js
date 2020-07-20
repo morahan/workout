@@ -6,7 +6,7 @@ import Exercise from '../components/exercise.jsx'
 
 function Workout(props) {
     // console.log("workout.js ~ Work Out props === ", props)
-    console.log("workout.js ~ Work Out props.nav === ", props.navigation.state.params)
+    // console.log("workout.js ~ Work Out props.nav === ", props.navigation.state.params)
     return (
         <View style={styles.Screen}>
             {/* <Exercise target={props.navigation.state.params.day}></Exercise> */}
