@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { View, Text } from 'react-native';
 import styles from '../styles/styles.js';
-import Exercise from '../components/exercise.js'
+// import Exercise from '../components/exercise.js'
 import Exercise2 from '../components/exercise2.jsx'
 
 function Workout(props) {
