@@ -5,7 +5,7 @@ import styles from '../styles/styles.js';
 import Exercise2 from '../components/exercise2.jsx'
 
 function Workout(props) {
-    console.log("workout.js ~ Work Out props === ", props)
+    // console.log("workout.js ~ Work Out props === ", props)
     console.log("workout.js ~ Work Out props.nav === ", props.navigation.state.params)
     return (
         <View style={styles.Screen}>
