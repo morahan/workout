@@ -5,9 +5,6 @@ import Timer from './timer.js';
 import workout from './workoutList.js';
 import { Audio } from 'expo-av';
 
-// const moment = require('moment');    
-// let currentExerciseNum = 1;
-// let currentDay = moment().format('dddd'); 
 let currentEx = 1;
 let currentRound = 1;
 let currentSuperSet = 1;
@@ -24,27 +21,16 @@ let defaultNextBtnText = "Next Exercise";
 let baseExInRound = 1;
 
 function Exercise2(props){
-
     const [exercise, setExercise] = useState(workout[props.target].exercises[currentEx].name);
     const [reps, setReps] = useState(workout[props.target].exercises[currentEx].reps);
     const [buttonText, setButtonText] = useState("Next Exercise");
     const [modalVisible, setModalVisible] = useState(false);
     console.log("exercise2.js ~ props === ", props)
-
-    // constructor(props) {
-    //     super(props);
-    //     this.state = {
-    //         exercise: workout[props.target].exercises[currentEx].name,
-    //         reps: workout[props.target].exercises[currentEx].reps,
-    //         buttonText: "Next Exercise",
-    //         modalVisable: false,
-    //     }
-    // }
-    // new audio attempt baced on https://www.youtube.com/watch?v=HCvp2fZh--A
     
-    // componentDidMount() {
-    //     this.loadAudioSamples()
-    // }
+    // sounds 
+    const soundChing = new Audio.Sound();
+    const soundChaChing = new Audio.Sound();
+    const soundCountMoney = new Audio.Sound();
 
     const loadAudioSamples = async () => {
         Audio.setAudioModeAsync({
@@ -57,10 +43,6 @@ function Exercise2(props){
             playsThroughEarpieceAndroid: true,
         })
 
-        const soundChing = new Audio.Sound();
-        const soundChaChing = new Audio.Sound();
-        const soundCountMoney = new Audio.Sound();
-
         const status = {
             shouldPlay: false
         }
@@ -70,53 +52,21 @@ function Exercise2(props){
         soundCountMoney.loadAsync(require('../assets/audio/CountMoney.mp3'), status, false);
     }
     loadAudioSamples();
-    
-    // ==== original audio setup below
-    // async componentDidMount(){
-    //     Audio.setAudioModeAsync({
-    //         allowsRecordingIOS: false,
-    //         interruptionModeIOS: Audio.INTERRUPTION_MODE_IOS_MIX_WITH_OTHERS,
-    //         playsInSilentModeIOS: true,
-    //         interruptionModeAndroid: Audio.INTERRUPTION_MODE_ANDROID_DUCK_OTHERS,
-    //         shouldDuckAndroid: true,
-    //         staysActicveInBackground: true,
-    //         playsThroughEarpieceAndroid: true,
-    //     })
-
-    //     this.soundChing = new Audio.Sound();
-    //     this.soundChaChing = new Audio.Sound();
-    //     this.soundCountMoney = new Audio.Sound();
-
-    //     const status = {
-    //         shouldPlay: false
-    //     }
-
-    //     this.soundChing.loadAsync(require('../assets/audio/Ching.mp3'), status, false);
-    //     this.soundChaChing.loadAsync(require('../assets/audio/ChaChing.mp3'), status, false);
-    //     this.soundCountMoney.loadAsync(require('../assets/audio/CountMoney.mp3'), status, false);
-    // }
 
     const playChingSound = () => {
-        this.soundChing.replayAsync();
-        //  this.sound.setPosition.async = 0;
+        soundChing.replayAsync();
     }
 
     const playChaChingSound = () => {
-        this.soundChaChing.replayAsync();
-        //  this.sound.setPosition.async = 0;
+        soundChaChing.replayAsync();
     }
 
     const playCountMoneySound = () => {
-        this.soundCountMoney.replayAsync();
-        //  this.sound.setPosition.async = 0;
+        soundCountMoney.replayAsync();
     }
 
     // track progress of workout
     const nextExerciseEventHandler = () => {
-
-        // ========  play audio every button press --> 
-        // new try from youtube video 
-        // playChingSound()
 
         // iterate next exercise
         completedExercises++;
@@ -125,16 +75,10 @@ function Exercise2(props){
         // Anticipate Next Round - Change Button Text
         if (currentEx % exercisesPerRound === 0) {
             setButtonText("Next Round!")
-            // this.setState({
-            //     buttonText: "Next Round!",
-            // })
 
             // Anticipate Next SuperSet
             if (currentRound % roundsPerSuperSet === 0) {
                 setButtonText("Next Super Set!")
-                // this.setState({
-                //     buttonText: "Next Super Set!"
-                // })
             }
         }
 
@@ -144,13 +88,8 @@ function Exercise2(props){
             completedRounds++;
             currentEx = baseExInRound;
             roundInSuperSet++;
-
-            console.log("~~~~~ inside here =============")
             setButtonText(defaultNextBtnText)
-            // this.setState({
-            //     buttonText: defaultNextBtnText,
-            //     // currentEx: currentEx
-            // })
+            console.log("~~~~~ inside here =============")
 
             // Increment Superset
             if (roundInSuperSet - 1 === roundsPerSuperSet) {
@@ -166,27 +105,19 @@ function Exercise2(props){
                 currentEx = baseExInRound;
                 console.log("===== new currentEx =====", currentEx)
             } else {
-                this.playChaChingSound();
+                playChaChingSound();
             }
         } else {
             playChingSound();
         }
 
         // Setting Exercise and Reps
-        setExercise(workout[this.props.target].exercises[currentEx].name);
-        setReps(workout[this.props.target].exercises[currentEx].reps);
-        // this.setState({
-        //     exercise: workout[this.props.target].exercises[currentEx].name,
-        //     reps: workout[this.props.target].exercises[currentEx].reps,
-        //     // currentEx: currentEx,
-        // });
+        setExercise(workout[props.target].exercises[currentEx].name);
+        setReps(workout[props.target].exercises[currentEx].reps);
 
         // Completed final superset
         if (completedSuperSets === superSetTargetNum) {
             setButtonText("Done!")
-            // this.setState({
-            //     buttonText: "Done!"
-            // })
             alert("Nice Work! You Completed Your Goal Today!");
         }
         console.log("exercise2.js ~", "| compEx =", completedExercises, " | curEx=", currentEx, " | compRounds =", completedRounds, " | curRound=", currentRound, " | compSS =", completedSuperSets, " | curSS =", currentSuperSet, " | SetInRound =", setInRound, " | roundInSS =", roundInSuperSet)
@@ -194,12 +125,9 @@ function Exercise2(props){
     }
 
     const infoEventHandler = () => {
-        // this.setState({ modalVisible: visible });
         console.log('exercise2.js - render -> ')
 
-        // const { modalVisible } = this.state; 
-        setModalVisible(true);
-        // this.setState({ modalVisible: "visible" });
+        setModalVisible(!modalVisible);
         <View>
             <Modal 
                 animationType="slide"
@@ -223,10 +151,8 @@ function Exercise2(props){
             </Modal>
         </View>
     }
-    console.log("exercise2.jsx -> exercise ===== ", exercise)
+    // console.log("exercise2.jsx -> exercise ===== ", exercise)
                     
-
-
     return (
         <View style={styles.WorkoutScreen}>
             <Text style={styles.HeaderText}>
@@ -265,9 +191,7 @@ function Exercise2(props){
 
             <Timer restTime='30' completedE={completedExercises} completedR={completedRounds} completedS={completedSuperSets}> </Timer>
         </View>
-
     );
-    // };
 }
 
 export default Exercise2;
