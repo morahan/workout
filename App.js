@@ -26,7 +26,7 @@ import Navigator from './routes/homeStack.js';
 
 // components to Test
 import Timer from './components/timer.js'
-import Exercise2 from './components/exercise2.jsx';
+// import Exercise from './components/exercise.jsx';
 
 function App(){
   return (
