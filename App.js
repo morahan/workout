@@ -43,8 +43,7 @@ function App(){
     // </SafeAreaView>
     
         // <Welcome></Welcome> 
-        // <Navigator/>
-        <Exercise2></Exercise2>
+        <Navigator/>
         // <SignUp></SignUp>
         // <SignIn></SignIn>
         // <Workout></Workout> 
