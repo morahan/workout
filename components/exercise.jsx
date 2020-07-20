@@ -19,12 +19,12 @@ let superSetTargetNum = 3;
 let defaultNextBtnText = "Next Exercise";
 let baseExInRound = 1;
 
-function Exercise2(props){
+function Exercise(props){
     const [exercise, setExercise] = useState(workout[props.target].exercises[currentEx].name);
     const [reps, setReps] = useState(workout[props.target].exercises[currentEx].reps);
     const [buttonText, setButtonText] = useState("Next Exercise");
     const [modalVisible, setModalVisible] = useState(false);
-    console.log("exercise2.js ~ props === ", props)
+    console.log("exercise.js ~ props === ", props)
     
     // sounds 
     const soundChing = new Audio.Sound();
@@ -119,12 +119,12 @@ function Exercise2(props){
             setButtonText("Done!")
             alert("Nice Work! You Completed Your Goal Today!");
         }
-        console.log("exercise2.js ~", "| compEx =", completedExercises, " | curEx=", currentEx, " | compRounds =", completedRounds, " | curRound=", currentRound, " | compSS =", completedSuperSets, " | curSS =", currentSuperSet, " | SetInRound =", setInRound, " | roundInSS =", roundInSuperSet)
-        // console.log("exercise2.js ~ Current day ===== ", currentDay)
+        console.log("exercise.js ~", "| compEx =", completedExercises, " | curEx=", currentEx, " | compRounds =", completedRounds, " | curRound=", currentRound, " | compSS =", completedSuperSets, " | curSS =", currentSuperSet, " | SetInRound =", setInRound, " | roundInSS =", roundInSuperSet)
+        // console.log("exercise.js ~ Current day ===== ", currentDay)
     }
 
     const infoEventHandler = () => {
-        console.log('exercise2.js - render -> ')
+        console.log('exercise.js - render -> ')
 
         setModalVisible(!modalVisible);
         <View>
@@ -150,7 +150,7 @@ function Exercise2(props){
             </Modal>
         </View>
     }
-    // console.log("exercise2.jsx -> exercise ===== ", exercise)
+    // console.log("exercise.jsx -> exercise ===== ", exercise)
                     
     return (
         <View style={styles.WorkoutScreen}>
@@ -193,7 +193,7 @@ function Exercise2(props){
     );
 }
 
-export default Exercise2;
+export default Exercise;
 
 // const timerStyles = StyleSheet.create({
 //     TextInputStyle: {
