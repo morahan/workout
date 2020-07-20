@@ -198,7 +198,7 @@ const styles = StyleSheet.create({
     height: 23,
     width: 23,
     // alignItems: "space-between",
-    left: '47%',
+    alignSelf: "center"
     // top: '5%',
   },
 
@@ -259,7 +259,10 @@ const styles = StyleSheet.create({
     // marginBottom: "-15%",
     // justifyContent: "space-around",
     // backgroundColor: "lightgrey",
+    paddingBottom: "20%",
     borderRadius: 17,
+    justifyContent: 'space-between',
+    alignItems: 'center',
   },
 
   WText2: {
