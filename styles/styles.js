@@ -197,9 +197,9 @@ const styles = StyleSheet.create({
   Icon: {
     height: 23,
     width: 23,
-    // alignItems: "center",
+    // alignItems: "space-between",
     left: '47%',
-    top: '5%',
+    // top: '5%',
   },
 
   Text: {
