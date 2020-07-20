@@ -13,7 +13,6 @@ let roundInSuperSet = 1;
 let completedExercises = 0;
 let completedRounds = 0;
 let completedSuperSets = 0;
-// let totalExerciseSets = 0;
 let exercisesPerRound = 3;
 let roundsPerSuperSet = 3;
 let superSetTargetNum = 3;
