@@ -23,13 +23,13 @@ let superSetTargetNum = 3;
 let defaultNextBtnText = "Next Exercise";
 let baseExInRound = 1;
 
-function Exercise(props){
+function Exercise2(props){
 
     const [exercise, setExercise] = useState(workout[props.target].exercises[currentEx].name);
     const [reps, setReps] = useState(workout[props.target].exercises[currentEx].reps);
     const [buttonText, setButtonText] = useState("Next Exercise");
     const [modalVisible, setModalVisible] = useState(false);
-    console.log("exercise.js ~ props === ", props)
+    console.log("exercise2.js ~ props === ", props)
 
     // constructor(props) {
     //     super(props);
@@ -46,7 +46,7 @@ function Exercise(props){
     //     this.loadAudioSamples()
     // }
 
-    loadAudioSamples = async () => {
+    const loadAudioSamples = async () => {
         Audio.setAudioModeAsync({
             allowsRecordingIOS: false,
             interruptionModeIOS: Audio.INTERRUPTION_MODE_IOS_MIX_WITH_OTHERS,
@@ -57,18 +57,19 @@ function Exercise(props){
             playsThroughEarpieceAndroid: true,
         })
 
-        this.soundChing = new Audio.Sound();
-        this.soundChaChing = new Audio.Sound();
-        this.soundCountMoney = new Audio.Sound();
+        const soundChing = new Audio.Sound();
+        const soundChaChing = new Audio.Sound();
+        const soundCountMoney = new Audio.Sound();
 
         const status = {
             shouldPlay: false
         }
 
-        this.soundChing.loadAsync(require('../assets/audio/Ching.mp3'), status, false);
-        this.soundChaChing.loadAsync(require('../assets/audio/ChaChing.mp3'), status, false);
-        this.soundCountMoney.loadAsync(require('../assets/audio/CountMoney.mp3'), status, false);
+        soundChing.loadAsync(require('../assets/audio/Ching.mp3'), status, false);
+        soundChaChing.loadAsync(require('../assets/audio/ChaChing.mp3'), status, false);
+        soundCountMoney.loadAsync(require('../assets/audio/CountMoney.mp3'), status, false);
     }
+    loadAudioSamples();
     
     // ==== original audio setup below
     // async componentDidMount(){
@@ -123,15 +124,17 @@ function Exercise(props){
 
         // Anticipate Next Round - Change Button Text
         if (currentEx % exercisesPerRound === 0) {
-            this.setState({
-                buttonText: "Next Round!",
-            })
+            setButtonText("Next Round!")
+            // this.setState({
+            //     buttonText: "Next Round!",
+            // })
 
             // Anticipate Next SuperSet
             if (currentRound % roundsPerSuperSet === 0) {
-                this.setState({
-                    buttonText: "Next Super Set!"
-                })
+                setButtonText("Next Super Set!")
+                // this.setState({
+                //     buttonText: "Next Super Set!"
+                // })
             }
         }
 
@@ -143,10 +146,11 @@ function Exercise(props){
             roundInSuperSet++;
 
             console.log("~~~~~ inside here =============")
-            this.setState({
-                buttonText: defaultNextBtnText,
-                // currentEx: currentEx
-            })
+            setButtonText(defaultNextBtnText)
+            // this.setState({
+            //     buttonText: defaultNextBtnText,
+            //     // currentEx: currentEx
+            // })
 
             // Increment Superset
             if (roundInSuperSet - 1 === roundsPerSuperSet) {
@@ -169,26 +173,29 @@ function Exercise(props){
         }
 
         // Setting Exercise and Reps
-        this.setState({
-            exercise: workout[this.props.target].exercises[currentEx].name,
-            reps: workout[this.props.target].exercises[currentEx].reps,
-            // currentEx: currentEx,
-        });
+        setExercise(workout[this.props.target].exercises[currentEx].name);
+        setReps(workout[this.props.target].exercises[currentEx].reps);
+        // this.setState({
+        //     exercise: workout[this.props.target].exercises[currentEx].name,
+        //     reps: workout[this.props.target].exercises[currentEx].reps,
+        //     // currentEx: currentEx,
+        // });
 
         // Completed final superset
-        if (this.state.completedSuperSets === superSetTargetNum) {
-            this.setState({
-                buttonText: "Done!"
-            })
+        if (completedSuperSets === superSetTargetNum) {
+            setButtonText("Done!")
+            // this.setState({
+            //     buttonText: "Done!"
+            // })
             alert("Nice Work! You Completed Your Goal Today!");
         }
-        console.log("exercise.js ~", "| compEx =", completedExercises, " | curEx=", currentEx, " | compRounds =", completedRounds, " | curRound=", currentRound, " | compSS =", completedSuperSets, " | curSS =", currentSuperSet, " | SetInRound =", setInRound, " | roundInSS =", roundInSuperSet)
-        // console.log("exercise.js ~ Current day ===== ", currentDay)
+        console.log("exercise2.js ~", "| compEx =", completedExercises, " | curEx=", currentEx, " | compRounds =", completedRounds, " | curRound=", currentRound, " | compSS =", completedSuperSets, " | curSS =", currentSuperSet, " | SetInRound =", setInRound, " | roundInSS =", roundInSuperSet)
+        // console.log("exercise2.js ~ Current day ===== ", currentDay)
     }
 
     const infoEventHandler = () => {
         // this.setState({ modalVisible: visible });
-        console.log('exercise.js - render -> ')
+        console.log('exercise2.js - render -> ')
 
         // const { modalVisible } = this.state; 
         setModalVisible(true);
@@ -216,6 +223,9 @@ function Exercise(props){
             </Modal>
         </View>
     }
+    console.log("exercise2.jsx -> exercise ===== ", exercise)
+                    
+
 
     return (
         <View style={styles.WorkoutScreen}>
@@ -225,8 +235,8 @@ function Exercise(props){
             <Text style={styles.HeaderText2}>{"Round " + currentRound} </Text>
             <View style={styles.Box}>
                 <View style={styles.EBox}>
-                    <Text style={styles.Text2}>{this.state.exercise}</Text>
-                    <Text style={styles.Text2}>{this.state.reps + " Reps"}</Text>
+                    <Text style={styles.Text2}>{exercise}</Text>
+                    <Text style={styles.Text2}>{reps + " Reps"}</Text>
                     {/* add i icon for info about each exercise */}
                     <TouchableOpacity onPress={infoEventHandler}>
                         <Image
@@ -238,7 +248,7 @@ function Exercise(props){
                 </View>
                 <View style={styles.Btn}>
                     <TouchableOpacity>
-                        <Text style={styles.WText} onPress={nextExerciseEventHandler}>{this.state.buttonText}</Text>
+                        <Text style={styles.WText} onPress={nextExerciseEventHandler}>{buttonText}</Text>
                         {/* <Text style={styles.WText} onPress={() => this.props.nextExerciseEventHandler(23)}>{this.state.buttonText}</Text> */}
                     </TouchableOpacity>
                 </View>
