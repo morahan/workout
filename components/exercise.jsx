@@ -125,7 +125,10 @@ function Exercise(props){
 
     const infoEventHandler = () => {
         console.log('exercise.js - render -> ')
-
+        console.log(
+          "exercise.jsx --> info button press",
+          workout[props.target].exercises[currentEx].infoUrl
+        );
         setModalVisible(!modalVisible);
         <View>
             <Modal 
