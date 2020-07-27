@@ -129,30 +129,36 @@ function Exercise(props){
         console.log("exercise.jsx --> info button press - Asset == ", workout[this.props.target].exercises[currentEx].asset);
         setModalVisible(!modalVisible);
         <View>
-            <Modal 
-                animationType="slide"
-                transparent={true}
-                visible={modalVisible}
-                onRequestClose={() => {
-                    Alert.alert("If you dont know, now you know... Keep Working out")
+          <Modal
+            animationType="slide"
+            transparent={true}
+            visible={modalVisible}
+            onRequestClose={() => {
+              Alert.alert("If you dont know, now you know... Keep Working out");
+            }}
+          >
+            <View>
+              <View>
+                <Text> Inside Modal</Text>
+              </View>
+              <View styles={styles.gif}>
+                <Image
+                  source={{
+                    uri: workout[this.props.target].exercises[currentEx].asset,
+                  }}
+                />
+              </View>
+              <Image></Image>
+              <TouchableOpacity
+                onPress={() => {
+                  setModalVisible(!modalVisible);
                 }}
-            >
-                <View>
-                    <View>
-                        <Text> Inside Modal</Text>
-                    </View>
-                    <Image>
-
-                    </Image>
-                    <TouchableOpacity onPress={() => {
-                        setModalVisible(!modalVisible);
-                        }}
-                    >
-                        <Text>Close Modal</Text>
-                    </TouchableOpacity>
-                </View>
-            </Modal>
-        </View>
+              >
+                <Text>Close Modal</Text>
+              </TouchableOpacity>
+            </View>
+          </Modal>
+        </View>;
     }
     // console.log("exercise.jsx -> exercise ===== ", exercise)
                     
