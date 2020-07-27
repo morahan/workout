@@ -32,6 +32,12 @@ const styles = StyleSheet.create({
     borderRadius: 37,
   },
   
+  Gif: {
+    color: 'white-smoke',
+    height: "35%",
+    width: "35%",
+  },
+
   Head: {
     justifyContent: 'space-between',
     color: "#ffff",
