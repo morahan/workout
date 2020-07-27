@@ -141,14 +141,13 @@ function Exercise(props){
               <View>
                 <Text> Inside Modal</Text>
               </View>
-              <View styles={styles.gif}>
+              <View styles={styles.Gif}>
                 <Image
                   source={{
                     uri: workout[this.props.target].exercises[currentEx].asset,
                   }}
                 />
               </View>
-              <Image></Image>
               <TouchableOpacity
                 onPress={() => {
                   setModalVisible(!modalVisible);
