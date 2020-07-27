@@ -3,7 +3,7 @@ import { Text, View, TouchableOpacity, Image } from 'react-native';
 import styles from '../styles/styles.js';
 
 export default function CustomizationComplete({ navigation }) {
-    // const [welcome, setWelcome] = useState('Welcome');
+    const [welcome, setWelcome] = useState('Welcome');
 
     const clickHandler = () => {
         // setWelcome('  Loading...');
