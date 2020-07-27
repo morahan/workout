@@ -640,7 +640,7 @@ let workout = {
         weight: 25,
         reps: 13,
         sets: 3,
-        infoUrl: ",
+        infoUrl: "",
         asset: "../assets/gifs/weights/DumbbellSingleArmRow.gif",
         available: true,
         alternate: false,
