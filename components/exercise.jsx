@@ -20,8 +20,8 @@ let defaultNextBtnText = "Next Exercise";
 let baseExInRound = 1;
 
 function Exercise(props){
-    const [exercise, setExercise] = useState(workout[props.target].exercises[currentEx].name);
-    const [reps, setReps] = useState(workout[props.target].exercises[currentEx].reps);
+    const [exercise, setExercise] = useState(workout[this.props.target].exercises[currentEx].name);
+    const [reps, setReps] = useState(workout[this.props.target].exercises[currentEx].reps);
     const [buttonText, setButtonText] = useState("Next Exercise");
     const [modalVisible, setModalVisible] = useState(false);
     console.log("exercise.js ~ props === ", props)
@@ -111,8 +111,8 @@ function Exercise(props){
         }
 
         // Setting Exercise and Reps
-        setExercise(workout[props.target].exercises[currentEx].name);
-        setReps(workout[props.target].exercises[currentEx].reps);
+        setExercise(workout[this.props.target].exercises[currentEx].name);
+        setReps(workout[this.props.target].exercises[currentEx].reps);
 
         // Completed final superset
         if (completedSuperSets === superSetTargetNum) {
@@ -125,10 +125,8 @@ function Exercise(props){
 
     const infoEventHandler = () => {
         console.log('exercise.js - render -> ')
-        console.log(
-          "exercise.jsx --> info button press",
-          workout[props.target].exercises[currentEx].infoUrl
-        );
+        console.log("exercise.jsx --> info button press - infoURL == ", workout[this.props.target].exercises[currentEx].infoUrl);
+        console.log("exercise.jsx --> info button press - Asset == ", workout[this.props.target].exercises[currentEx].asset);
         setModalVisible(!modalVisible);
         <View>
             <Modal 
@@ -143,6 +141,9 @@ function Exercise(props){
                     <View>
                         <Text> Inside Modal</Text>
                     </View>
+                    <Image>
+
+                    </Image>
                     <TouchableOpacity onPress={() => {
                         setModalVisible(!modalVisible);
                         }}
