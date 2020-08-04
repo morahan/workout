@@ -37,6 +37,12 @@ const styles = StyleSheet.create({
     height: "35%",
     width: "35%",
   },
+  
+  Modal: {
+    backgroundColor: 'green',
+    height: "35%",
+    width: "35%",
+  },
 
   Head: {
     justifyContent: 'space-between',
