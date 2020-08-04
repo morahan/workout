@@ -20,12 +20,12 @@ let defaultNextBtnText = "Next Exercise";
 let baseExInRound = 1;
 
 function Exercise(props){
-    const [exercise, setExercise] = useState(workout[this.props.target].exercises[currentEx].name);
-    const [reps, setReps] = useState(workout[this.props.target].exercises[currentEx].reps);
+    console.log("exercise.jsx props ====2 ", props);
+    const [exercise, setExercise] = useState(workout[props.target].exercises[currentEx].name);
+    const [reps, setReps] = useState(workout[props.target].exercises[currentEx].reps);
     const [buttonText, setButtonText] = useState("Next Exercise");
     const [modalVisible, setModalVisible] = useState(false);
-    console.log("exercise.js ~ props === ", props)
-    
+
     // sounds 
     const soundChing = new Audio.Sound();
     const soundChaChing = new Audio.Sound();
@@ -111,8 +111,8 @@ function Exercise(props){
         }
 
         // Setting Exercise and Reps
-        setExercise(workout[this.props.target].exercises[currentEx].name);
-        setReps(workout[this.props.target].exercises[currentEx].reps);
+        setExercise(workout[props.target].exercises[currentEx].name);
+        setReps(workout[props.target].exercises[currentEx].reps);
 
         // Completed final superset
         if (completedSuperSets === superSetTargetNum) {
@@ -125,8 +125,8 @@ function Exercise(props){
 
     const infoEventHandler = () => {
         console.log('exercise.js - render -> ')
-        console.log("exercise.jsx --> info button press - infoURL == ", workout[this.props.target].exercises[currentEx].infoUrl);
-        console.log("exercise.jsx --> info button press - Asset == ", workout[this.props.target].exercises[currentEx].asset);
+        console.log("exercise.jsx --> info button press - infoURL == ", workout[props.target].exercises[currentEx].infoUrl);
+        console.log("exercise.jsx --> info button press - Asset == ", workout[props.target].exercises[currentEx].asset);
         setModalVisible(!modalVisible);
         <View>
           <Modal
@@ -144,7 +144,7 @@ function Exercise(props){
               <View styles={styles.Gif}>
                 <Image
                   source={{
-                    uri: workout[this.props.target].exercises[currentEx].asset,
+                    uri: workout[props.target].exercises[currentEx].asset,
                   }}
                 />
               </View>
@@ -183,18 +183,18 @@ function Exercise(props){
                 <View style={styles.Btn}>
                     <TouchableOpacity>
                         <Text style={styles.WText} onPress={nextExerciseEventHandler}>{buttonText}</Text>
-                        {/* <Text style={styles.WText} onPress={() => this.props.nextExerciseEventHandler(23)}>{this.state.buttonText}</Text> */}
+                        {/* <Text style={styles.WText} onPress={() => props.nextExerciseEventHandler(23)}>{state.buttonText}</Text> */}
                     </TouchableOpacity>
                 </View>
             </View>
-            {/* <Text style={styles.Text}>{this.props.day}</Text> */}
+            {/* <Text style={styles.Text}>{props.day}</Text> */}
             {/* <TextInput
                 placeholder="Enter Duration"
                 underlineColorAndroid='transparent'
                 style={timerStyles.TextInputStyle}
                 keyboardType='numeric'
                 maxLength={10} 
-                onChangeText={(time) => this.enterDurationEventHandler(time)}
+                onChangeText={(time) => enterDurationEventHandler(time)}
             />   */}
 
             <Timer restTime='30' completedE={completedExercises} completedR={completedRounds} completedS={completedSuperSets}> </Timer>
