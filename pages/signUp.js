@@ -2,9 +2,11 @@ import React, { Component } from 'react';
 import { Text, View, TextInput, TouchableOpacity, Image } from 'react-native';
 import styles from '../styles/styles.js';
 import workout from '../components/workoutList.js';
+// import TargetDayContext from '../components/contexts/targetDay.js'
+
 const moment = require('moment');
 
-const [targetDay, setTargetDay] = moment().format('dddd');
+// const [targetDay, setTargetDay] = moment().format('dddd');
 let currentDay = moment().format('dddd'); 
 let target = '';
 
@@ -35,6 +37,7 @@ export default class SignUp extends Component {
             }
         }
         setTargetMuscles();
+  
 
         // pass through desired target muscles based on day
         this.props.navigation.navigate('Workout', { day: target })
@@ -93,6 +96,7 @@ export default class SignUp extends Component {
                     <View>
                         <Text style={styles.foot}>© Freio Labs, All Rights Reserved</Text>
                     </View>
+       
                 </View>
             )
         }
