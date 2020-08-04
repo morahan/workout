@@ -15,6 +15,7 @@ import GetStarted from './pages/getStarted.js';
 import SignUp from './pages/signUp.js';
 import SignIn from './pages/signIn.js';
 import Customize from './pages/customize.js';
+import ExModal from './pages/modalTest.jsx';
 
 // ==== components =====
 import Footer from './components/footer.js';
@@ -39,11 +40,9 @@ function App(){
     // </NavigationContainer>
       
     // <SafeAreaView style={styles.Screen}>
-    
     // </SafeAreaView>
     
         // <Welcome></Welcome> 
-        <Navigator/>
         // <SignUp></SignUp>
         // <SignIn></SignIn>
         // <Workout></Workout> 
@@ -55,6 +54,9 @@ function App(){
         // <TagsView></TagsView>
         // <DisplayTags></DisplayTags>
 
+        <ExModal></ExModal>
+        
+    // <Navigator/>
   );
 }
 
