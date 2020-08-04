@@ -4,6 +4,7 @@ import styles from '../styles/styles.js';
 import workout from '../components/workoutList.js';
 const moment = require('moment');
 
+const [targetDay, setTargetDay] = moment().format('dddd');
 let currentDay = moment().format('dddd'); 
 let target = '';
 
