@@ -164,7 +164,7 @@ function Exercise(props){
                         </View>
                     </Modal>
                 </View>
-            )
+            );
         // }
     }
     // console.log("exercise.jsx -> exercise ===== ", exercise)
