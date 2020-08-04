@@ -33,7 +33,7 @@ const styles = StyleSheet.create({
   },
   
   Gif: {
-    color: 'white-smoke',
+    color: 'blue',
     height: "35%",
     width: "35%",
   },
