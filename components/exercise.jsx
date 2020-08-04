@@ -4,6 +4,8 @@ import styles from '../styles/styles.js';
 import Timer from './timer.js';
 import workout from './workoutList.js';
 import { Audio } from 'expo-av';
+import TargetDayContext from "./contexts/targetDay.js";
+
 
 let currentEx = 1;
 let currentRound = 1;
@@ -20,11 +22,13 @@ let defaultNextBtnText = "Next Exercise";
 let baseExInRound = 1;
 
 function Exercise(props){
+    
+    console.log("exercise.jsx TDcontext.value ==== ", TargetDayContext.consumer);
     console.log("exercise.jsx props ====2 ", props);
     const [exercise, setExercise] = useState(workout[props.target].exercises[currentEx].name);
     const [reps, setReps] = useState(workout[props.target].exercises[currentEx].reps);
     const [buttonText, setButtonText] = useState("Next Exercise");
-    const [modalVisible, setModalVisible] = useState(false);
+    const [modalVisible, setModalVisible] = useState(true);
 
     // sounds 
     const soundChing = new Audio.Sound();
@@ -124,40 +128,44 @@ function Exercise(props){
     }
 
     const infoEventHandler = () => {
-        console.log('exercise.js - render -> ')
-        console.log("exercise.jsx --> info button press - infoURL == ", workout[props.target].exercises[currentEx].infoUrl);
-        console.log("exercise.jsx --> info button press - Asset == ", workout[props.target].exercises[currentEx].asset);
-        setModalVisible(!modalVisible);
-        <View>
-          <Modal
-            animationType="slide"
-            transparent={true}
-            visible={modalVisible}
-            onRequestClose={() => {
-              Alert.alert("If you dont know, now you know... Keep Working out");
-            }}
-          >
-            <View>
-              <View>
-                <Text> Inside Modal</Text>
-              </View>
-              <View styles={styles.Gif}>
-                <Image
-                  source={{
-                    uri: workout[props.target].exercises[currentEx].asset,
-                  }}
-                />
-              </View>
-              <TouchableOpacity
-                onPress={() => {
-                  setModalVisible(!modalVisible);
-                }}
-              >
-                <Text>Close Modal</Text>
-              </TouchableOpacity>
-            </View>
-          </Modal>
-        </View>;
+        // console.log('exercise.js - InfoRender -> ')
+        console.log("exercise.jsx --> info button press - infoURL == ", workout[props.target].exercises[currentEx].infoUrl)
+        console.log("exercise.jsx --> info button press - Asset == ", workout[props.target].exercises[currentEx].asset)
+        // setModalVisible(!modalVisible)
+        console.log("exercise.jsx --> info button press - modal Visible == ", modalVisible)
+        // render(){
+            return(
+                <View style={styles.Box}>
+                    <Modal
+                        animationType="slide"
+                        transparent={true}
+                        visible={modalVisible}
+                        onRequestClose={() => console.log("If you dont know, now you know... Keep Working out")}
+                    >
+                        <View>
+                            <View styles={styles.Modal}>
+                                <Text styles={styles.HeaderText}> Inside Modal</Text>
+                            </View>
+                            {/* ===== display gif below ====  */}
+                            {/* <View styles={styles.Gif}>
+                                <Image
+                                source={{
+                                    uri: workout[props.target].exercises[currentEx].asset,
+                                }}
+                                />
+                            </View> */}
+                            <TouchableOpacity
+                                onPress={() => {
+                                setModalVisible(!modalVisible)
+                                }}
+                            >
+                                <Text>Close Modal</Text>
+                            </TouchableOpacity>
+                        </View>
+                    </Modal>
+                </View>
+            )
+        // }
     }
     // console.log("exercise.jsx -> exercise ===== ", exercise)
                     
@@ -187,6 +195,8 @@ function Exercise(props){
                     </TouchableOpacity>
                 </View>
             </View>
+
+
             {/* <Text style={styles.Text}>{props.day}</Text> */}
             {/* <TextInput
                 placeholder="Enter Duration"
