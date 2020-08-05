@@ -21,7 +21,9 @@ function ExModal(){
               visibility={modalVisibility}
               style={{ alignSelf: "center" }}
             >
-              <View style={{ backgroundColor: "#000000aa", flex: 1 }}>
+              <View
+                style={{ backgroundColor: "#000000aa", flex: 1, borderRadius: 37, border: 0}}
+              >
                 <View
                   style={{
                     backgroundColor: "#ffffff",
@@ -31,9 +33,9 @@ function ExModal(){
                     flex: 1,
                   }}
                 >
-                  {/* <TouchableOpacity onPress={() => {modalVisibility = false;}}>
-                                <Text style={styles.HeaderText2}>this is inside the modal</Text>
-                            </TouchableOpacity>   */}
+                  {/* <TouchableOpacity onPress={() => {modalVisibility = false}}>
+                        <Text style={styles.HeaderText2}>this is inside the modal</Text>
+                    </TouchableOpacity>   */}
                   {/* ==== Using Hooks ===  */}
                   <TouchableOpacity onPress={() => setModalVisibility(false)}>
                     <Text style={styles.HeaderText2}>
