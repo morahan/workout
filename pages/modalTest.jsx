@@ -1,53 +1,56 @@
 import React, { useState } from "react";
 import {View, Text, Button, Modal, TouchableOpacity } from 'react-native'
 import styles from '../styles/styles.js';
+import { set } from "react-native-reanimated";
 
 // let modalVisibility = true;
 
 function ExModal(){
-    const [modalVisibility, setModalVisibility] = useState(false);
-    // render(){
-        return (
-          <View style={{ flex: 1, marginTop: 10, alignItems: "center" }}>
-            <Text style={{ fontSize: 48, alignContent: "center" }}>
-              This is regular text
-            </Text>
-            <Button
-              title="Turn On Modal"
-              onPress={() => setModalVisibility(true)}
-            />
-            <Modal
-              transpartent={false}
-              visibility={modalVisibility}
-              style={{ alignSelf: "center" }}
+    const [modalVisibility, setModalVisibility] = useState(true);
+
+     const openModal = () => {
+        console.log("open modal", modalVisibility);
+        // setModalVisibility(true);
+        <Modal transparent={true} visible={modalVisibility}>
+            <View
+                style={{
+                backgroundColor: "#000000aa",
+                flex: 1,
+                borderRadius: 37,
+                }}
             >
-              <View
-                style={{ backgroundColor: "#000000aa", flex: 1, borderRadius: 37, border: 0}}
-              >
                 <View
-                  style={{
+                style={{
                     backgroundColor: "#ffffff",
                     margin: 50,
                     padding: 25,
                     borderRadius: 37,
                     flex: 1,
-                  }}
+                }}
                 >
-                  {/* <TouchableOpacity onPress={() => {modalVisibility = false}}>
-                        <Text style={styles.HeaderText2}>this is inside the modal</Text>
-                    </TouchableOpacity>   */}
-                  {/* ==== Using Hooks ===  */}
-                  <TouchableOpacity onPress={() => setModalVisibility(false)}>
-                    <Text style={styles.HeaderText2}>
-                      this is inside the modal
-                    </Text>
-                  </TouchableOpacity>
+                <TouchableOpacity
+                    onPress={() => {
+                    setModalVisibility(false);
+                    }}
+                >
+                    <Text style={styles.HeaderText2}>this is inside the modal</Text>
+                </TouchableOpacity>
                 </View>
-              </View>
-            </Modal>
-          </View>
-        );
-    // }
+            </View>
+        </Modal>
+    }
+    
+
+    return (
+      <View style={{ flex: 1, marginTop: 10, alignItems: "center" }}>
+        <Text style={{ fontSize: 48, alignContent: "center" }}>
+          This is regular text
+        </Text>
+        <TouchableOpacity onPress={() => {openModal()}}>
+          <Text style={styles.HeaderText2}>Turn On Modal</Text>
+        </TouchableOpacity>
+      </View>
+    );
 }
 
 
