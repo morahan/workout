@@ -210,13 +210,7 @@ function Exercise(props){
                                 }}
                                 />
                             </View> */}
-                    <TouchableOpacity 
-                    onPress={() => {
-                        setModalVisible(false);
-                    }}
-                    >
-                        <Text>Close Modal</Text>
-                    </TouchableOpacity>
+
                 </View>
             </Modal>
             
