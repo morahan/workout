@@ -38,35 +38,68 @@ const styles = StyleSheet.create({
     width: "35%",
   },
 
-  Modal: {
-    backgroundColor: 'green',
-    height: "35%",
-    width: "35%",
+  // Modal: {
+  //   backgroundColor: 'green',
+  //   height: "35%",
+  //   width: "35%",
+  // },
+
+  // ModalWrapper: {
+  //   backgroundColor: 'green',
+  //   height: "100%",
+  //   width: "100%",
+  //   elevation: 1,
+  // },
+
+  // HeaderText: {
+  //   color: "#000",
+  //   fontSize: 47,
+  //   textAlign: 'center',
+  //   paddingTop: "5%",
+  //   borderBottomColor: 'black',
+  // },
+  ModalHeadingArea: {
+    backgroundColor: "grey",
+    margin: "3%",
+    height: "25%",
+    // width: "100%",
   },
 
-  ModalWrapper: {
-    backgroundColor: 'green',
-    height: "100%",
-    width: "100%",
-    elevation: 1,
-  },
-
-  ModalBackdrop: {
-    height: "50%",
-    width: "100%",
-    alignSelf: "center",
-    zIndex: 100,
-    backgroundColor: "darkGrey",
+  ModalSubHeaddingText: {
+    // backgroundColor: 'white',
+    marginTop: "10%",
+    textAlign: "center",
+    fontSize: 17,
     elevation: 2,
-
   },
+
+  ModalHeaddingText: {
+    // backgroundColor: 'white',
+    textAlign: "center",
+    fontSize: 23,
+    elevation: 2,
+  },
+
+  // ModalBackdrop: {
+  //   backgroundColor: 'grey',
+  //   height: "150%",
+  //   width: "100%",
+  //   // alignSelf: "center",
+  //   alignItems: "center",
+  //   zIndex: 100,
+  //   elevation: 2,
+  // },
 
   ModalBox: {
     backgroundColor: 'white',
-    height: "35%",
-    width: "35%",
+    margin: "25%",
+    height: "75%",
+    width: "75%",
     elevation: 5,
     alignItems: "center",
+    justifyContent: "space-between",
+    alignSelf: "center",
+    borderRadius: 17,
     // overflow: "auto",
     // overflowY: "auto",
   },
@@ -103,7 +136,6 @@ const styles = StyleSheet.create({
     alignSelf: "center", 
     paddingTop: "5%",
   },
-
   
   LogIn: {
     // margin: "5%",
@@ -168,6 +200,16 @@ const styles = StyleSheet.create({
     height: "25%",
     alignItems: "center",
     justifyContent: "center",
+    backgroundColor: "black",
+    borderRadius: 17,
+  },
+
+  BtnCloseModal: {
+    // width: "75%",
+    // height: "50%",
+    // margin: "0%",
+    paddingLeft: "10%",
+    paddingRight: "10%",
     backgroundColor: "black",
     borderRadius: 17,
   },
