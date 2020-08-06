@@ -48,6 +48,7 @@ const styles = StyleSheet.create({
     backgroundColor: 'green',
     height: "100%",
     width: "100%",
+    elevation: 1,
   },
 
   ModalBackdrop: {
@@ -55,14 +56,16 @@ const styles = StyleSheet.create({
     width: "100%",
     zIndex: 100,
     backgroundColor: "grey",
+    elevation: 2,
+    
   },
-
 
   ModalBox: {
     backgroundColor: 'white',
     height: "35%",
     width: "35%",
     zIndex: 101,
+    // overflow: "auto",
     // overflowY: "auto",
   },
 
