@@ -54,9 +54,9 @@ function App(){
         // <TagsView></TagsView>
         // <DisplayTags></DisplayTags>
 
-        <ExModal></ExModal>
+        // <ExModal></ExModal>
         
-    // <Navigator/>
+    <Navigator/>
   );
 }
 
