@@ -204,9 +204,9 @@ function Exercise(props){
                     </Text>
                   </View>
                   <View styles={styles.Gif}>
-                        {/* <Image
-                        source={require(exerciseGif)}
-                        /> */}
+                        <Image
+                            source={exerciseGif}
+                        />
                     </View>
                   <View>
                     <TouchableOpacity
