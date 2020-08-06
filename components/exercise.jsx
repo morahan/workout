@@ -23,12 +23,12 @@ let baseExInRound = 1;
 
 function Exercise(props){
     
-    console.log("exercise.jsx TDcontext.value ==== ", TargetDayContext.consumer);
-    console.log("exercise.jsx props ====2 ", props);
+    // console.log("exercise.jsx TDcontext.value ==== ", TargetDayContext.consumer);
+    // console.log("exercise.jsx props ====2 ", props);
     const [exercise, setExercise] = useState(workout[props.target].exercises[currentEx].name);
     const [reps, setReps] = useState(workout[props.target].exercises[currentEx].reps);
     const [buttonText, setButtonText] = useState("Next Exercise");
-    const [modalVisible, setModalVisible] = useState(true);
+    const [modalVisible, setModalVisible] = useState(false);
 
     // sounds 
     const soundChing = new Audio.Sound();
@@ -131,41 +131,49 @@ function Exercise(props){
         // console.log('exercise.js - InfoRender -> ')
         console.log("exercise.jsx --> info button press - infoURL == ", workout[props.target].exercises[currentEx].infoUrl)
         console.log("exercise.jsx --> info button press - Asset == ", workout[props.target].exercises[currentEx].asset)
-        // setModalVisible(!modalVisible)
+        setModalVisible(!modalVisible)
         console.log("exercise.jsx --> info button press - modal Visible == ", modalVisible)
-        // render(){
-            return(
-                <View style={styles.Box}>
-                    <Modal
-                        animationType="slide"
-                        transparent={true}
-                        visible={modalVisible}
-                        onRequestClose={() => console.log("If you dont know, now you know... Keep Working out")}
-                    >
-                        <View>
-                            <View styles={styles.Modal}>
-                                <Text styles={styles.HeaderText}> Inside Modal</Text>
-                            </View>
-                            {/* ===== display gif below ====  */}
-                            {/* <View styles={styles.Gif}>
+            
+        if (modalVisible) {
+            return (
+              <View style={styles.Box}>
+                <Modal
+                  animationType="slide"
+                  transparent={true}
+                  visible={modalVisible}
+                  onRequestClose={() =>
+                    console.log("If you dont know, now you know... Keep Working out")
+                  }
+                >
+                  <View styles={styles.ModalBackdrop}>
+                    <View style={styles.ModalBox}>
+                      <Text styles={styles.HeaderText}> Inside Modal</Text>
+                    </View>
+                    {/* ===== display gif below ====  */}
+                    {/* <View styles={styles.Gif}>
                                 <Image
                                 source={{
                                     uri: workout[props.target].exercises[currentEx].asset,
                                 }}
                                 />
                             </View> */}
-                            <TouchableOpacity
-                                onPress={() => {
-                                setModalVisible(!modalVisible)
-                                }}
-                            >
-                                <Text>Close Modal</Text>
-                            </TouchableOpacity>
-                        </View>
-                    </Modal>
+                    <TouchableOpacity
+                      onPress={() => {
+                        setModalVisible(!modalVisible);
+                      }}
+                    >
+                      <Text>Close Modal</Text>
+                    </TouchableOpacity>
+                  </View>
+                </Modal>
+                <View>
+                  <TouchableOpacity onPress={() => {!modalVisible}}>
+                    <Text>Close Modal</Text>
+                  </TouchableOpacity>
                 </View>
+              </View>
             );
-        // }
+        }
     }
     // console.log("exercise.jsx -> exercise ===== ", exercise)
                     
@@ -180,7 +188,9 @@ function Exercise(props){
                     <Text style={styles.Text2}>{exercise}</Text>
                     <Text style={styles.Text2}>{reps + " Reps"}</Text>
                     {/* add i icon for info about each exercise */}
-                    <TouchableOpacity onPress={infoEventHandler}>
+                    <TouchableOpacity onPress={() => {
+                        infoEventHandler()
+                    }}>
                         <Image
                             style={styles.Icon}
                             source={require("../assets/icons/info.png")}
