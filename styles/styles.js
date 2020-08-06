@@ -37,11 +37,33 @@ const styles = StyleSheet.create({
     height: "35%",
     width: "35%",
   },
-  
+
   Modal: {
     backgroundColor: 'green',
     height: "35%",
     width: "35%",
+  },
+
+  ModalWrapper: {
+    backgroundColor: 'green',
+    height: "100%",
+    width: "100%",
+  },
+
+  ModalBackdrop: {
+    height: "50%",
+    width: "100%",
+    zIndex: 100,
+    backgroundColor: "grey",
+  },
+
+
+  ModalBox: {
+    backgroundColor: 'white',
+    height: "35%",
+    width: "35%",
+    zIndex: 101,
+    // overflowY: "auto",
   },
 
   Head: {
