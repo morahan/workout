@@ -187,42 +187,77 @@ function Exercise(props){
             <Text style={styles.Text2}>{reps + " Reps"}</Text>
             {/* add i icon for info about each exercise */}
 
-            
             <Modal
-            animationType="slide"
-            transparent={true}
-            visible={modalVisible}
-            onRequestClose={() =>
+              animationType="slide"
+              transparent={true}
+              visible={modalVisible}
+              onRequestClose={() =>
                 console.log(
-                "If you dont know, now you know... Keep Working out"
+                  "If you dont know, now you know... Keep Working out"
                 )
-            }
+              }
             >
-                <View styles={styles.ModalBackdrop}>
-                    <View style={styles.ModalBox}>
-                        <Text styles={styles.HeaderText}> Inside Modal</Text>
+              <View styles={styles.ModalBackdrop}>
+                <View style={styles.ModalBox}>
+                    <View style={styles.ModalHeadingArea}>
+                        <Text style={styles.ModalSubHeaddingText}>How to do:</Text>
+                        <Text style={styles.ModalHeaddingText}>
+                        {workout[props.target].exercises[currentEx].name}
+                        </Text>
                     </View>
-                    {/* ===== display gif below ====  */}
-                    {/* <View styles={styles.Gif}>
-                                <Image
-                                source={{
-                                    uri: workout[props.target].exercises[currentEx].asset,
-                                }}
-                                />
-                            </View> */}
-
+                    <View styles={styles.Gif}>
+                        <Image
+                        source={{
+                            uri: workout[props.target].exercises[currentEx].asset,
+                        }}
+                        />
+                    </View>
+                    <View>
+                        <TouchableOpacity
+                        onPress={() => {
+                            setModalVisible(false);
+                        }}
+                        style={styles.BtnCloseModal}
+                        >
+                        <Text style={styles.WText}>Close</Text>
+                        </TouchableOpacity>
+                    </View>
                 </View>
+                {/* ===== display gif below ====  */}
+              </View>
             </Modal>
-            
-            <View>
-                <TouchableOpacity
-                    onPress={() => {
-                    setModalVisible(false);
-                    }}
-                >
-                    <Text>Close Modal</Text>
-                </TouchableOpacity>
-            </View>
+
+            {/*  */}
+            {/* <Modal
+              animationType="slide"
+              transparent={true}
+              visible={modalVisible}
+              onRequestClose={() =>
+                console.log(
+                  "If you dont know, now you know... Keep Working out"
+                )
+              }
+            >
+              <View styles={styles.ModalBackdrop}>
+                <View style={styles.ModalBox}>
+                  <Text style={styles.ModalSubHeaddingText}>How to do:</Text>
+                  <Text style={styles.ModalHeaddingText}>
+                    {workout[props.target].exercises[currentEx].name}
+                  </Text>
+                  <View>
+                    <TouchableOpacity
+                      onPress={() => {
+                        setModalVisible(false);
+                      }}
+                      style={styles.BtnCloseModal}
+                    >
+                      <Text style={styles.WText}>Close</Text>
+                    </TouchableOpacity>
+                  </View>
+                </View>
+                {/* ===== display gif below ====  */}
+              {/* </View> */}
+            {/* </Modal> */}
 
             <TouchableOpacity
               onPress={() => {
