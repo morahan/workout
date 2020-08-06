@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import {View, Text, Button, Modal, TouchableOpacity } from 'react-native'
+import {View, Text, Button, Modal, TouchableOpacity, Image} from 'react-native'
 import styles from '../styles/styles.js';
 import { set } from "react-native-reanimated";
 import TestModal from './modalTest.jsx'
@@ -47,7 +47,9 @@ function ExModal(){
         <Text style={{ fontSize: 48, alignContent: "center" }}>
           This is regular text
         </Text>
-        <TestModal></TestModal>
+        {/* <TestModal></TestModal> */}
+
+        <Image source={require('../assets/gifs/Curl.gif')} />
         {/* <TouchableOpacity onPress={() => {openModal()}}> */}
           {/* <Text style={styles.HeaderText2}>Turn On Modal</Text> */}
         {/* </TouchableOpacity> */}
