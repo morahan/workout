@@ -54,17 +54,19 @@ const styles = StyleSheet.create({
   ModalBackdrop: {
     height: "50%",
     width: "100%",
+    alignSelf: "center",
     zIndex: 100,
-    backgroundColor: "grey",
+    backgroundColor: "darkGrey",
     elevation: 2,
-    
+
   },
 
   ModalBox: {
     backgroundColor: 'white',
     height: "35%",
     width: "35%",
-    zIndex: 101,
+    elevation: 5,
+    alignItems: "center",
     // overflow: "auto",
     // overflowY: "auto",
   },
