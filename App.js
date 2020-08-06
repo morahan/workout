@@ -15,7 +15,7 @@ import GetStarted from './pages/getStarted.js';
 import SignUp from './pages/signUp.js';
 import SignIn from './pages/signIn.js';
 import Customize from './pages/customize.js';
-import ExModal from './pages/modalTest.jsx';
+import ExModal from './pages/modalPage.jsx';
 
 // ==== components =====
 import Footer from './components/footer.js';
