@@ -5,6 +5,7 @@ import Timer from './timer.js';
 import workout from './workoutList.js';
 import { Audio } from 'expo-av';
 import TargetDayContext from "./contexts/targetDay.js";
+import FitImage from "react-native-fit-image";
 
 
 let currentEx = 1;
@@ -184,69 +185,70 @@ function Exercise(props){
         <Text style={styles.HeaderText}>{"Super Set #" + currentSuperSet}</Text>
         <Text style={styles.HeaderText2}>{"Round " + currentRound} </Text>
         <View style={styles.Box}>
-          <View style={styles.EBox}>
-            <Text style={styles.Text2}>{exercise}</Text>
-            <Text style={styles.Text2}>{reps + " Reps"}</Text>
-            {/* add i icon for info about each exercise */}
-            
-            {/* ==== Modal Below ===  */}
-            <Modal
-              animationType="slide"
-              transparent={true}
-              visible={modalVisible}
-            >
-              <View styles={styles.ModalBackdrop}>
-                <View style={styles.ModalBox}>
-                  <View style={styles.ModalHeadingArea}>
-                    <Text style={styles.ModalSubHeaddingText}>How to do:</Text>
-                    <Text style={styles.ModalHeaddingText}>
-                      {workout[props.target].exercises[currentEx].name}
-                    </Text>
-                  </View>
-                  <View styles={styles.Gif}>
-                        <Image
-                            source={exerciseGif}
-                        />
+            <View style={styles.EBox}>
+                <Text style={styles.Text2}>{exercise}</Text>
+                <Text style={styles.Text2}>{reps + " Reps"}</Text>
+                {/* add i icon for info about each exercise */}
+                
+                {/* ==== Modal Below ===  */}
+                <Modal
+                animationType="slide"
+                transparent={true}
+                visible={modalVisible}
+                >
+                    <View style={styles.ModalBackdrop}>
+                        <View style={styles.ModalBox}>
+                            <View style={styles.ModalHeadingArea}>
+                                <Text style={styles.ModalSubHeaddingText}>How to do:</Text>
+                                <Text style={styles.ModalHeaddingText}>
+                                {workout[props.target].exercises[currentEx].name}
+                                </Text>
+                            </View>
+                            <View style={styles.Gif}>
+                                    <FitImage
+                                        style={styles.FitImage}
+                                        source={exerciseGif}
+                                    />
+                                </View>
+                            <View>
+                                <TouchableOpacity
+                                onPress={() => { 
+                                    console.log("==== closing Modal now ===== ")  
+                                    setModalVisible(false);
+
+                                    }}
+                                style={styles.BtnCloseModal}
+                                >
+                                    <Text style={styles.WText}>Close</Text>
+                                </TouchableOpacity>
+                            </View>
+                        </View>
+                        {/* ===== display gif below ====  */}
                     </View>
-                  <View>
-                    <TouchableOpacity
-                      onPress={() => { 
-                        console.log("==== closing Modal now ===== ")  
-                        setModalVisible(false);
+                </Modal>
 
-                        }}
-                      style={styles.BtnCloseModal}
-                    >
-                      <Text style={styles.WText}>Close</Text>
-                    </TouchableOpacity>
-                  </View>
-                </View>
-                {/* ===== display gif below ====  */}
-              </View>
-            </Modal>
-
-            <TouchableOpacity
-              onPress={() => {
-                setModalVisible(true);
-                console.log("====Opening Modal ==== ", exerciseGif)
-                // infoEventHandler()
-              }}
-            >
-              <Image
-                style={styles.Icon}
-                source={require("../assets/icons/info.png")}
-              />
-            </TouchableOpacity>
-            {/* <Image></Image> */}
-          </View>
-          <View style={styles.Btn}>
-            <TouchableOpacity>
-              <Text style={styles.WText} onPress={nextExerciseEventHandler}>
-                {buttonText}
-              </Text>
-              {/* <Text style={styles.WText} onPress={() => props.nextExerciseEventHandler(23)}>{state.buttonText}</Text> */}
-            </TouchableOpacity>
-          </View>
+                <TouchableOpacity
+                onPress={() => {
+                    setModalVisible(true);
+                    console.log("====Opening Modal ==== ", exerciseGif)
+                    // infoEventHandler()
+                }}
+                >
+                <Image
+                    style={styles.Icon}
+                    source={require("../assets/icons/info.png")}
+                />
+                </TouchableOpacity>
+                {/* <Image></Image> */}
+            </View>
+            <View style={styles.Btn}>
+                <TouchableOpacity>
+                <Text style={styles.WText} onPress={nextExerciseEventHandler}>
+                    {buttonText}
+                </Text>
+                {/* <Text style={styles.WText} onPress={() => props.nextExerciseEventHandler(23)}>{state.buttonText}</Text> */}
+                </TouchableOpacity>
+            </View>
         </View>
 
         {/* <Text style={styles.Text}>{props.day}</Text> */}
