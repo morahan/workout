@@ -31,37 +31,32 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
     borderRadius: 37,
   },
-  
-  Gif: {
-    color: 'blue',
-    height: "35%",
-    width: "35%",
+  FitImage: {
+    width: 350,
+    height: 350,
   },
 
-  // Modal: {
-  //   backgroundColor: 'green',
-  //   height: "35%",
-  //   width: "35%",
-  // },
+  Gif: {
+    // maxWidth: "45%",
+    // justifyContent: 'center'
+    // maxHeight: "25%"
+    alignSelf: "center",
+    resizeMode: "contain",
 
-  // ModalWrapper: {
-  //   backgroundColor: 'green',
-  //   height: "100%",
-  //   width: "100%",
-  //   elevation: 1,
-  // },
+  
+  },
 
-  // HeaderText: {
-  //   color: "#000",
-  //   fontSize: 47,
-  //   textAlign: 'center',
-  //   paddingTop: "5%",
-  //   borderBottomColor: 'black',
-  // },
+  ModalBackdrop: {
+    backgroundColor: '#000000aa',
+    height: "100%",
+  },
+
   ModalHeadingArea: {
     backgroundColor: "whitesmoke",
+    width: "100%",
     margin: "3%",
     padding: "5%",
+
     // paddingBottom: "5%",
     // paddingLeft: "5%",
     // paddingRight: "5%",
@@ -76,38 +71,26 @@ const styles = StyleSheet.create({
     // marginTop: "10%",
     textAlign: "center",
     fontSize: 17,
-    elevation: 2,
+    // elevation: 2,
   },
 
   ModalHeaddingText: {
     // backgroundColor: 'white',
     textAlign: "center",
-    fontSize: 23,
-    elevation: 2,
+    fontSize: 25,
   },
-
-  // ModalBackdrop: {
-  //   backgroundColor: 'grey',
-  //   height: "150%",
-  //   width: "100%",
-  //   // alignSelf: "center",
-  //   alignItems: "center",
-  //   zIndex: 100,
-  //   elevation: 2,
-  // },
 
   ModalBox: {
     backgroundColor: 'white',
-    margin: "25%",
-    height: "75%",
-    width: "75%",
+    marginTop: "10%",
+
+    marginBottom: "10%",
+    // height: "75%",
+    width: "100%",
     elevation: 5,
     alignItems: "center",
-    justifyContent: "space-between",
-    alignSelf: "center",
+    // justifyContent: "space-between",
     borderRadius: 17,
-    // overflow: "auto",
-    // overflowY: "auto",
   },
 
   Head: {
@@ -166,12 +149,18 @@ const styles = StyleSheet.create({
     display: "flex",
     backgroundColor: 'whitesmoke',
     alignItems: 'center',
-    justifyContent: "space-around",
+    justifyContent: "space-between",
     borderRadius: 17,
-    height: '35%',
-    width: "75%",
-    paddingBottom: "2%",
-    paddingTop: "2%",
+    width: "80%",
+    padding: "7%",
+  },
+
+  EBox: {
+    width: "100%",
+    // backgroundColor: "lightgrey",
+    justifyContent: "space-between",
+    borderRadius: 17,
+    alignItems: 'center',
   },
 
   BtnBox: {
@@ -187,9 +176,6 @@ const styles = StyleSheet.create({
   },
 
   BtnBoxLG: {
-    display: "flex",
-    // alignContent: "space-between",
-    // justifyContent: "space-around",
     backgroundColor: 'whitesmoke',
     borderRadius: 17,
     height: '25%',
@@ -203,7 +189,6 @@ const styles = StyleSheet.create({
 
   Btn: {
     width: "75%",
-    height: "25%",
     alignItems: "center",
     justifyContent: "center",
     backgroundColor: "black",
@@ -211,11 +196,9 @@ const styles = StyleSheet.create({
   },
 
   BtnCloseModal: {
-    // width: "75%",
-    // height: "50%",
-    // margin: "0%",
     paddingLeft: "10%",
     paddingRight: "10%",
+    marginBottom: "5%",
     backgroundColor: "black",
     borderRadius: 17,
   },
@@ -284,9 +267,10 @@ const styles = StyleSheet.create({
   Icon: {
     height: 23,
     width: 23,
-    // alignItems: "space-between",
-    alignSelf: "center"
-    // top: '5%',
+    alignSelf: "center",
+    // justifyContent: "center",
+    margin: "5%",
+    top: '-15%',
   },
 
   Text: {
@@ -336,20 +320,6 @@ const styles = StyleSheet.create({
     fontSize: 23,
     textAlign: 'center',
     paddingBottom: '4%'
-  },
-
-  EBox: {
-    display: "flex",
-    width: "100%",
-    height: "45%",
-    // marginTop: "5%",
-    // marginBottom: "-15%",
-    // justifyContent: "space-around",
-    // backgroundColor: "lightgrey",
-    paddingBottom: "20%",
-    borderRadius: 17,
-    justifyContent: 'space-between',
-    alignItems: 'center',
   },
 
   WText2: {
