@@ -7,7 +7,7 @@ The goal of this app is to randomize a workout based on desired exercises and ro
 - Upper Body
 
 ## Desired Workout Types
-- kinesthetis 
+- kinesthetic 
 - weights
 - cardio
 
