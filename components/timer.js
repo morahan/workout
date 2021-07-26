@@ -145,6 +145,7 @@ export default class Timer extends Component {
                 {this.state.sessionInProgress &&
                     <TouchableOpacity style={styles.BtnStart} onPress={this.stopSession}>
                         <Text style={timerStyles.textWhite}>Stop Session</Text>
+                        {/* <Text style={timerStyles.textWhite}>Stop Session</Text> */}
                     </TouchableOpacity>
                 }
             </View>

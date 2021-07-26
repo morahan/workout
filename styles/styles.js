@@ -8,7 +8,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#44ace8',
     // padding: "3%",
     justifyContent: 'space-around',
-    height: "100%",
+    height: "100vh",
   },
   
   ContainerSafeView: {
@@ -83,11 +83,10 @@ const styles = StyleSheet.create({
 
   ModalBox: {
     backgroundColor: 'white',
-    marginTop: "10%",
-
-    marginBottom: "10%",
+    marginTop: "10vh",
+    marginBottom: "10vh",
     // height: "75%",
-    width: "100%",
+    width: "100vw",
     elevation: 5,
     alignItems: "center",
     // justifyContent: "space-between",
@@ -117,14 +116,14 @@ const styles = StyleSheet.create({
 
   foot: {
     color: "#fff",
-    paddingBottom: "5%"
+    paddingBottom: "5vh"
   },
 
   Logo: {
-    height: "15%", 
-    width: "15%", 
+    height: "15vh", 
+    width: "15vw", 
     alignSelf: "center", 
-    paddingTop: "5%",
+    paddingTop: "5vh",
   },
   
   LogIn: {
@@ -134,14 +133,14 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'space-around',
     borderRadius: 17,
-    height: '25%',
-    width: "50%",
+    height: '25vh',
+    width: "50vw",
   },
   
   Welcome: {
     color: "#ffff",
     fontSize: 23,
-    paddingTop: "2%",
+    paddingTop: "2vh",
     // paddingBottom: "5%",
     alignSelf: "center",
   },
@@ -153,9 +152,10 @@ const styles = StyleSheet.create({
     justifyContent: "space-between",
     borderRadius: 17,
     width: "80vw",
-    padding: "7vh",
-    borderColor: 'grey',
-    borderWidth: 2,
+    padding: "5vh",
+    boxShadow: '0px 5px 30px 1px #000000',
+    // borderWidth: 2,
+    // borderColor: 'rgba(0,0,0,0.2)',
     
   },
 
@@ -230,7 +230,7 @@ const styles = StyleSheet.create({
   },
 
   BtnStop: {
-    width: "100%",
+    width: "100vh",
     // height: "25%",
     alignItems: "center",
     alignSelf: "center",
@@ -269,12 +269,11 @@ const styles = StyleSheet.create({
   },
 
   Icon: {
-    height: 23,
-    width: 23,
+    height: 13,
+    width: 13,
     alignSelf: "center",
-    // justifyContent: "center",
-    margin: "5%",
-    top: '-15%',
+    padding: "1vh",
+    margin: "3vh",
   },
 
   Text: {
@@ -325,14 +324,14 @@ const styles = StyleSheet.create({
     color: "#000",
     fontSize: 31,
     textAlign: 'center',
-    paddingBottom: '4vh'
+    paddingBottom: '3vh'
   },
   
   Text3: {
     color: "#000",
     fontSize: 23,
     textAlign: 'center',
-    paddingBottom: '4vh'
+    paddingBottom: '3vh'
   },
 
   WText2: {
