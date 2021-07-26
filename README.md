@@ -1,5 +1,7 @@
 # Quick Launch
-- NPM install
+- sudo npm install
+- sudo npm audit fix --force
+- sudo expo install
 - NPM start
 
 # Workout Generator
