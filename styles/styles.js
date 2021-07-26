@@ -31,6 +31,7 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
     borderRadius: 37,
   },
+
   FitImage: {
     width: 350,
     height: 350,
@@ -151,8 +152,8 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: "space-between",
     borderRadius: 17,
-    width: "80%",
-    padding: "7%",
+    width: "80vw",
+    padding: "7vh",
   },
 
   EBox: {
@@ -292,8 +293,8 @@ const styles = StyleSheet.create({
     color: "white",
     fontSize: 17,
     textAlign: 'center',
-    paddingTop: "5%",
-    paddingBottom: "5%",
+    paddingTop: "5vh",
+    paddingBottom: "5vh",
 
   },
 
@@ -301,7 +302,8 @@ const styles = StyleSheet.create({
     color: "#000",
     fontSize: 47,
     textAlign: 'center',
-    paddingTop: "5%",
+    paddingTop: "7vh",
+    // marginTop: "15vr",
     borderBottomColor: 'black',
   },
 
@@ -309,7 +311,8 @@ const styles = StyleSheet.create({
     color: "#000",
     fontSize: 37,
     textAlign: 'center',
-    marginTop: "-5%",
+    // marginTop: "-5vh",
+    paddingTop: "3vh",
     // paddingBottom: "2%",
     borderBottomColor: 'black',
     borderBottomWidth: 1,
@@ -319,7 +322,7 @@ const styles = StyleSheet.create({
     color: "#000",
     fontSize: 23,
     textAlign: 'center',
-    paddingBottom: '4%'
+    paddingBottom: '4vh'
   },
 
   WText2: {
