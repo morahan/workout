@@ -154,6 +154,9 @@ const styles = StyleSheet.create({
     borderRadius: 17,
     width: "80vw",
     padding: "7vh",
+    borderColor: 'grey',
+    borderWidth: 2,
+    
   },
 
   EBox: {
@@ -313,12 +316,19 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     // marginTop: "-5vh",
     paddingTop: "3vh",
-    // paddingBottom: "2%",
     borderBottomColor: 'black',
     borderBottomWidth: 1,
+    marginBottom: "5vh",
   },
 
   Text2: {
+    color: "#000",
+    fontSize: 31,
+    textAlign: 'center',
+    paddingBottom: '4vh'
+  },
+  
+  Text3: {
     color: "#000",
     fontSize: 23,
     textAlign: 'center',

@@ -183,11 +183,11 @@ function Exercise(props){
     return (
       <View style={styles.WorkoutScreen}>
         <Text style={styles.HeaderText}>{"Super Set #" + currentSuperSet}</Text>
-        <Text style={styles.HeaderText2}>{"Round " + currentRound} </Text>
+        <Text style={styles.HeaderText2}>{"Round " + currentRound}</Text>
         <View style={styles.Box}>
             <View style={styles.EBox}>
                 <Text style={styles.Text2}>{exercise}</Text>
-                <Text style={styles.Text2}>{reps + " Reps"}</Text>
+                <Text style={styles.Text3}>{reps + " Reps"}</Text>
                 {/* add i icon for info about each exercise */}
                 
                 {/* ==== Modal Below ===  */}
