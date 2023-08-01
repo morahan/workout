@@ -8,7 +8,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#44ace8',
     // padding: "3%",
     justifyContent: 'space-around',
-    height: "100vh",
+    // height: "100vh",
   },
   
   ContainerSafeView: {

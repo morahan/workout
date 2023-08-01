@@ -53,7 +53,7 @@ export default class SignUp extends Component {
             return (
                 <View style={styles.Screen}>
                     <View>
-                        <Image source={require('../assets/fl-icon.png')} style={{ height: 117, width: 117, alignSelf: "center" }} />
+                        <Image source={require('../assets/FL-Icon.png')} style={{ height: 117, width: 117, alignSelf: "center" }} />
                         <Text style={styles.cta2}>{this.state.message}</Text>
                         <Text style={styles.cta2}>{this.state.name}</Text>
                     </View>
@@ -77,7 +77,7 @@ export default class SignUp extends Component {
             return (
                 <View style={styles.Screen}>
                     <View>
-                        <Image source={require('../assets/fl-icon.png')} style={{ height: 117, width: 117, alignSelf: "center" }} />
+                        <Image source={require('../assets/FL-Icon.png')} style={{ height: 117, width: 117, alignSelf: "center" }} />
                     </View>
                     <View>
                         <Text style={styles.cta2}>{this.state.message}</Text>

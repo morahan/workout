@@ -27,7 +27,7 @@ class GetStarted extends Component {
         return (
             <View style={styles.Screen}>
                 <View>
-                    <Image source={require('../assets/fl-icon.png')} style={{ height: 117, width: 117, alignSelf: "center" }} />
+                    <Image source={require('../assets/FL-Icon.png')} style={{ height: 117, width: 117, alignSelf: "center" }} />
                     <Text style={styles.Head}>Get Started</Text>
                 </View>
                 <View>

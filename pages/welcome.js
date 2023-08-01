@@ -14,7 +14,7 @@ export default function Welcome({ navigation }) {
     return (
         <View style={styles.Screen}>
             <View style={styles.TopLogoAndHeading}>
-                <Image source={require('../assets/fl-icon.png')} style={{ height: 117, width: 117, alignSelf: "center" }} />
+                <Image source={require('../assets/FL-Icon.png')} style={{ height: 117, width: 117, alignSelf: "center" }} />
                 <Text style={styles.Welcome}>{welcome}</Text>
             </View>
             <View style={styles.LogIn}>
