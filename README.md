@@ -1,8 +1,13 @@
 # Quick Launch
-- sudo npm install
+<!-- - sudo npm install --force -->
 - sudo npm audit fix --force
-- sudo expo install
-- NPM start
+<!-- - sudo expo install -->
+<!-- - npx expo start -->
+<!-- - npm start -->
+<!-- 2023 rebuild version start sequence -->
+- yarn install
+- yarn run start
+- npx react-native start
 
 # Workout Generator
 The goal of this app is to randomize a workout based on desired exercises and rotating muscle groups
