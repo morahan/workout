@@ -6,14 +6,14 @@ const styles = StyleSheet.create({
     flexDirection: "column",
     alignItems: "center",
     backgroundColor: '#44ace8',
-    // padding: "3%",
+    padding: "3%",
     justifyContent: 'space-around',
-    // height: "100vh",
+    height: "100%",
   },
   
-  ContainerSafeView: {
-    margin: 30,
-  },
+  // ContainerSafeView: {
+    // margin: 30,
+  // },
 
   TopLogoAndHeading: {
     justifyContent: "center",
