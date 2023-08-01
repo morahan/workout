@@ -127,15 +127,18 @@ const styles = StyleSheet.create({
   },
   
   LogIn: {
-    // margin: "5%",
+    // margin: "15%",
+    padding: "13%",
     display: "flex",
     backgroundColor: 'whitesmoke',
     alignItems: 'center',
-    justifyContent: 'space-around',
+    justifyContent: 'space-evenly',
     borderRadius: 17,
-    height: '25vh',
-    width: "50vw",
+    // height: "25vh",
+    // width: "50vw",
   },
+
+  
   
   Welcome: {
     color: "#ffff",
@@ -193,6 +196,10 @@ const styles = StyleSheet.create({
 
   Btn: {
     width: "75%",
+    paddingLeft: "13%",
+    paddingRight: "13%",
+    paddingBottom: "3%",
+    paddingTop: "3%",
     alignItems: "center",
     justifyContent: "center",
     backgroundColor: "black",
@@ -354,6 +361,8 @@ const styles = StyleSheet.create({
   Input2: {
     width: "75%",
     height: "25%",
+    paddingRight: "7%",
+    paddingLeft: "7%",
     textAlign: "center",
     fontSize: 17,
     borderRadius: 17,

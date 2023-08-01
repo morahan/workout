@@ -10,11 +10,11 @@ class GetStarted extends Component {
         };
     }
 
-    signInHandler = (props) => {
-        // this.setState({ name: "Lola Sign In"}),
-        this.props.navigation.navigate('SignIn')
-        console.log("Get Started Handler --> Sign In")
-    }
+    // signInHandler = (props) => {
+    //     // this.setState({ name: "Lola Sign In"}),
+    //     this.props.navigation.navigate('SignIn')
+    //     console.log("Get Started Handler --> Sign In")
+    // }
 
     signUpHandler = () => {
         // this.setState({ name: "Lola Sign Up"})
@@ -30,14 +30,17 @@ class GetStarted extends Component {
                     <Image source={require('../assets/FL-Icon.png')} style={{ height: 117, width: 117, alignSelf: "center" }} />
                     <Text style={styles.Head}>Get Started</Text>
                 </View>
-                <View>
+                {/* <View>
                     <Text style={styles.cta2}>{this.state.name}</Text>
-                </View>
+                </View> */}
 
                 <View style={styles.LogIn}>
                     <TouchableOpacity style={styles.Btn} onPress={this.signInHandler}>
                         <Text style={styles.WText}>Log In</Text>
                     </TouchableOpacity>
+                    <View>
+                        <Text> </Text>
+                    </View>
                     <TouchableOpacity style={styles.Btn} onPress={this.signUpHandler}>
                         <Text style={styles.WText}>Sign Up</Text>
                     </TouchableOpacity>

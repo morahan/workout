@@ -38,7 +38,7 @@ function  SignUp2(props) {
   };
 
   pressCustomizeHandler = () => {
-    console.log(props.navigation.navigate, "=== signUp.js, navigate to customize workout (displayTags.js) ===="
+    console.log(props.navigation.navigate, "=== signUp.js2, navigate to customize workout (displayTags.js) ===="
     );
     props.navigation.navigate("DisplayTags");
   };
