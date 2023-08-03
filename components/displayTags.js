@@ -103,7 +103,7 @@ class DisplayTags extends Component {
                             selected={selected}
                             isExclusive={false}
                             step={this.state.step}
-                            // key={key}
+                            key={Workout.step}
                         />
                     </View>
                 </ScrollView>

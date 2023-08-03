@@ -296,6 +296,7 @@ const styles = StyleSheet.create({
     fontSize: 23,
     paddingTop: "5%",
     paddingBottom: "5%",
+    textAlign: 'center',
   },
 
   WText2: {

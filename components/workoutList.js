@@ -677,16 +677,14 @@ let workout = {
         // switchSides: true,
         // switchAfter: 30,
       },
-
-
       15: {
-        // id: ?,
+        id: 15,
         name: "NO MORE EXERCISES",
         muscleGroups: [],
         // detailedMuscleDescription: "",
-        weight: 25,
-        reps: 13,
-        sets: 3,
+        weight: 0,
+        reps: 0,
+        sets: 0,
         infoUrl: "",
         asset: require("../assets/msc/HappyDance.gif"),
         available: true,
@@ -954,7 +952,6 @@ let workout = {
           },
         },
       },
-      
       14: { 
         // id: 6,
         name: "Romanian Dumbbell lift",
@@ -971,11 +968,8 @@ let workout = {
         // switchSides: true,
         // switchAfter: 30,
       },
-
-
-
       15: {
-        // id: ?,
+        id: 15,
         name: "NO MORE EXERCISES",
         muscleGroups: [],
         // detailedMuscleDescription: "",
@@ -1132,13 +1126,13 @@ let workout = {
         // switchAfter: 30,
       },
       9: {
-        // id: ?,
+        id: 9,
         muscleGroups: [],
         // detailedMuscleDescription: "",
         name: "NO MORE EXERCISES",
-        weight: 25,
-        reps: 13,
-        sets: 3,
+        weight: 0,
+        reps: 0,
+        sets: 0,
         infoUrl: "",
         asset: require("../assets/msc/HappyDance.gif"),
         available: true,
