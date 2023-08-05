@@ -3,7 +3,7 @@
 
 import React from 'react';
 import { View, StyleSheet, TouchableOpacity, Text } from 'react-native';
-// import Styles from '../../styles/styles.js';
+import Styles from '../styles/styles.js';
 import BackgroundButton from './backgroundButton.js';
 // import addOrRemove from './addOrRemove.js';
 // import customEx from './customExercises.js';
@@ -19,7 +19,7 @@ export default class TagsView extends React.Component {
     render() {
         return (
             // <View style={styles.container} key={}>
-            <View style={styles.container}>
+            <View style={Styles.Container}>
                 {this.makeButtons()}
             </View>
         )
@@ -39,13 +39,16 @@ export default class TagsView extends React.Component {
 
     addOrRemove = (array, item) => {
         const exists = array.includes(item)
+        const FavoriteExercises = array
+        console.log("TagView.js ~ addOrRemove() ~ FavoriteExercisesArray (pre)== ", FavoriteExercises )
+        // console.log("exists === ", exists, )
         if (exists) {
-            return array.filter((c) => { return c !== item })
+            console.log("TagView.js > addOrRemove > Removing Exercise(tag) ", item)
+            return array.filter((remove) => { return remove !== item })
         } else {
-            const result = array
-            result.push(item)
-            console.log("TagView.js - addOrRemove() --> Adding Tag, == ", result)
-            return result
+            FavoriteExercises.push(item)
+            console.log("TagView.js > addOrRemove > Adding Exercise(Tag) == ", item, "FavoriteExercisesArray (post)== ", FavoriteExercises)
+            return FavoriteExercises
         }
     }
 
@@ -65,7 +68,7 @@ export default class TagsView extends React.Component {
                         textColor={textColor}
                         borderColor={borderColor}
                         onPress={() => {
-                            console.log("TagsView.js, backGroundButton onPress RemoveTag == ", tag)
+                            console.log("TagsView.js > backgroundButton change > onPress == ", tag)
                             this.onPress(tag)
                         }}
                         key={i}
@@ -79,11 +82,11 @@ export default class TagsView extends React.Component {
     }
 }
 
-const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-        flexDirection: 'row',
-        flexWrap: 'wrap',
-        padding: 20
-    }
-})
+// const styles = StyleSheet.create({
+//     container: {
+//         flex: 1,
+//         flexDirection: 'row',
+//         flexWrap: 'wrap',
+//         padding: 20
+//     }
+// })

@@ -10,10 +10,6 @@ const styles = StyleSheet.create({
     justifyContent: 'space-around',
     height: "100%",
   },
-  
-  // ContainerSafeView: {
-    // margin: 30,
-  // },
 
   TopLogoAndHeading: {
     justifyContent: "center",
@@ -413,7 +409,12 @@ const styles = StyleSheet.create({
 
   }, 
 
-
-});
+  Container: {
+    flex: 1,
+    flexDirection: 'row',
+    flexWrap: 'wrap',
+    padding: 20
+  },
+})
 
 export default styles;

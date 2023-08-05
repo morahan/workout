@@ -1,10 +1,8 @@
 import React, { Component } from 'react';
 import { View, Text, ScrollView } from 'react-native';
 import TagsView from './tagsView.js';
-// import { getActiveChildNavigationOptions } from 'react-navigation';
 import Workout from './workoutList.js';
 import Styles from '../styles/styles.js';
-import customEx from './customExercises.js';
 import { TouchableOpacity } from 'react-native-gesture-handler';
 
 const selected = [];
@@ -36,9 +34,8 @@ class DisplayTags extends Component {
             // console.log("~ DisplayTags.js ~ == navigate to next page, completed customization ==", this.props.navigation)
         }
         if (this.state.step > 3){
-            customEx.selected.push(selected);
-            console.log("~displayTags.js - iterate tags - step is > 3.  step = ", this.state.step);
-            console.log("displayTags.js - Custom Selected Exercises = ", customEx.selected)
+            console.log("~ displayTags.js > step is > 3 >  step = ", this.state.step);
+            console.log("~ props.navigation.navigate", this.props.navigation.navigate);
             this.props.navigation.navigate('Workout')
         }
     }
@@ -77,7 +74,7 @@ class DisplayTags extends Component {
     }
     
     nextEventHandler = () => {
-        console.log("displayTags.js- nextEventHandler - SelectedTags ===", selected)
+        console.log("displayTags.js > nextEventHandler > SelectedTags ===", selected)
         this.setState({step: this.state.step+=1})
         console.log("step === ", this.state.step)
         this.iterateTags()
@@ -90,9 +87,9 @@ class DisplayTags extends Component {
                 <View style={Styles.ContainerSafeView}>
                     <View style={Styles.Spacer3}>
                         <Text style={Styles.Text2}> 
-                        Choose {this.state.target} Exercises 
+                        Choose {this.state.target} Exercises
                         </Text>
-                        <Text>* Note: Not all exercises will be complted in one day. These exercises will be shuffled for you on your {this.state.target} days. </Text>
+                        <Text>* Note: These exercises will be shuffled in on your {this.state.target} days. </Text>
                     </View>
                 </View>
 

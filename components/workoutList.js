@@ -1,5 +1,3 @@
-// example workout app
-
 // let user = {
 //   firstName: "Michael",
 //   lastName: "Morahan",

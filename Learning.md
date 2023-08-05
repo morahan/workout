@@ -3,6 +3,7 @@
 ## Navigation
 - Useful series for React Native 
 - Stack Nav RN APP Tutorial: https://www.youtube.com/watch?v=cS4PgI3zBzY&list=PL4cUxeGkcC9ixPU-QkScoRBVxtPPzVjrQ&index=20
+- Navigation Pages live in dir routes>homeStack.js
 
 ## Downgrading Module
 - start by changing version in package.json then reinstall "npm install"
