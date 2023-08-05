@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { View, Text, ScrollView } from 'react-native';
 import TagsView from './tagsView.js';
 import Workout from './workoutList.js';
+// import Confirm from './confirm.js'
 import Styles from '../styles/styles.js';
 import { TouchableOpacity } from 'react-native-gesture-handler';
 
@@ -33,11 +34,10 @@ class DisplayTags extends Component {
             this.getCoreTags();
             // console.log("~ DisplayTags.js ~ == navigate to next page, completed customization ==", this.props.navigation)
         }
-        if (this.state.step > 3){
+        if (this.state.step === 4){
             console.log("~ displayTags.js > step is > 3 >  step = ", this.state.step);
             console.log("~ props.navigation.navigate", this.props.navigation.navigate);
-            this.props.navigation.navigate('Workout')
-        }
+            this.props.navigation.navigate('Confirmation')
     }
       
     getUpperTags = () => { 

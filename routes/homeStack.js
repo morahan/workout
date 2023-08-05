@@ -9,6 +9,7 @@ import SignIn from '../pages/signIn.js';
 import SignUp from '../pages/signUp.js';
 import Workout from '../pages/workout.js';
 import DisplayTags from '../components/displayTags.js';
+import Confirmation from '../pages/confirm.js';
 
 const screens = {
     Welcome: {
@@ -28,6 +29,9 @@ const screens = {
     },
     CustomizeWorkout: {
         screen: SetWorkout
+    },
+    Confirmation: {
+        screen: Confirmation
     },
     Workout: {
         screen: Workout
