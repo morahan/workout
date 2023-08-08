@@ -38,6 +38,7 @@ class DisplayTags extends Component {
             console.log("~ displayTags.js > step is > 3 >  step = ", this.state.step);
             console.log("~ props.navigation.navigate", this.props.navigation.navigate);
             this.props.navigation.navigate('Confirmation')
+        }
     }
       
     getUpperTags = () => { 

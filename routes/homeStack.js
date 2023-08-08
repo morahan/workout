@@ -9,7 +9,7 @@ import SignIn from '../pages/signIn.js';
 import SignUp from '../pages/signUp.js';
 import Workout from '../pages/workout.js';
 import DisplayTags from '../components/displayTags.js';
-import Confirmation from '../pages/confirm.js';
+import Confirmation from '../pages/confirmation.js';
 
 const screens = {
     Welcome: {

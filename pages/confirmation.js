@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 import { Text, View, TextInput, TouchableOpacity, Image } from 'react-native';
 import styles from '../styles/styles.js';
+// import favoriteExercises from '../components/tagsView.js';
+
+// console.log('confirmation.js> top of page> type of favExercises == ', typeof(favoriteExercises));
 
 export default class Confirm extends Component {
     constructor(props){
@@ -13,8 +16,10 @@ export default class Confirm extends Component {
     }
 
     pressWorkoutHandler = () => {
-        console.log(this.props.navigation.navigate, "~ confirm.js > pressWorkoutHandler navigate to workout")
+        // console.log(this.props.navigation.navigate, "~ confirm.js > pressWorkoutHandler navigate to workout")
+        // console.log("confirmation.js > pressWorkoutHandler > FavorteExercises ==> ", favoriteExercises);
     }
+
 
     render () {
         if (this.state.step === 5){
@@ -26,8 +31,19 @@ export default class Confirm extends Component {
                             Your Selected Exercises are:
                         </Text>
                         <Text style={styles.Text3}>
-
+                            favoriteExercises is Var exported from TagsView.  How to display it?
                         </Text>
+
+                        {/* <Text> */}
+                        {/* {favoriteExercises.map((exercise, index) => {
+                             <Text key={index}> {exercise} </Text>
+                        })} */}
+
+                            {/* {favoriteExercises.map((x) => (
+                                <Text>x</Text>
+                            ))} */}
+                        {/* </Text> */}
+
                     </View>
                     <TouchableOpacity onPress={this.pressWorkoutHandler} >
                         <Text>Start Workout</Text>

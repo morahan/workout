@@ -3,8 +3,6 @@ import { Text, View, TextInput, TouchableOpacity, Image } from 'react-native';
 import styles from '../styles/styles.js';
 import workout from '../components/workoutList.js';
 
-
-
 export default class SignUp extends Component {
     constructor(props) {
         super(props);
