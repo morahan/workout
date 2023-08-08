@@ -15,6 +15,7 @@ class DisplayTags extends Component {
         this.state = {
             step: 1,
             target: "Upper Body",
+            // selected: []
         }
         this.nextEventHandler = this.nextEventHandler.bind(this)
     }
@@ -32,11 +33,11 @@ class DisplayTags extends Component {
         }
         if (this.state.step === 3){
             this.getCoreTags();
-            // console.log("~ DisplayTags.js ~ == navigate to next page, completed customization ==", this.props.navigation)
+            // console.log("DisplayTags.js > iterateTags > == navigate to next page, completed customization ==", this.props.navigation)
         }
         if (this.state.step === 4){
-            console.log("~ displayTags.js > step is > 3 >  step = ", this.state.step);
-            console.log("~ props.navigation.navigate", this.props.navigation.navigate);
+            console.log("displayTags.js > iterateTags > step = ", this.state.step);
+            // console.log("displayTags.js > iterateTags > props.navigation.navigate", this.props.navigation.navigate);
             this.props.navigation.navigate('Confirmation')
         }
     }
@@ -75,14 +76,15 @@ class DisplayTags extends Component {
     }
     
     nextEventHandler = () => {
-        console.log("displayTags.js > nextEventHandler > SelectedTags ===", selected)
+        console.log("displayTags.js > nextEventHandler > SelectedTags === ", selected)
+        console.log("displayTags.js > nextEventHandler > Selected isArray typeof === ", Array.isArray(selected))
         this.setState({step: this.state.step+=1})
+        this.setState({selected: this.state.selected = selected})
         console.log("step === ", this.state.step)
         this.iterateTags()
     }
 
     render() {
-        // this.iterateTags()
         return (
             <>
                 <View style={Styles.ContainerSafeView}>

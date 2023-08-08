@@ -1,11 +1,15 @@
 import React, { Component } from 'react';
 import { Text, View, TextInput, TouchableOpacity, Image } from 'react-native';
 import styles from '../styles/styles.js';
-// import favoriteExercises from '../components/tagsView.js';
+import favoriteExercises from '../components/tagsView.js';
+import TagsView from '../components/displayTags.js';
+import { ScrollView } from 'react-native-gesture-handler';
 
-// console.log('confirmation.js> top of page> type of favExercises == ', typeof(favoriteExercises));
+// console.log("confirmation.js > top of page selected = ", selected);
+console.log("confirmation.js > top of page favoriteExercises = ", favoriteExercises);
+console.log('confirmation.js> top of page> type of favExercises == ', typeof(favoriteExercises));
 
-export default class Confirm extends Component {
+export default class Confirmation extends React.Component {
     constructor(props){
         super(props);
         this.state ={
@@ -33,7 +37,14 @@ export default class Confirm extends Component {
                         <Text style={styles.Text3}>
                             favoriteExercises is Var exported from TagsView.  How to display it?
                         </Text>
-
+                        {/* error below!  Showing only partial list and unselected!  Closer... */}
+                            <TagsView
+                                // all={tags}
+                                selected={false}
+                                // isExclusive={false}
+                                // step={this.state.step}
+                                // key={}
+                            />
                         {/* <Text> */}
                         {/* {favoriteExercises.map((exercise, index) => {
                              <Text key={index}> {exercise} </Text>

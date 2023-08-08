@@ -39,19 +39,22 @@ export default class TagsView extends React.Component {
 
     addOrRemove = (array, item) => {
         const exists = array.includes(item)
-        const FavoriteExercises = array
-        console.log("TagView.js ~ addOrRemove() ~ FavoriteExercisesArray (pre)== ", FavoriteExercises )
+        const favoriteExercises = array
+        console.log("TagView.js ~ addOrRemove() ~ favoriteExercisesArray (pre)== ", favoriteExercises )
         // console.log("exists === ", exists, )
         if (exists) {
             console.log("TagView.js > addOrRemove > Removing Exercise(tag) ", item)
-            return array.filter((remove) => { return remove !== item })
+            console.log(typeof(favoriteExercises))
+            array.filter((remove) => { return remove !== item })
+            return favoriteExercises
         } else {
-            FavoriteExercises.push(item)
-            console.log("TagView.js > addOrRemove > Adding Exercise(Tag) == ", item, "FavoriteExercisesArray (post)== ", FavoriteExercises)
-            return FavoriteExercises
+            favoriteExercises.push(item)
+            console.log("TagView.js > addOrRemove > Adding Exercise(Tag) == ", item, "favoriteExercisesArray (post)== ", favoriteExercises)
+            console.log('TagView.js > typeof Favorite Exercise = ', typeof(favoriteExercises[0]))
+            return favoriteExercises
         }
     }
-
+    
     makeButtons() {
         return this.props.all.map((tag, i) => {
             const on = this.state.selected.includes(tag)
@@ -75,7 +78,7 @@ export default class TagsView extends React.Component {
                         showImage={on}
                         title={tag} 
                         selected={this.state.selected}
-                    />
+                        />
                 </>
             )
         })
