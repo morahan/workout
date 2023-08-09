@@ -33,8 +33,9 @@ export default class TagsView extends React.Component {
             selected = this.addOrRemove(this.state.selected, tag)
         }
         this.setState({
-            selected
+            selected: selected
         })
+        return selected
     }
 
     addOrRemove = (array, item) => {
