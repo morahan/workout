@@ -74,6 +74,17 @@ class DisplayTags extends Component {
             tags.push(Workout.core.exercises[i].name)
         } 
     }
+
+    getFavoriteExercisesTags = () => { 
+        const num = Object.keys(Workout.favoriteExercises.exercises).length
+        this.setState({
+            target: "Core"
+        })
+        tags.splice(0, tags.length)
+        for (let i = 1; i < num+1; i++){
+            tags.push(Workout.favoriteExercises.exercises[i].name)
+        } 
+    }
     
     nextEventHandler = () => {
         console.log("displayTags.js > nextEventHandler > SelectedTags === ", selected)
@@ -115,7 +126,6 @@ class DisplayTags extends Component {
                         </Text>
                     </TouchableOpacity>
                 </View>
-
             </>
         );
     }

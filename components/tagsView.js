@@ -2,17 +2,20 @@
 //  Link to potential different appraoch article: https://medium.com/fantageek/how-to-make-tag-selection-view-in-react-native-b6f8b0adc891
 
 import React from 'react';
-import { View, StyleSheet, TouchableOpacity, Text } from 'react-native';
+import { View, TouchableOpacity, Text } from 'react-native';
 import Styles from '../styles/styles.js';
 import BackgroundButton from './backgroundButton.js';
 // import addOrRemove from './addOrRemove.js';
 // import customEx from './customExercises.js';
 
+// let favoriteExercises = [];
+
 export default class TagsView extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
-            selected: props.selected
+            selected: props.selected,
+            favoriteExercises: []
         }
     }   
 
@@ -40,20 +43,25 @@ export default class TagsView extends React.Component {
 
     addOrRemove = (array, item) => {
         const exists = array.includes(item)
-        const favoriteExercises = array
-        console.log("TagView.js ~ addOrRemove() ~ favoriteExercisesArray (pre)== ", favoriteExercises )
+        // const favExercises = []
+        // console.log("TagView.js ~ addOrRemove() ~ favoriteExercisesArray (pre)== ", favoriteExercises )
         // console.log("exists === ", exists, )
         if (exists) {
             console.log("TagView.js > addOrRemove > Removing Exercise(tag) ", item)
-            console.log(typeof(favoriteExercises))
+            // console.log(typeof(favoriteExercises))
             array.filter((remove) => { return remove !== item })
-            return favoriteExercises
+            // favExercises.filter((remove) => { return remove !== item })
+            // return favoriteExercises 
         } else {
-            favoriteExercises.push(item)
-            console.log("TagView.js > addOrRemove > Adding Exercise(Tag) == ", item, "favoriteExercisesArray (post)== ", favoriteExercises)
-            console.log('TagView.js > typeof Favorite Exercise = ', typeof(favoriteExercises[0]))
-            return favoriteExercises
+            array.push(item)
+            // favExercises.push(Workout.core.exercises[i].name)
+            console.log("TagView.js > addOrRemove > Adding Exercise(Tag) == ", item)
+            // console.log('TagView.js > typeof Favorite Exercise = ', typeof(favoriteExercises[0]), "favoriteExercisesArray (post)== ", favoriteExercises)
         }
+        this.setState({
+            favoriteExercises: array
+        })
+        // return favoriteExercises;
     }
     
     makeButtons() {
@@ -79,9 +87,10 @@ export default class TagsView extends React.Component {
                         showImage={on}
                         title={tag} 
                         selected={this.state.selected}
-                        />
+                    />
                 </>
             )
         })
     }
 }
+// export const favoriteExercises;

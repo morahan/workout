@@ -1139,6 +1139,10 @@ let workout = {
       // },
     }
   },
+  favoriteExercises: {
+    exercises: {},
+    
+  },
 };
 
 export default workout;

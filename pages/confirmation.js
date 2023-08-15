@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
-import { Text, View, TextInput, TouchableOpacity, Image } from 'react-native';
+import { Text, View, TouchableOpacity, Image } from 'react-native';
 import styles from '../styles/styles.js';
 import favoriteExercises from '../components/tagsView.js';
 import TagsView from '../components/displayTags.js';
-import { ScrollView } from 'react-native-gesture-handler';
+// import myFavExercises from '../components/displayTags.js';
+// import { ScrollView } from 'react-native-gesture-handler';
 
 // console.log("confirmation.js > top of page selected = ", selected);
 console.log("confirmation.js > top of page favoriteExercises = ", favoriteExercises);
@@ -12,18 +13,16 @@ console.log('confirmation.js> top of page> type of favExercises == ', typeof(fav
 export default class Confirmation extends React.Component {
     constructor(props){
         super(props);
-        this.state ={
+        this.state = {
             message: "Confirm",
             name: '',
             step: 5,
         };
     }
-
     pressWorkoutHandler = () => {
         // console.log(this.props.navigation.navigate, "~ confirm.js > pressWorkoutHandler navigate to workout")
         // console.log("confirmation.js > pressWorkoutHandler > FavorteExercises ==> ", favoriteExercises);
     }
-
 
     render () {
         if (this.state.step === 5){
@@ -38,23 +37,23 @@ export default class Confirmation extends React.Component {
                             favoriteExercises is Var exported from TagsView.  How to display it?
                         </Text>
                         {/* error below!  Showing only partial list and unselected!  Closer... */}
+                           {/* <myFavExercises>
+                           </myFavExercises> */}
                             <TagsView
                                 // all={tags}
-                                selected={false}
+                                selected={this.state.favoriteExercises}
                                 // isExclusive={false}
-                                // step={this.state.step}
+                                step={this.state.step}
                                 // key={}
                             />
                         {/* <Text> */}
-                        {/* {favoriteExercises.map((exercise, index) => {
-                             <Text key={index}> {exercise} </Text>
-                        })} */}
-
+                            {/* {favoriteExercises.map((exercise, index) => {
+                                <Text key={index}> {exercise} </Text>
+                            })} */}
                             {/* {favoriteExercises.map((x) => (
                                 <Text>x</Text>
                             ))} */}
                         {/* </Text> */}
-
                     </View>
                     <TouchableOpacity onPress={this.pressWorkoutHandler} >
                         <Text>Start Workout</Text>
