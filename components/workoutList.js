@@ -1234,6 +1234,6 @@ let workout = {
     exercises: {},
     
   },
-},
+};
 
 export default workout;
