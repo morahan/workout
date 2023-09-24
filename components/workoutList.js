@@ -3,7 +3,8 @@
 //   lastName: "Morahan",
 //   // weight: 150,
 //   days: "All",
-//   favoriteWorkout: "upperBody"
+//   favoriteWorkout: "upperBody",
+//   equipmentOwned: ['',''],
 // };
 
 let workout = {
@@ -405,7 +406,7 @@ let workout = {
     groups: {
       1: {
         description: "Back and Biceps",
-        ex: [1, 9, 10, 11, 12, 13, 14],
+        ex: [1, 9, 10],
       },
       2: {
         description: "Chest and Triceps",
@@ -487,8 +488,8 @@ let workout = {
             name: "Bench Press Dumbbell",
             primaryMuscleGroups: ['chest', 'front delts'],
             secondaryMuscleGroups: ['triceps'],
-            equipmentRequired: ['dumbbells', 'incline bench'],
-            equipmentOptions: [''],
+            equipmentRequired: ['dumbbells', 'bench'],
+            equipmentOptions: ['incline bench'],
             reps: 13,
             sets: 3,
             infoUrl: "",
@@ -725,11 +726,11 @@ let workout = {
     groups: {
       1: {
         description: "Quadriceps and Gluteal",
-        ex: [1, 2, 3, 4, 5, 6, 7, 8],
+        ex: [1, 2, 3, 4, 5, 8, 9],
       },
       2: {
         description: "Hamstrings and Calves",
-        ex: [9, 10, 11, 12, 13, 14, 15],
+        ex: [6, 7, 9],
       },
     },
     days: ["Tuesday", "Thursday"],
@@ -893,7 +894,7 @@ let workout = {
       6: { 
         id: 6,
         name: "Leg Curls",
-        primaryMuscleGroups: [],
+        primaryMuscleGroups: ['Hamstrings'],
         secondaryMuscleGroups: [''],
         equipmentRequired: ['leg curl machine'],
         equipmentOptions: [''],
@@ -910,7 +911,7 @@ let workout = {
           6.1: { 
             id: 6.1,
             name: "Swiss Ball Hamstring Curl",
-            primaryMuscleGroups: [],
+            primaryMuscleGroups: ['Hamstrings'],
             secondaryMuscleGroups: [''],
             equipmentRequired: ['swiss ball'],
             equipmentOptions: [''],
@@ -928,7 +929,7 @@ let workout = {
           6.2: { 
             id: 6.2,
             name: "Single-leg Swiss Ball Hamstring Curl",
-            primaryMuscleGroups: [],
+            primaryMuscleGroups: ['Hamstrings'],
             secondaryMuscleGroups: [''],
             equipmentRequired: ['swiss ball'],
             equipmentOptions: [''],
@@ -949,7 +950,7 @@ let workout = {
     7: { 
       id: 7,
       name: "Calf Raises",
-      primaryMuscleGroups: [],
+      primaryMuscleGroups: ["Calfs"],
       secondaryMuscleGroups: [''],
       equipmentRequired: ['step'],
       equipmentOptions: [''],
@@ -968,7 +969,7 @@ let workout = {
     8: { 
       id: 8,
       name: "Glute Bridge",
-      primaryMuscleGroups: [],
+      primaryMuscleGroups: ['Glutes'],
       secondaryMuscleGroups: [''],
       equipmentRequired: [''],
       equipmentOptions: [''],
