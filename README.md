@@ -10,7 +10,9 @@
 - npx react-native start
 
 # Workout Generator
-The goal of this app is to randomize a workout based on desired exercises and rotating muscle groups
+The goal of this app is to enable people to workout with confidence anywhere with any amount of equipment.  
+
+The main function of the app is a 'smart shuffle'.  The smart shuffle rotates targeted muscle groups and randomizes workouts to make working out fun.  
 
 ## Target Muscles
 - Legs
